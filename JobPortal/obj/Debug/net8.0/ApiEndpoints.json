@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "JobPortal.Controllers.AuthenticateController",
+    "Method": "Login",
+    "RelativePath": "Api/Authenticate/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DTO.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobPortal.Controllers.AuthenticateController",
+    "Method": "Register",
+    "RelativePath": "Api/Authenticate/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DTO.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "JobPortal.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
