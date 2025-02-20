@@ -1,0 +1,15 @@
+C:\Users\LENOVO\source\ProjectCollege\DTO\bin\Debug\net8.0\DTO.deps.json
+C:\Users\LENOVO\source\ProjectCollege\DTO\bin\Debug\net8.0\DTO.runtimeconfig.json
+C:\Users\LENOVO\source\ProjectCollege\DTO\bin\Debug\net8.0\DTO.dll
+C:\Users\LENOVO\source\ProjectCollege\DTO\bin\Debug\net8.0\DTO.pdb
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\DTO.csproj.AssemblyReference.cache
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\DTO.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\DTO.AssemblyInfo.cs
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\DTO.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\DTO.sourcelink.json
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\DTO.dll
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\refint\DTO.dll
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\DTO.pdb
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\DTO.genruntimeconfig.cache
+C:\Users\LENOVO\source\ProjectCollege\DTO\obj\Debug\net8.0\ref\DTO.dll
