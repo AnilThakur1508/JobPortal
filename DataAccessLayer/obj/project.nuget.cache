@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Izqtll7raxo=",
+  "dgSpecHash": "yInky29r51Q=",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\DataAccessLayer.csproj",
+  "projectFilePath": "D:\\ProjectCollege\\DataAccessLayer\\DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
