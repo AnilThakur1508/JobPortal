@@ -1,0 +1,49 @@
+# .NET Core
+## Ignore build output directories
+bin/
+obj/
+.vs/
+## Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Ignore Rider project files
+.idea/
+*.sln.iml
+
+## Ignore Visual Studio Code specific settings
+.vscode/
+
+# Ignore log files
+*.log
+*.tlog
+
+# Ignore database and cache files
+*.db
+*.cache
+
+# Ignore test results
+TestResults/
+*.trx
+*.coverage
+
+# Ignore NPM Packages for Angular
+node_modules/
+
+# Ignore Angular build output
+dist/
+out-tsc/
+
+# Ignore Angular environment files (optional)
+src/environments/environment*.ts
+
+# Ignore Angular coverage reports
+coverage/
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
