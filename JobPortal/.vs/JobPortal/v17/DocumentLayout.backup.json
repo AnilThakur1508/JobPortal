@@ -1,72 +1,100 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\",
+  "WorkspaceRootPath": "D:\\ProjectCollege\\JobPortal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\lenovo\\source\\projectcollege\\dataaccesslayer\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221161758_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\lenovo\\source\\projectcollege\\dataaccesslayer\\entity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\lenovo\\source\\projectcollege\\jobportal\\controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\lenovo\\source\\projectcollege\\jobportal\\controllers\\employercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\employercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\lenovo\\source\\projectcollege\\service\\interface\\iauthenticateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\lenovo\\source\\projectcollege\\service\\implementation\\authenticateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|c:\\users\\lenovo\\source\\projectcollege\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\lenovo\\source\\projectcollege\\jobportal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\lenovo\\source\\projectcollege\\jobportal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221160505_ChangeDataTypeInQualificationsTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155348_ChangeDataTypeInQualificationsTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155311_ChangeDataTypeInQualificationsTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\projectcollege\\dataaccesslayer\\entity\\workexperience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\projectcollege\\dataaccesslayer\\entity\\qualification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221154101_ChangeDataTypeInQualificationTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|d:\\projectcollege\\dto\\qualificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|d:\\projectcollege\\dto\\workexperiencedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221153650_ChangeDataTypeInQualificationTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\controllers\\employecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\employecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\controllers\\qualificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\qualificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\controllers\\workexperiencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\workexperiencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\implementation\\qualificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\implementation\\workexperienceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\interface\\iworkexperienceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\implementation\\employeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\interface\\iqualificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\interface\\iemployeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\implementation\\authenticateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|d:\\projectcollege\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\projectcollege\\dataaccesslayer\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\lenovo\\source\\projectcollege\\jobportal\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\projectcollege\\dataaccesslayer\\entity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|c:\\users\\lenovo\\source\\projectcollege\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|d:\\projectcollege\\dto\\employedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|c:\\users\\lenovo\\source\\projectcollege\\dto\\dto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\lenovo\\source\\projectcollege\\dataaccesslayer\\dataaccesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\lenovo\\source\\projectcollege\\jobportal\\jobportal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:jobportal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\lenovo\\source\\projectcollege\\dataaccesslayer\\portalrepository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\lenovo\\source\\projectcollege\\dataaccesslayer\\portalrepository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\lenovo\\source\\projectcollege\\service\\service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|c:\\users\\lenovo\\source\\projectcollege\\dto\\employerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\lenovo\\source\\projectcollege\\dataaccesslayer\\migrations\\20250220093740_updateappusertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\lenovo\\source\\projectcollege\\dataaccesslayer\\migrations\\20250220073740_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\projectcollege\\dataaccesslayer\\entity\\employe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -76,249 +104,376 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\PortalRepository\\IRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\PortalRepository\\IRepository.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\PortalRepository\\IRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\PortalRepository\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:19:46.275Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "20250220093740_UpdateAppUserTable.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\Migrations\\20250220093740_UpdateAppUserTable.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250220093740_UpdateAppUserTable.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\Migrations\\20250220093740_UpdateAppUserTable.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250220093740_UpdateAppUserTable.cs",
+              "DocumentIndex": 0,
+              "Title": "20250221161758_Initial.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221161758_Initial.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221161758_Initial.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221161758_Initial.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221161758_Initial.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T09:37:41.037Z"
+              "WhenOpened": "2025-02-21T16:17:58.293Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "20250220073740_Initial.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\Migrations\\20250220073740_Initial.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250220073740_Initial.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\Migrations\\20250220073740_Initial.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250220073740_Initial.cs",
+              "DocumentIndex": 2,
+              "Title": "20250221160505_ChangeDataTypeInQualificationsTables.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221160505_ChangeDataTypeInQualificationsTables.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221160505_ChangeDataTypeInQualificationsTables.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221160505_ChangeDataTypeInQualificationsTables.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221160505_ChangeDataTypeInQualificationsTables.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T07:37:41.119Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\Mapping\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "Mapping\\MappingProfile.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\Mapping\\MappingProfile.cs",
-              "RelativeToolTip": "Mapping\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T06:50:23.232Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthenticateService.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\Service\\Implementation\\AuthenticateService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\Implementation\\AuthenticateService.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\Service\\Implementation\\AuthenticateService.cs",
-              "RelativeToolTip": "..\\Service\\Implementation\\AuthenticateService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T06:35:26.214Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IAuthenticateService.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\Service\\Interface\\IAuthenticateService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\Interface\\IAuthenticateService.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\Service\\Interface\\IAuthenticateService.cs",
-              "RelativeToolTip": "..\\Service\\Interface\\IAuthenticateService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAwA0AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T06:34:46.786Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\Entity\\AppUser.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\AppUser.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\Entity\\AppUser.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\AppUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T06:25:47.246Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DTO.csproj",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DTO\\DTO.csproj",
-              "RelativeDocumentMoniker": "..\\DTO\\DTO.csproj",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DTO\\DTO.csproj",
-              "RelativeToolTip": "..\\DTO\\DTO.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-20T04:42:40.991Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DataAccessLayer.csproj",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\DataAccessLayer.csproj",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\DataAccessLayer.csproj",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\DataAccessLayer.csproj",
-              "RelativeToolTip": "..\\DataAccessLayer\\DataAccessLayer.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-20T04:42:31.212Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-20T04:24:02.188Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Service.csproj",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\Service\\Service.csproj",
-              "RelativeDocumentMoniker": "..\\Service\\Service.csproj",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\Service\\Service.csproj",
-              "RelativeToolTip": "..\\Service\\Service.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-19T18:32:47.823Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\PortalRepository\\Repository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\PortalRepository\\Repository.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\PortalRepository\\Repository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\PortalRepository\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:19:12.966Z"
+              "WhenOpened": "2025-02-21T16:05:05.975Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "EmployerController.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\Controllers\\EmployerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EmployerController.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\Controllers\\EmployerController.cs",
-              "RelativeToolTip": "Controllers\\EmployerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Title": "20250221155348_ChangeDataTypeInQualificationsTables.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155348_ChangeDataTypeInQualificationsTables.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221155348_ChangeDataTypeInQualificationsTables.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155348_ChangeDataTypeInQualificationsTables.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221155348_ChangeDataTypeInQualificationsTables.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:16:21.047Z"
+              "WhenOpened": "2025-02-21T15:53:48.274Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "EmployerDto.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DTO\\EmployerDto.cs",
-              "RelativeDocumentMoniker": "..\\DTO\\EmployerDto.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DTO\\EmployerDto.cs",
-              "RelativeToolTip": "..\\DTO\\EmployerDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "20250221155311_ChangeDataTypeInQualificationsTables.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155311_ChangeDataTypeInQualificationsTables.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221155311_ChangeDataTypeInQualificationsTables.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155311_ChangeDataTypeInQualificationsTables.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221155311_ChangeDataTypeInQualificationsTables.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:14:40.229Z"
+              "WhenOpened": "2025-02-21T15:53:11.591Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DataAccessLayer\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAx3P7J2sewAoAAABWAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "20250221154101_ChangeDataTypeInQualificationTables.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221154101_ChangeDataTypeInQualificationTables.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221154101_ChangeDataTypeInQualificationTables.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221154101_ChangeDataTypeInQualificationTables.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221154101_ChangeDataTypeInQualificationTables.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:10:16.437Z",
+              "WhenOpened": "2025-02-21T15:41:01.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\ProjectCollege\\JobPortal\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-21T08:39:13.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20250221153650_ChangeDataTypeInQualificationTable.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221153650_ChangeDataTypeInQualificationTable.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221153650_ChangeDataTypeInQualificationTable.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221153650_ChangeDataTypeInQualificationTable.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221153650_ChangeDataTypeInQualificationTable.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T15:36:50.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthenticateController.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Controllers\\AuthenticateController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthenticateController.cs",
+              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Controllers\\AuthenticateController.cs",
+              "RelativeToolTip": "Controllers\\AuthenticateController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAwCsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T10:49:18.834Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "RegisterDto.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DTO\\RegisterDto.cs",
-              "RelativeDocumentMoniker": "..\\DTO\\RegisterDto.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DTO\\RegisterDto.cs",
-              "RelativeToolTip": "..\\DTO\\RegisterDto.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAkwBoAAAA8AAAAAAAAAA==",
+              "Title": "WorkExperience.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\WorkExperience.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\WorkExperience.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\WorkExperience.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\WorkExperience.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA0wBAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:09:01.153Z"
+              "WhenOpened": "2025-02-21T07:15:43.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Qualification.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\Qualification.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\Qualification.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\Qualification.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\Qualification.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T07:31:54.923Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DTO\\LoginDto.cs",
-              "RelativeDocumentMoniker": "..\\DTO\\LoginDto.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\DTO\\LoginDto.cs",
-              "RelativeToolTip": "..\\DTO\\LoginDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
+              "Title": "WorkExperienceDto.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DTO\\WorkExperienceDto.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\WorkExperienceDto.cs",
+              "ToolTip": "D:\\ProjectCollege\\DTO\\WorkExperienceDto.cs",
+              "RelativeToolTip": "..\\DTO\\WorkExperienceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:08:40.719Z"
+              "WhenOpened": "2025-02-21T07:42:06.391Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthenticateController.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\Controllers\\AuthenticateController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthenticateController.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\Controllers\\AuthenticateController.cs",
-              "RelativeToolTip": "Controllers\\AuthenticateController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "QualificationDto.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DTO\\QualificationDto.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\QualificationDto.cs",
+              "ToolTip": "D:\\ProjectCollege\\DTO\\QualificationDto.cs",
+              "RelativeToolTip": "..\\DTO\\QualificationDto.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA4wA8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:06:58.359Z"
+              "WhenOpened": "2025-02-21T07:42:32.856Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "EmployeService.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Implementation\\EmployeService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Implementation\\EmployeService.cs",
+              "ToolTip": "D:\\ProjectCollege\\Service\\Implementation\\EmployeService.cs",
+              "RelativeToolTip": "..\\Service\\Implementation\\EmployeService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T17:59:00.815Z"
+              "WhenOpened": "2025-02-21T09:50:08.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "QualificationService.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Implementation\\QualificationService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Implementation\\QualificationService.cs",
+              "ToolTip": "D:\\ProjectCollege\\Service\\Implementation\\QualificationService.cs",
+              "RelativeToolTip": "..\\Service\\Implementation\\QualificationService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAzwB0AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T07:46:52.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IWorkExperienceService.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Interface\\IWorkExperienceService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Interface\\IWorkExperienceService.cs",
+              "ToolTip": "D:\\ProjectCollege\\Service\\Interface\\IWorkExperienceService.cs",
+              "RelativeToolTip": "..\\Service\\Interface\\IWorkExperienceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T10:11:53.788Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "JobPortal.csproj",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\JobPortal.csproj",
-              "RelativeDocumentMoniker": "JobPortal.csproj",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\ProjectCollege\\JobPortal\\JobPortal.csproj",
-              "RelativeToolTip": "JobPortal.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-19T17:38:08.465Z"
+              "Title": "QualificationController.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Controllers\\QualificationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\QualificationController.cs",
+              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Controllers\\QualificationController.cs",
+              "RelativeToolTip": "Controllers\\QualificationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T08:15:33.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EmployeController.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Controllers\\EmployeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmployeController.cs",
+              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Controllers\\EmployeController.cs",
+              "RelativeToolTip": "Controllers\\EmployeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T10:26:59.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "WorkExperienceController.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Controllers\\WorkExperienceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WorkExperienceController.cs",
+              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Controllers\\WorkExperienceController.cs",
+              "RelativeToolTip": "Controllers\\WorkExperienceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T10:27:22.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WorkExperienceService.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Implementation\\WorkExperienceService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Implementation\\WorkExperienceService.cs",
+              "ToolTip": "D:\\ProjectCollege\\Service\\Implementation\\WorkExperienceService.cs",
+              "RelativeToolTip": "..\\Service\\Implementation\\WorkExperienceService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAADwvxwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T10:10:09.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IQualificationService.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Interface\\IQualificationService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Interface\\IQualificationService.cs",
+              "ToolTip": "D:\\ProjectCollege\\Service\\Interface\\IQualificationService.cs",
+              "RelativeToolTip": "..\\Service\\Interface\\IQualificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T07:50:24.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IEmployeService.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Interface\\IEmployeService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Interface\\IEmployeService.cs",
+              "ToolTip": "D:\\ProjectCollege\\Service\\Interface\\IEmployeService.cs",
+              "RelativeToolTip": "..\\Service\\Interface\\IEmployeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T09:51:26.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AuthenticateService.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Implementation\\AuthenticateService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Implementation\\AuthenticateService.cs",
+              "ToolTip": "D:\\ProjectCollege\\Service\\Implementation\\AuthenticateService.cs",
+              "RelativeToolTip": "..\\Service\\Implementation\\AuthenticateService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T12:55:40.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T08:45:29.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAArwBEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T10:40:46.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DTO\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\RegisterDto.cs",
+              "ToolTip": "D:\\ProjectCollege\\DTO\\RegisterDto.cs",
+              "RelativeToolTip": "..\\DTO\\RegisterDto.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA6wCEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T07:03:42.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\AppUser.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\AppUser.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\AppUser.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T06:59:57.403Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Mapping\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Mapping\\MappingProfile.cs",
+              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Mapping\\MappingProfile.cs",
+              "RelativeToolTip": "Mapping\\MappingProfile.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAYwAwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T08:05:38.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "EmployeDto.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DTO\\EmployeDto.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\EmployeDto.cs",
+              "ToolTip": "D:\\ProjectCollege\\DTO\\EmployeDto.cs",
+              "RelativeToolTip": "..\\DTO\\EmployeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T09:53:44.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Employe.cs",
+              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\Employe.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\Employe.cs",
+              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\Employe.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\Employe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T07:02:20.275Z"
             }
           ]
         }

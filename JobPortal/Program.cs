@@ -1,5 +1,7 @@
 using DataAccessLayer.Data;
 using DataAccessLayer.Entity;
+using DataAccessLayer.PortalRepository;
+using DataAccessLayer.Repository;
 using JobPortal.Mapping;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -36,7 +38,11 @@ builder.Services.AddAuthentication(options =>
     };
 });
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IAuthenticateService, AuthenticateService>();
+builder.Services.AddScoped<IEmployeService, EmployeService>();
+builder.Services.AddScoped<IQualificationService, QualificationService>();
+builder.Services.AddScoped<IWorkExperienceService, WorkExperienceService>();
 // Add services to the container.
 
 builder.Services.AddControllers();
