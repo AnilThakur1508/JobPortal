@@ -21,6 +21,7 @@ namespace JobPortal.Controllers
             _authenticateService = authenticateService;
         }
 
+        //Register
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto model)
         {
@@ -31,6 +32,7 @@ namespace JobPortal.Controllers
             return Ok(new { message = result });
         }
 
+        //Login
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginDto model)
         {
@@ -40,8 +42,5 @@ namespace JobPortal.Controllers
 
             return Ok(new { token });
         }
-
-
-
     }
 }

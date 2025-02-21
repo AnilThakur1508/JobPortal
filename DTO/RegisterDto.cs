@@ -27,6 +27,9 @@ namespace DTO
         [Phone(ErrorMessage ="Invalid phone number format")]
         public string PhoneNumber { get; set; }
         public string ProfilePicture { get; set; }
+
+        public string? Address { get; set; }
+
         [Required(ErrorMessage ="Role is required")]
         public string RoleName { get; set; } = string.Empty;
        
