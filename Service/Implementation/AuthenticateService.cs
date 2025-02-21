@@ -34,11 +34,12 @@ namespace Service.Implementation
         {
             var user = _mapper.Map<AppUser>(model);
             var result = await _userManager.CreateAsync(user, model.Password);
-            await _userManager.AddToRoleAsync(user, model.RoleName);
+            user = await _userManager.FindByEmailAsync(model.Email);
+         
 
             if (!result.Succeeded)
                 return null; // Registration failed
-
+            await _userManager.AddToRoleAsync(user, model.RoleName);
             return "User registered successfully!";
         }
         public async Task<string> LoginAsync(LoginDto model)
