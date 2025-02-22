@@ -7,7 +7,7 @@ namespace JobPortal.Controllers
 {
     [ApiController]
     [Route("api/Qualification")]
-    public class QualificationController : Controller
+    public class QualificationController : ControllerBase
     {
         private readonly IQualificationService _service;
         public  QualificationController(IQualificationService qualificationService)
