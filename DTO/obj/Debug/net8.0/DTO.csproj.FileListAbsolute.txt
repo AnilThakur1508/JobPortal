@@ -28,3 +28,18 @@ D:\ProjectCollege\DTO\obj\Debug\net8.0\refint\DTO.dll
 D:\ProjectCollege\DTO\obj\Debug\net8.0\DTO.pdb
 D:\ProjectCollege\DTO\obj\Debug\net8.0\DTO.genruntimeconfig.cache
 D:\ProjectCollege\DTO\obj\Debug\net8.0\ref\DTO.dll
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\bin\Debug\net8.0\DTO.deps.json
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\bin\Debug\net8.0\DTO.runtimeconfig.json
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\bin\Debug\net8.0\DTO.dll
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\bin\Debug\net8.0\DTO.pdb
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\DTO.csproj.AssemblyReference.cache
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\DTO.AssemblyInfoInputs.cache
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\DTO.AssemblyInfo.cs
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\DTO.sourcelink.json
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\DTO.dll
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\refint\DTO.dll
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\DTO.pdb
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\DTO.genruntimeconfig.cache
+C:\Users\Payal Thakur\Source\College\JobPortal\DTO\obj\Debug\net8.0\ref\DTO.dll

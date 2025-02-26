@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
 namespace DTO
@@ -26,7 +27,7 @@ namespace DTO
         [Required(ErrorMessage = "PhoneNumber is required")]
         [Phone(ErrorMessage ="Invalid phone number format")]
         public string PhoneNumber { get; set; }
-        public string ProfilePicture { get; set; }
+        public IFormFile ProfilePicture { get; set; }
 
         public string? Address { get; set; }
 

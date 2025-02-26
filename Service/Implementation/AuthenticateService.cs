@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DataAccessLayer.Entity;
 using DTO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Service.Interface;
 
@@ -23,12 +26,16 @@ namespace Service.Implementation
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
+        
+        
+
         public AuthenticateService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration, IMapper mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _configuration = configuration;
             _mapper = mapper;
+            
         }
         public async Task<string> RegisterAsync(RegisterDto model)
         {
@@ -51,11 +58,8 @@ namespace Service.Implementation
 
             return GenerateJwtToken(user);
         }
-
-
-
-
-        private string GenerateJwtToken(AppUser user)
+        
+         private string GenerateJwtToken(AppUser user)
         {
             var claims = new[]
             {

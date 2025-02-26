@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer.Entity;
 using DTO;
 using Microsoft.AspNetCore.Mvc;
+using Service.Implementation;
 using Service.Interface;
 
 namespace JobPortal.Controllers
@@ -28,6 +29,17 @@ namespace JobPortal.Controllers
            await _service.AddAsync(qualificationDto);
             return Ok(new { Meassage = "Added a qualification", Data = qualificationDto });
         }
+        [HttpGet("GetById/{id}")]
+        public async Task<ActionResult<QualificationDto>> GetById(Guid id)
+        {
+            var qualification = await _service.GetByIdAsync(id);
+
+            if (qualification == null)
+                return NotFound("Qualication not found.");
+
+            return Ok(qualification);
+        }
     }
-    
 }
+    
+

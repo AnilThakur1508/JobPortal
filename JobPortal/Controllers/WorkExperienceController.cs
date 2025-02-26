@@ -28,7 +28,17 @@ namespace JobPortal.Controllers
         public async Task<IActionResult> AddAsync(WorkExperienceDto workExperienceDto)
         {
             await _experienceService.AddAsync(workExperienceDto);
-            return Ok(new { Meassage = "Added a Work Experience", Data = workExperienceDto});
+            return Ok(new { Meassage = "Added a Work Experience", Data = workExperienceDto });
+        }
+        [HttpGet("GetById/{id}")]
+        public async Task<ActionResult<WorkExperienceDto>> GetById(Guid id)
+        {
+            var experience = await _experienceService.GetByIdAsync(id);
+
+            if (experience == null)
+                return NotFound("Experience not found.");
+
+            return Ok(experience);
         }
     }
 }

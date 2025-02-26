@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DataAccessLayer.Entity;
 using DataAccessLayer.PortalRepository;
+using DataAccessLayer.Repository;
 using DTO;
 using Service.Interface;
 
@@ -35,6 +36,19 @@ namespace Service.Implementation
             await _workExperienceRepository.AddAsync(experience);
             return workExperienceDto;
         }
+        public async Task<WorkExperienceDto> GetByIdAsync(Guid id)
+        {
+            var experience = await _workExperienceRepository.GetByIdAsync(id);
+            if (experience == null)
+            {
+                return null; // Or throw an exception if needed
+            }
+            return _mapper.Map<WorkExperienceDto>(experience);
+        }
+
+
+
+
     }
 
 }

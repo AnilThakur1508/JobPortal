@@ -3,6 +3,7 @@ using DTO;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Service.Implementation;
 using Service.Interface;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -42,5 +43,7 @@ namespace JobPortal.Controllers
 
             return Ok(new { token });
         }
+        
+        
     }
 }

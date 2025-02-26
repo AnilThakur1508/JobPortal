@@ -10,9 +10,9 @@ namespace DTO
     {
         public Guid EmployeId { get; set; }
         public string InstitutionName { get; set; }
-        public String FieldOfStudy { get; set; }
+        public string StudyField { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
-        public string Score { get; set; }
+        public decimal Score { get; set; }
     }
 }

@@ -38,5 +38,14 @@ namespace Service.Implementation
             await _qualifiactionRepository.AddAsync(qualification);
             return qualificationDto;
         }
+         public async Task<QualificationDto> GetByIdAsync(Guid id)
+        {
+            var qualification = await _qualifiactionRepository.GetByIdAsync(id);
+            if (qualification == null)
+            {
+                return null; // Or throw an exception if needed
+            }
+            return _mapper.Map<QualificationDto>(qualification);
+        }
     }
 }

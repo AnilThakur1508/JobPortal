@@ -1,100 +1,117 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\ProjectCollege\\JobPortal\\",
+  "WorkspaceRootPath": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221161758_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\portalrepository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\implementation\\employerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221160505_ChangeDataTypeInQualificationsTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\interface\\iqualificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155348_ChangeDataTypeInQualificationsTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\portalrepository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155311_ChangeDataTypeInQualificationsTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\interface\\iemployerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\jobportal\\controllers\\employercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\employercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\entity\\employer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\entity\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\entity\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\entity\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\entity\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\entity\\workexperience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\entity\\qualification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dto\\employerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\jobportal\\controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\projectcollege\\dataaccesslayer\\entity\\workexperience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\implementation\\authenticateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\projectcollege\\dataaccesslayer\\entity\\qualification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221154101_ChangeDataTypeInQualificationTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226051244_FixScoreColumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|d:\\projectcollege\\dto\\qualificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226050103_xyz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|d:\\projectcollege\\dto\\workexperiencedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dto\\qualificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221153650_ChangeDataTypeInQualificationTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226045204_FixScoreColumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\controllers\\employecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\employecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226044237_TablesUpdated.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\controllers\\qualificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\qualificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\implementation\\qualificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\controllers\\workexperiencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\interface\\iauthenticateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\jobportal\\controllers\\workexperiencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\workexperiencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\implementation\\qualificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\jobportal\\controllers\\qualificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\qualificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\implementation\\workexperienceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\implementation\\workexperienceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\interface\\iworkexperienceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\interface\\iworkexperienceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\implementation\\employeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\implementation\\stateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\interface\\iqualificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\interface\\iemployeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|d:\\projectcollege\\service\\implementation\\authenticateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|d:\\projectcollege\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\projectcollege\\dataaccesslayer\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\jobportal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\projectcollege\\dataaccesslayer\\entity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|d:\\projectcollege\\jobportal\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\jobportal\\jobportal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:jobportal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|d:\\projectcollege\\dto\\employedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\migrations\\20250225120957_appuserupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|d:\\projectcollege\\dataaccesslayer\\entity\\employe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\migrations\\20250225113216_editedemployertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\migrations\\20250225100500_statetableupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -104,376 +121,455 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250221161758_Initial.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221161758_Initial.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221161758_Initial.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221161758_Initial.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221161758_Initial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T16:17:58.293Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20250221160505_ChangeDataTypeInQualificationsTables.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221160505_ChangeDataTypeInQualificationsTables.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221160505_ChangeDataTypeInQualificationsTables.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221160505_ChangeDataTypeInQualificationsTables.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221160505_ChangeDataTypeInQualificationsTables.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T16:05:05.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "20250221155348_ChangeDataTypeInQualificationsTables.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155348_ChangeDataTypeInQualificationsTables.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221155348_ChangeDataTypeInQualificationsTables.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155348_ChangeDataTypeInQualificationsTables.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221155348_ChangeDataTypeInQualificationsTables.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABJAAAAAAAAAA==",
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\PortalRepository\\IRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\PortalRepository\\IRepository.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\PortalRepository\\IRepository.cs*",
+              "RelativeToolTip": "..\\DataAccessLayer\\PortalRepository\\IRepository.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:53:48.274Z",
+              "WhenOpened": "2025-02-26T08:16:20.767Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20250221155311_ChangeDataTypeInQualificationsTables.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155311_ChangeDataTypeInQualificationsTables.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221155311_ChangeDataTypeInQualificationsTables.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221155311_ChangeDataTypeInQualificationsTables.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221155311_ChangeDataTypeInQualificationsTables.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\PortalRepository\\Repository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\PortalRepository\\Repository.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\PortalRepository\\Repository.cs*",
+              "RelativeToolTip": "..\\DataAccessLayer\\PortalRepository\\Repository.cs*",
+              "ViewState": "AgIAACwAAAAAAAAAAAAswEEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:53:11.591Z",
+              "WhenOpened": "2025-02-26T08:15:46.503Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "20250221154101_ChangeDataTypeInQualificationTables.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221154101_ChangeDataTypeInQualificationTables.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221154101_ChangeDataTypeInQualificationTables.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221154101_ChangeDataTypeInQualificationTables.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221154101_ChangeDataTypeInQualificationTables.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:41:01.218Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\ProjectCollege\\JobPortal\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-21T08:39:13.101Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20250221153650_ChangeDataTypeInQualificationTable.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221153650_ChangeDataTypeInQualificationTable.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250221153650_ChangeDataTypeInQualificationTable.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Migrations\\20250221153650_ChangeDataTypeInQualificationTable.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250221153650_ChangeDataTypeInQualificationTable.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Title": "EmployerService.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\EmployerService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Implementation\\EmployerService.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\EmployerService.cs*",
+              "RelativeToolTip": "..\\Service\\Implementation\\EmployerService.cs*",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAuwF4AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:36:50.343Z",
+              "WhenOpened": "2025-02-25T10:50:34.016Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AuthenticateController.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Controllers\\AuthenticateController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthenticateController.cs",
-              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Controllers\\AuthenticateController.cs",
-              "RelativeToolTip": "Controllers\\AuthenticateController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAwCsAAAAJAAAAAAAAAA==",
+              "Title": "EmployerController.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Controllers\\EmployerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmployerController.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Controllers\\EmployerController.cs*",
+              "RelativeToolTip": "Controllers\\EmployerController.cs*",
+              "ViewState": "AgIAADAAAAAAAAAAAAA7wDwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T10:49:18.834Z",
+              "WhenOpened": "2025-02-25T10:07:50.279Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WorkExperience.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\WorkExperience.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\WorkExperience.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\WorkExperience.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\WorkExperience.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA0wBAAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "IEmployerService.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Interface\\IEmployerService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Interface\\IEmployerService.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Interface\\IEmployerService.cs*",
+              "RelativeToolTip": "..\\Service\\Interface\\IEmployerService.cs*",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAUwBQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T07:15:43.748Z",
+              "WhenOpened": "2025-02-25T10:41:01.304Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Qualification.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\Qualification.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\Qualification.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\Qualification.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\Qualification.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "IQualificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Interface\\IQualificationService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Interface\\IQualificationService.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Interface\\IQualificationService.cs",
+              "RelativeToolTip": "..\\Service\\Interface\\IQualificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T07:31:54.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "WorkExperienceDto.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DTO\\WorkExperienceDto.cs",
-              "RelativeDocumentMoniker": "..\\DTO\\WorkExperienceDto.cs",
-              "ToolTip": "D:\\ProjectCollege\\DTO\\WorkExperienceDto.cs",
-              "RelativeToolTip": "..\\DTO\\WorkExperienceDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T07:42:06.391Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "QualificationDto.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DTO\\QualificationDto.cs",
-              "RelativeDocumentMoniker": "..\\DTO\\QualificationDto.cs",
-              "ToolTip": "D:\\ProjectCollege\\DTO\\QualificationDto.cs",
-              "RelativeToolTip": "..\\DTO\\QualificationDto.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA4wA8AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T07:42:32.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "EmployeService.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Implementation\\EmployeService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\Implementation\\EmployeService.cs",
-              "ToolTip": "D:\\ProjectCollege\\Service\\Implementation\\EmployeService.cs",
-              "RelativeToolTip": "..\\Service\\Implementation\\EmployeService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T09:50:08.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "QualificationService.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Implementation\\QualificationService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\Implementation\\QualificationService.cs",
-              "ToolTip": "D:\\ProjectCollege\\Service\\Implementation\\QualificationService.cs",
-              "RelativeToolTip": "..\\Service\\Implementation\\QualificationService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAzwB0AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T07:46:52.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IWorkExperienceService.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Interface\\IWorkExperienceService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\Interface\\IWorkExperienceService.cs",
-              "ToolTip": "D:\\ProjectCollege\\Service\\Interface\\IWorkExperienceService.cs",
-              "RelativeToolTip": "..\\Service\\Interface\\IWorkExperienceService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T10:11:53.788Z",
+              "WhenOpened": "2025-02-25T12:33:33.746Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "QualificationController.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Controllers\\QualificationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\QualificationController.cs",
-              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Controllers\\QualificationController.cs",
-              "RelativeToolTip": "Controllers\\QualificationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Title": "EmployerDto.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DTO\\EmployerDto.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\EmployerDto.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DTO\\EmployerDto.cs",
+              "RelativeToolTip": "..\\DTO\\EmployerDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T08:15:33.923Z",
+              "WhenOpened": "2025-02-25T10:38:54.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "State.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\State.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\State.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\State.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\State.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T09:59:33.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Country.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Country.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\Country.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Country.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\Country.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T09:59:39.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "WorkExperience.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\WorkExperience.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\WorkExperience.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\WorkExperience.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\WorkExperience.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T18:08:48.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Address.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\Address.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Address.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\Address.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T10:06:25.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Employer.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Employer.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\Employer.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Employer.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\Employer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T10:07:39.653Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "EmployeController.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Controllers\\EmployeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EmployeController.cs",
-              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Controllers\\EmployeController.cs",
-              "RelativeToolTip": "Controllers\\EmployeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABLAAAAAAAAAA==",
+              "Title": "Qualification.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Qualification.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\Qualification.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Qualification.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\Qualification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T10:26:59.588Z",
+              "WhenOpened": "2025-02-25T18:11:06.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Employee.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\Employee.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Employee.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T07:46:23.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AuthenticateService.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\AuthenticateService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Implementation\\AuthenticateService.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\AuthenticateService.cs",
+              "RelativeToolTip": "..\\Service\\Implementation\\AuthenticateService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAiwCIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T12:15:12.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "WorkExperienceController.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Controllers\\WorkExperienceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\WorkExperienceController.cs",
-              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Controllers\\WorkExperienceController.cs",
-              "RelativeToolTip": "Controllers\\WorkExperienceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABaAAAAAAAAAA==",
+              "Title": "AuthenticateController.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Controllers\\AuthenticateController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthenticateController.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Controllers\\AuthenticateController.cs",
+              "RelativeToolTip": "Controllers\\AuthenticateController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwC0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T10:27:22.205Z",
+              "WhenOpened": "2025-02-25T12:25:07.355Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "WorkExperienceService.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Implementation\\WorkExperienceService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\Implementation\\WorkExperienceService.cs",
-              "ToolTip": "D:\\ProjectCollege\\Service\\Implementation\\WorkExperienceService.cs",
-              "RelativeToolTip": "..\\Service\\Implementation\\WorkExperienceService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAADwvxwAAAAhAAAAAAAAAA==",
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DTO\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DTO\\RegisterDto.cs",
+              "RelativeToolTip": "..\\DTO\\RegisterDto.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAYwB0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T10:10:09.423Z",
+              "WhenOpened": "2025-02-25T12:06:48.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IQualificationService.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Interface\\IQualificationService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\Interface\\IQualificationService.cs",
-              "ToolTip": "D:\\ProjectCollege\\Service\\Interface\\IQualificationService.cs",
-              "RelativeToolTip": "..\\Service\\Interface\\IQualificationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "20250226051244_FixScoreColumn.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226051244_FixScoreColumn.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250226051244_FixScoreColumn.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226051244_FixScoreColumn.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250226051244_FixScoreColumn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T07:50:24.412Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IEmployeService.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Interface\\IEmployeService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\Interface\\IEmployeService.cs",
-              "ToolTip": "D:\\ProjectCollege\\Service\\Interface\\IEmployeService.cs",
-              "RelativeToolTip": "..\\Service\\Interface\\IEmployeService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwAwAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T09:51:26.946Z",
+              "WhenOpened": "2025-02-26T05:12:44.595Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "AuthenticateService.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\Service\\Implementation\\AuthenticateService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\Implementation\\AuthenticateService.cs",
-              "ToolTip": "D:\\ProjectCollege\\Service\\Implementation\\AuthenticateService.cs",
-              "RelativeToolTip": "..\\Service\\Implementation\\AuthenticateService.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwCwAAAAIAAAAAAAAAA==",
+              "Title": "20250226044237_TablesUpdated.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226044237_TablesUpdated.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250226044237_TablesUpdated.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226044237_TablesUpdated.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250226044237_TablesUpdated.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T12:55:40.339Z"
+              "WhenOpened": "2025-02-26T04:42:38.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "20250226050103_xyz.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226050103_xyz.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250226050103_xyz.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226050103_xyz.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250226050103_xyz.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T05:01:03.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20250226045204_FixScoreColumn.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226045204_FixScoreColumn.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250226045204_FixScoreColumn.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250226045204_FixScoreColumn.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250226045204_FixScoreColumn.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T04:52:04.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "QualificationDto.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DTO\\QualificationDto.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\QualificationDto.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DTO\\QualificationDto.cs",
+              "RelativeToolTip": "..\\DTO\\QualificationDto.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T18:15:45.67Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\AppDbContext.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABWAAAAAAAAAA==",
+              "Title": "IAuthenticateService.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Interface\\IAuthenticateService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Interface\\IAuthenticateService.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Interface\\IAuthenticateService.cs",
+              "RelativeToolTip": "..\\Service\\Interface\\IAuthenticateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T08:45:29.508Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAArwBEAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T10:40:46.705Z"
+              "WhenOpened": "2025-02-25T12:10:19.247Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "RegisterDto.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DTO\\RegisterDto.cs",
-              "RelativeDocumentMoniker": "..\\DTO\\RegisterDto.cs",
-              "ToolTip": "D:\\ProjectCollege\\DTO\\RegisterDto.cs",
-              "RelativeToolTip": "..\\DTO\\RegisterDto.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA6wCEAAAAhAAAAAAAAAA==",
+              "Title": "QualificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\QualificationService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Implementation\\QualificationService.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\QualificationService.cs",
+              "RelativeToolTip": "..\\Service\\Implementation\\QualificationService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T07:03:42.13Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\AppUser.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\AppUser.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\AppUser.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\AppUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T06:59:57.403Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\JobPortal\\Mapping\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "Mapping\\MappingProfile.cs",
-              "ToolTip": "D:\\ProjectCollege\\JobPortal\\Mapping\\MappingProfile.cs",
-              "RelativeToolTip": "Mapping\\MappingProfile.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAYwAwAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T08:05:38.892Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "EmployeDto.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DTO\\EmployeDto.cs",
-              "RelativeDocumentMoniker": "..\\DTO\\EmployeDto.cs",
-              "ToolTip": "D:\\ProjectCollege\\DTO\\EmployeDto.cs",
-              "RelativeToolTip": "..\\DTO\\EmployeDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T09:53:44.248Z"
+              "WhenOpened": "2025-02-25T17:37:49.193Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 28,
-              "Title": "Employe.cs",
-              "DocumentMoniker": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\Employe.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\Employe.cs",
-              "ToolTip": "D:\\ProjectCollege\\DataAccessLayer\\Entity\\Employe.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Entity\\Employe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "Title": "StateService.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\StateService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Implementation\\StateService.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\StateService.cs",
+              "RelativeToolTip": "..\\Service\\Implementation\\StateService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwBgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T07:02:20.275Z"
+              "WhenOpened": "2025-02-25T10:47:11.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IWorkExperienceService.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Interface\\IWorkExperienceService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Interface\\IWorkExperienceService.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Interface\\IWorkExperienceService.cs",
+              "RelativeToolTip": "..\\Service\\Interface\\IWorkExperienceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T12:33:01.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "WorkExperienceService.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\WorkExperienceService.cs",
+              "RelativeDocumentMoniker": "..\\Service\\Implementation\\WorkExperienceService.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\WorkExperienceService.cs",
+              "RelativeToolTip": "..\\Service\\Implementation\\WorkExperienceService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAIwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T12:35:06.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "WorkExperienceController.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Controllers\\WorkExperienceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WorkExperienceController.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Controllers\\WorkExperienceController.cs",
+              "RelativeToolTip": "Controllers\\WorkExperienceController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T17:44:56.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "QualificationController.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Controllers\\QualificationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\QualificationController.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Controllers\\QualificationController.cs",
+              "RelativeToolTip": "Controllers\\QualificationController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAYwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T17:49:41.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "20250225120957_AppUserUpdate.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250225120957_AppUserUpdate.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250225120957_AppUserUpdate.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250225120957_AppUserUpdate.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250225120957_AppUserUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T12:09:57.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "JobPortal.csproj",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\Source\\College\\JobPortal\\JobPortal\\JobPortal.csproj",
+              "RelativeDocumentMoniker": "JobPortal.csproj",
+              "ToolTip": "C:\\Users\\Payal Thakur\\Source\\College\\JobPortal\\JobPortal\\JobPortal.csproj",
+              "RelativeToolTip": "JobPortal.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-25T10:14:42.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "20250225113216_EditedEmployerTable.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250225113216_EditedEmployerTable.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250225113216_EditedEmployerTable.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250225113216_EditedEmployerTable.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250225113216_EditedEmployerTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T11:32:16.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T11:21:31.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwA4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T11:07:58.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "20250225100500_StatetableUpdate.cs",
+              "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250225100500_StatetableUpdate.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250225100500_StatetableUpdate.cs",
+              "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Migrations\\20250225100500_StatetableUpdate.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Migrations\\20250225100500_StatetableUpdate.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T10:05:00.688Z"
             }
           ]
         }

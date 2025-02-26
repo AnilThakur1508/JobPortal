@@ -11,6 +11,7 @@ namespace Service.Interface
     public interface IQualificationService
     {
         Task<IEnumerable<QualificationDto>> GetAllAsync();
+        Task<QualificationDto> GetByIdAsync(Guid id);
         Task<QualificationDto> AddAsync(QualificationDto QualificationDto); 
     }
 }

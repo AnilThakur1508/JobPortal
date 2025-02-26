@@ -28,3 +28,21 @@ D:\ProjectCollege\DataAccessLayer\obj\Debug\net8.0\refint\DataAccessLayer.dll
 D:\ProjectCollege\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.pdb
 D:\ProjectCollege\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.genruntimeconfig.cache
 D:\ProjectCollege\DataAccessLayer\obj\Debug\net8.0\ref\DataAccessLayer.dll
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.deps.json
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.runtimeconfig.json
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.dll
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.pdb
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\bin\Debug\net8.0\DTO.dll
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\bin\Debug\net8.0\DTO.pdb
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.sourcelink.json
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\DataAcce.E67BD773.Up2Date
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.dll
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\refint\DataAccessLayer.dll
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.pdb
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\Payal Thakur\Source\College\JobPortal\DataAccessLayer\obj\Debug\net8.0\ref\DataAccessLayer.dll
