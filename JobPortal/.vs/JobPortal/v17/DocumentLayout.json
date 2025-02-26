@@ -3,23 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\implementation\\employerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\interface\\iemployerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\portalrepository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\jobportal\\controllers\\employercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20FD8266-212C-4B60-8380-B03DC51185B8}|JobPortal.csproj|solutionrelative:controllers\\employercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\implementation\\employerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\interface\\iemployerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\entity\\employer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D8A6542-5536-49FD-A259-E04E4EE1D692}|..\\DTO\\DTO.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dto\\employerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2075175-4AF9-49D6-AAC3-2CCFD7BC9883}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\dataaccesslayer\\portalrepository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F8AAA141-7955-4DAD-BF44-A2F1FB266E25}|..\\Service\\Service.csproj|c:\\users\\payal thakur\\source\\college\\jobportal\\service\\interface\\iqualificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -121,7 +121,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -133,20 +133,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\PortalRepository\\Repository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\PortalRepository\\Repository.cs",
               "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\PortalRepository\\Repository.cs",
               "RelativeToolTip": "..\\DataAccessLayer\\PortalRepository\\Repository.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwEEAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T08:15:46.503Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "EmployerService.cs",
               "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Implementation\\EmployerService.cs",
               "RelativeDocumentMoniker": "..\\Service\\Implementation\\EmployerService.cs",
@@ -159,20 +159,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "EmployerController.cs",
               "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Controllers\\EmployerController.cs",
               "RelativeDocumentMoniker": "Controllers\\EmployerController.cs",
               "ToolTip": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\JobPortal\\Controllers\\EmployerController.cs",
               "RelativeToolTip": "Controllers\\EmployerController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAA7wD4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAASwDkAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T10:07:50.279Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "IEmployerService.cs",
               "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\Service\\Interface\\IEmployerService.cs",
               "RelativeDocumentMoniker": "..\\Service\\Interface\\IEmployerService.cs",
@@ -198,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EmployerDto.cs",
               "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DTO\\EmployerDto.cs",
               "RelativeDocumentMoniker": "..\\DTO\\EmployerDto.cs",
@@ -211,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Employer.cs",
               "DocumentMoniker": "C:\\Users\\Payal Thakur\\source\\College\\JobPortal\\DataAccessLayer\\Entity\\Employer.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entity\\Employer.cs",
