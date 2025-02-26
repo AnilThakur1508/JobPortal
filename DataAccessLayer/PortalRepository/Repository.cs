@@ -53,7 +53,16 @@ namespace DataAccessLayer.Repository
             return false;
         }
 
-       
+        public Task<T> GetById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> Delete(Guid id)
+        {
+            throw new NotImplementedException();
+
+        }
         
     }
 }
