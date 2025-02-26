@@ -55,12 +55,7 @@ namespace JobPortal.Controllers
 
             return Ok("Employer deleted successfully.");
         }
-        [HttpGet("GetFormattedAddressByUserId/{userId}")]
-        public async Task<IActionResult> GetFormattedAddressByUserId(Guid userId)
-        {
-            var formattedAddress = await _employerService.GetFormattedAddressByUserId(userId);
-            return Ok(new { Address = formattedAddress });
-        }
+       
 
 
 
