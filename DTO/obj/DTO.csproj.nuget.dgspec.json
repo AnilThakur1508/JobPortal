@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProjectCollege\\DTO\\DTO.csproj": {}
+    "C:\\Users\\Payal Thakur\\Source\\College\\JobPortal\\DTO\\DTO.csproj": {}
   },
   "projects": {
-    "D:\\ProjectCollege\\DTO\\DTO.csproj": {
+    "C:\\Users\\Payal Thakur\\Source\\College\\JobPortal\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjectCollege\\DTO\\DTO.csproj",
+        "projectUniqueName": "C:\\Users\\Payal Thakur\\Source\\College\\JobPortal\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "D:\\ProjectCollege\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjectCollege\\DTO\\obj\\",
+        "projectPath": "C:\\Users\\Payal Thakur\\Source\\College\\JobPortal\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\Payal Thakur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Payal Thakur\\Source\\College\\JobPortal\\DTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Payal Thakur\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

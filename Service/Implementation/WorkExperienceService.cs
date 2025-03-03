@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DataAccessLayer.Entity;
 using DataAccessLayer.PortalRepository;
+using DataAccessLayer.Repository;
 using DTO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Service.Interface;
 
 namespace Service.Implementation
@@ -15,11 +18,13 @@ namespace Service.Implementation
     {
         private readonly IRepository<WorkExperience> _workExperienceRepository;
         private readonly IMapper _mapper;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public WorkExperienceService(IRepository<WorkExperience> workExperienceRepository, IMapper mapper)
+        public WorkExperienceService(IRepository<WorkExperience> workExperienceRepository, IMapper mapper,IWebHostEnvironment webHostEnvironment)
         {
             _workExperienceRepository = workExperienceRepository;
             _mapper = mapper;
+            _webHostEnvironment = webHostEnvironment;
         }
         //GetAll
         public async Task<IEnumerable<WorkExperienceDto>> GetAllAsync()
@@ -35,6 +40,37 @@ namespace Service.Implementation
             await _workExperienceRepository.AddAsync(experience);
             return workExperienceDto;
         }
+        //GetbyId
+        public async Task<WorkExperienceDto> GetByIdAsync(Guid id)
+        {
+            var experience = await _workExperienceRepository.GetByIdAsync(id);
+            if (experience == null)
+            {
+                return null; // Or throw an exception if needed
+            }
+            return _mapper.Map<WorkExperienceDto>(experience);
+        }
+        
+        //Update
+        public async Task<bool> UpdateAsync(Guid id, WorkExperienceDto workExperienceDto)
+        {
+            var workExperience = _mapper.Map<WorkExperience>(workExperienceDto);
+            workExperience.Id = id;
+            return await _workExperienceRepository.UpdateAsync(workExperience);
+        }
+
+
+        //Delete
+        public async Task<bool> DeleteAsync(Guid id)
+        {
+            return await _workExperienceRepository.DeleteAsync(id);
+
+        }
+      
+
+
+
+
     }
 
 }

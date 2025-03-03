@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Data;
+using DataAccessLayer.Entity;
 using DataAccessLayer.PortalRepository;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,7 +24,7 @@ namespace DataAccessLayer.Repository
         {
             return await _dbSet.ToListAsync();
         }
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(Guid id)
         {
             return await _dbSet.FindAsync(id);
         }
@@ -40,7 +41,7 @@ namespace DataAccessLayer.Repository
             await _context.SaveChangesAsync();
             return true;
         }
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(Guid id)
         {
             var entity = await _dbSet.FindAsync(id);
             if (entity != null)
@@ -51,5 +52,17 @@ namespace DataAccessLayer.Repository
             }
             return false;
         }
+
+        public Task<T> GetById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> Delete(Guid id)
+        {
+            throw new NotImplementedException();
+
+        }
+        
     }
 }

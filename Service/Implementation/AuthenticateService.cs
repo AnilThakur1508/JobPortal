@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DataAccessLayer.Entity;
 using DTO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Service.Interface;
 
@@ -23,12 +26,22 @@ namespace Service.Implementation
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
-        public AuthenticateService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration, IMapper mapper)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ILogger<AuthenticateService> _logger;
+        
+        
+
+        public AuthenticateService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration, IMapper mapper,IWebHostEnvironment webHostEnvironment,ILogger<AuthenticateService> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _configuration = configuration;
             _mapper = mapper;
+            _webHostEnvironment = webHostEnvironment;
+            _logger = logger;
+
+
+            
         }
         public async Task<string> RegisterAsync(RegisterDto model)
         {
@@ -51,9 +64,24 @@ namespace Service.Implementation
 
             return GenerateJwtToken(user);
         }
+       
+        public async Task<string> AddAsync(IFormFile file, string subFolder)
+        {
+            if (file == null) return null;
 
+            var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, subFolder);
+            if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
 
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+            var filePath = Path.Combine(uploadPath, fileName);
 
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            return $"/{subFolder}/{fileName}";
+        }
 
         private string GenerateJwtToken(AppUser user)
         {
