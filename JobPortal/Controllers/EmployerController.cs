@@ -34,6 +34,14 @@ namespace JobPortal.Controllers
             return Ok(employer);
         }
 
+        [HttpPost("Add")]
+        public async Task<IActionResult> AddAsync(EmployerDto employerDto)
+        {
+            await _employerService.AddAsync(employerDto);
+
+            return Ok(new { Message = "Created a employer", data = employerDto });
+        }
+
 
         [HttpPut("Update/{id}")]
         public async Task<IActionResult> UpdateEmployer(Guid id, [FromBody] EmployerDto employerDto)
@@ -55,27 +63,37 @@ namespace JobPortal.Controllers
 
             return Ok("Employer deleted successfully.");
         }
-       
 
 
+        
+        //public async Task<IActionResult> UploadEmployerAsync([FromForm] EmployerDto employer)
+        //{
+        //    if (employer == null)
+        //    {
+        //        return BadRequest("Invalid employer  data.");
+        //    }
 
-        [HttpPost("upload-employer")]
-        public async Task<IActionResult> UploadEmployer([FromForm] EmployerDto employer)
-        {
-            if (employer == null)
-            {
-                return BadRequest("Invalid employer  data.");
-            }
+        //    var result = await _employerService.AddAsync(employer);
 
-            var result = await _employerService.AddAsync(employer);
+        //    if (result == null)
+        //        return StatusCode(500, "Failed to upload employer.");
 
-            if (result == null)
-                return StatusCode(500, "Failed to upload employer.");
+        //    return Ok(new { message = "Employer  uploaded successfully!", employer = result });
+        //}
+        //[HttpPost("upload")]
+        //public async Task<IActionResult> UploadFile([FromForm] IFormFile file)
+        //{
+        //    var filePath = await _employerService.AddAsync(file, "uploads");
+        //    if (filePath == null) return BadRequest("File upload failed.");
+        //    return Ok(new { filePath });
+        //}
 
-            return Ok(new { message = "Employer  uploaded successfully!", employer = result });
-        }
 
     }
+
 }
-    
+
+
+
+
 

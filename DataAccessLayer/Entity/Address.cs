@@ -13,7 +13,7 @@ namespace DataAccessLayer.Entity
         public Guid UserId { get; set; }
         public string AddressLine1 { get; set; }  // Street Address
         public string AddressLine2 { get; set; }  // Apartment, Suite, Unit (optional)
-        public Guid StateId { get; set; }
+        public string StateName { get; set; }
         public virtual State State { get; set; }
         public string City { get; set; }
         public string Zipcode { get; set; }

@@ -23,13 +23,13 @@ namespace JobPortal.Controllers
             return Ok(new { Meassage = "List of Work Experience", Data = experience });
         }
 
-        //Add 
         [HttpPost("Add")]
-        public async Task<IActionResult> AddAsync(WorkExperienceDto workExperienceDto)
+        public async Task<IActionResult> AddAsync(WorkExperienceDto experienceDto)
         {
-            await _experienceService.AddAsync(workExperienceDto);
-            return Ok(new { Meassage = "Added a Work Experience", Data = workExperienceDto });
+            await _experienceService.AddAsync(experienceDto);
+            return Ok(new { Message = "Created a Experience", data = experienceDto });
         }
+
         [HttpGet("GetById/{id}")]
         public async Task<ActionResult<WorkExperienceDto>> GetById(Guid id)
         {
@@ -40,5 +40,28 @@ namespace JobPortal.Controllers
 
             return Ok(experience);
         }
+
+        [HttpPut("Update/{id}")]
+        public async Task<IActionResult> UpdateWorkExperience(Guid id, [FromBody] WorkExperienceDto experienceDto)
+        {
+            await _experienceService.UpdateAsync(id, experienceDto);
+
+
+            return Ok("Experience updated successfully.");
+        }
+
+
+        [HttpDelete("Delete/{id}")]
+        public async Task<IActionResult> DeleteWorkExperience(Guid id)
+        {
+            var success = await _experienceService.DeleteAsync(id)
+;
+            if (!success)
+                return NotFound("Experience not found.");
+
+            return Ok("Experience deleted successfully.");
+        }
+        
+
     }
 }

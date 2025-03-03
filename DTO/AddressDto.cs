@@ -9,14 +9,13 @@ namespace DTO
 {
     public class AddressDto
     {
-        public Guid UserId { get; set; }
+        
         public string AddressLine1 { get; set; }  
         public string AddressLine2 { get; set; }  
-        public Guid CountryId { get; set; }
-        public Guid StateId { get; set; }
+        public string StateName { get; set; }
         public string City { get; set; }
         public string Zipcode { get; set; }
-        
+        public Guid UserId { get; set; }
         
         
 

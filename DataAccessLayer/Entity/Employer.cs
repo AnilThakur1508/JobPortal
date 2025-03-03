@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,8 @@ namespace DataAccessLayer.Entity
         public string PhoneNumber { get; set; }
         public string ProfilePicture { get; set; }
         public Guid UserId { get; set; }
+        
+        
         
 
 

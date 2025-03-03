@@ -9,6 +9,6 @@ namespace DTO
     public class StateDto
     {
         public string Name { get; set; }
-        public Guid CountryId { get; set; }
+        public string CountryName { get; set; }
     }
 }

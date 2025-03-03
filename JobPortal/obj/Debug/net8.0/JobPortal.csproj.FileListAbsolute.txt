@@ -465,7 +465,6 @@ C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\JobPor
 C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\JobPortal.AssemblyInfoInputs.cache
 C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\JobPortal.AssemblyInfo.cs
 C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\JobPortal.csproj.CoreCompileInputs.cache
-C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\JobPortal.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\JobPortal.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\JobPortal.sourcelink.json
 C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\scopedcss\bundle\JobPortal.styles.css
@@ -485,3 +484,4 @@ C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\refint
 C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\JobPortal.pdb
 C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\JobPortal.genruntimeconfig.cache
 C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\ref\JobPortal.dll
+C:\Users\Payal Thakur\Source\College\JobPortal\JobPortal\obj\Debug\net8.0\JobPortal.MvcApplicationPartsAssemblyInfo.cs

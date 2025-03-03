@@ -26,9 +26,9 @@ namespace JobPortal.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto model)
         {
-            var result = await _authenticateService.RegisterAsync(model);
+           var result = await _authenticateService.RegisterAsync(model);
             if (result == null)
-                return BadRequest("User registration failed.");
+               return BadRequest("User registration failed.");
 
             return Ok(new { message = result });
         }
@@ -43,7 +43,25 @@ namespace JobPortal.Controllers
 
             return Ok(new { token });
         }
+
+       
         
-        
+        [HttpPost("upload-register")]
+        public async Task<IActionResult> UploadRegister([FromForm] RegisterDto model)
+        {
+            if (model == null)
+            {
+                return BadRequest("Invalid registration  data.");
+            }
+
+            var result =await _authenticateService.RegisterAsync(model);
+
+            if (result == null)
+                return StatusCode(500, "Failed to upload reg.");
+
+            return Ok(new { message = "Registraion  uploaded successfully!", model = result });
+        }
+
+
     }
 }

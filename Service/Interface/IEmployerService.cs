@@ -16,12 +16,14 @@ namespace Service.Interface
            
             Task<bool> AddAsync(EmployerDto employerDto);
             Task<bool> UpdateAsync(Guid id, EmployerDto employerDto);
-            Task<string> UploadFileAsync(IFormFile file );
+            
             Task<bool> DeleteAsync(Guid id);
          
-           Task<string> SaveFileAsync(IFormFile file, string subFolder);
+           //Task<string> AddAsync(IFormFile file, string subFolder);
            
 
     }
 }
 
+
+    

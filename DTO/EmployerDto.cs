@@ -10,6 +10,10 @@ namespace DTO
 {
     public class EmployerDto
     {
+        public EmployerDto()
+        {
+            Address = new AddressDto();
+        }
         public string CompanyName { get; set; }
         public string Description { get; set; }
         public IFormFile Logo { get; set; }
@@ -18,7 +22,10 @@ namespace DTO
         public string PhoneNumber { get; set; }
         public IFormFile ProfilePicture { get; set; }
         public Guid UserId { get; set; }
+        public AddressDto Address { get; set; }
 
-        
+
+
+
     }
 }
