@@ -31,12 +31,7 @@ namespace Service.Implementation
             
 
         }
-        public async Task<StateDto> AddAsync(StateDto stateDto)
-        {
-            var state = _mapper.Map<State>(stateDto);
-            await _stateRepository.AddAsync(state);
-            return stateDto;
-        }
+        
     }
 }
 

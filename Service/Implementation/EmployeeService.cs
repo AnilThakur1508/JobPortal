@@ -56,16 +56,16 @@ namespace Service.Implementation
         //Add
         public async Task<bool> AddAsync(EmployeeDto employeeDto)
         {
-           
             var employee = _mapper.Map<Employee>(employeeDto);
             //var address = _mapper.Map<Address>(employeeDto.Address);
-           await _addressService.AddAsync(employeeDto.Address);
-            employee.ProfilePicture=await UploadFileAsync(employeeDto.ProfilePicture);
-            return   await _employeeRepository.AddAsync(employee);
-           
-            
-           
+            await _addressService.AddAsync(employeeDto.Address);
+            employee.ProfilePicture = await UploadFileAsync(employeeDto.ProfilePicture);
+            return await _employeeRepository.AddAsync(employee);
         }
+
+
+
+
         //Update
         public async Task<bool> UpdateAsync(Guid id, EmployeeDto employeeDto)
         {

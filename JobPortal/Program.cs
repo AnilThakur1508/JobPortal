@@ -47,6 +47,9 @@ builder.Services.AddScoped<IEmployerService, EmployerService>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<IStateService, StateService>();
 builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IJobService, JobService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ISkillsService ,SkillService>();
 
 
 // Add services to the container.

@@ -16,6 +16,10 @@ namespace DataAccessLayer.Data
         public DbSet<Address> Address { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<State> States { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Skills> Skills { get; set; }
+        public DbSet<JobCategories> JobCategories { get; set; }
     }
 }
 

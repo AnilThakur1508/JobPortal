@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 
 namespace DataAccessLayer.Entity
@@ -11,7 +12,7 @@ namespace DataAccessLayer.Entity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string 
+        public string ProfilePicture {  get; set; }
        
      
         

@@ -29,8 +29,8 @@ namespace JobPortal.Controllers
         [HttpGet("GetById/{id}")]
         public async Task<ActionResult<EmployeeDto>> GetById(Guid id)
         {
-            var employee = await _employeeService.GetByIdAsync(id)
-;
+            var employee = await _employeeService.GetByIdAsync(id);
+
             if (employee == null)
                 return NotFound("Employee not found.");
 
@@ -39,7 +39,7 @@ namespace JobPortal.Controllers
 
         //Add
         [HttpPost("Add")]
-        public async Task<IActionResult> AddAsync(EmployeeDto employeeDto)
+        public async Task<IActionResult> AddOr(EmployeeDto employeeDto)
         {
             await _employeeService.AddAsync(employeeDto);
             return Ok(new { Message = "Created a employee", data = employeeDto });
@@ -54,13 +54,14 @@ namespace JobPortal.Controllers
 
             return Ok("Employee updated successfully.");
         }
+
         //delete
 
         [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeleteEmployee(Guid id)
         {
-            var success = await _employeeService.DeleteAsync(id)
-;
+            var success = await _employeeService.DeleteAsync(id);
+
             if (!success)
                 return NotFound("Employee not found.");
 

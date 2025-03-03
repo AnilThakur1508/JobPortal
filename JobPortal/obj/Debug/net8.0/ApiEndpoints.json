@@ -106,12 +106,37 @@
         "IsRequired": false
       },
       {
+        "Name": "ProfilePicture",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
         "Name": "RoleName",
         "Type": "System.String",
         "IsRequired": false
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobPortal.Controllers.CategoryController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/Category/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DTO.CategoryDto, DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "JobPortal.Controllers.CountryController",
@@ -151,7 +176,7 @@
   },
   {
     "ContainingType": "JobPortal.Controllers.EmployeeController",
-    "Method": "AddAsync",
+    "Method": "AddOr",
     "RelativePath": "api/Employe/Add",
     "HttpMethod": "POST",
     "IsController": true,
@@ -188,8 +213,8 @@
         "IsRequired": false
       },
       {
-        "Name": "Address.StateName",
-        "Type": "System.String",
+        "Name": "Address.StateId",
+        "Type": "System.Guid",
         "IsRequired": false
       },
       {
@@ -357,8 +382,8 @@
         "IsRequired": false
       },
       {
-        "Name": "Address.StateName",
-        "Type": "System.String",
+        "Name": "Address.StateId",
+        "Type": "System.Guid",
         "IsRequired": false
       },
       {
@@ -457,6 +482,105 @@
       {
         "Name": "employerDto",
         "Type": "DTO.EmployerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobPortal.Controllers.JobController",
+    "Method": "AddAsync",
+    "RelativePath": "api/Job/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobDto",
+        "Type": "DTO.JobDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobPortal.Controllers.JobController",
+    "Method": "DeleteJob",
+    "RelativePath": "api/Job/Delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobPortal.Controllers.JobController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/Job/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DTO.JobDto, DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "JobPortal.Controllers.JobController",
+    "Method": "GetById",
+    "RelativePath": "api/Job/GetById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DTO.JobDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "JobPortal.Controllers.JobController",
+    "Method": "UpdateJob",
+    "RelativePath": "api/Job/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "jobDto",
+        "Type": "DTO.JobDto",
         "IsRequired": true
       }
     ],
@@ -562,20 +686,24 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "JobPortal.Controllers.StateController",
-    "Method": "AddAsync",
-    "RelativePath": "api/State/Add",
-    "HttpMethod": "POST",
+    "ContainingType": "JobPortal.Controllers.SkillsController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/Skills/GetAll",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
+    "Parameters": [],
+    "ReturnTypes": [
       {
-        "Name": "stateDto",
-        "Type": "DTO.StateDto",
-        "IsRequired": true
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DTO.SkillsDto, DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
       }
-    ],
-    "ReturnTypes": []
+    ]
   },
   {
     "ContainingType": "JobPortal.Controllers.StateController",

@@ -25,13 +25,6 @@ namespace JobPortal.Controllers
                 return Ok(new { Message = "List of the state", Data = state });
             }
 
-            //Add 
-            [HttpPost("Add")]
-            public async Task<IActionResult> AddAsync(StateDto stateDto)
-            {
-                await _stateService.AddAsync(stateDto);
-                return Ok(new { Message = "Created a state", data = stateDto });
-            }
-        
+
     }
 }

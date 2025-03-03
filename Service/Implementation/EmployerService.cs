@@ -24,9 +24,11 @@ namespace Service.Implementation
             private readonly UserManager<AppUser> _userManager;
             private readonly IWebHostEnvironment _webHostEnvironment;
             private readonly ILogger<EmployerService> _logger;
-        
+            private readonly IAddressService _addressService;
 
-        public EmployerService(UserManager<AppUser> userManager,IRepository<Employer> repository, IMapper mapper, IWebHostEnvironment webHostEnvironment, ILogger<EmployerService> logger )
+
+
+        public EmployerService(UserManager<AppUser> userManager,IRepository<Employer> repository, IMapper mapper, IWebHostEnvironment webHostEnvironment, ILogger<EmployerService> logger , IAddressService addressService)
           
             {
                 _repository = repository;
@@ -34,6 +36,7 @@ namespace Service.Implementation
                 _webHostEnvironment = webHostEnvironment;
                  _logger = logger;
                 _userManager = userManager;
+               _addressService = addressService;
 
 
         }
@@ -55,7 +58,9 @@ namespace Service.Implementation
             public async Task<bool> AddAsync(EmployerDto employerDto)
             {
                 var employer = _mapper.Map<Employer>(employerDto);
-              employer.ProfilePicture = await UploadFileAsync(employerDto.ProfilePicture);
+            //var address = _mapper.Map<Address>(employeeDto.Address);
+            await _addressService.AddAsync(employerDto.Address);
+            employer.ProfilePicture = await UploadFileAsync(employerDto.ProfilePicture);
               return await _repository.AddAsync(employer);
             }
             // Update
