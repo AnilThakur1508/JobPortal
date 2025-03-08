@@ -34,22 +34,13 @@ namespace JobPortal.Controllers
             return Ok(employer);
         }
 
-        [HttpPost("Add")]
-        public async Task<IActionResult> AddAsync(EmployerDto employerDto)
+        //Add
+        [HttpPost("AddOrUpdate")]
+        public async Task<IActionResult> AddOrUpdate(EmployerDto employerDto)
         {
-            await _employerService.AddAsync(employerDto);
-
+            await _employerService.UpsertAsync(employerDto);
             return Ok(new { Message = "Created a employer", data = employerDto });
-        }
 
-
-        [HttpPut("Update/{id}")]
-        public async Task<IActionResult> UpdateEmployer(Guid id, [FromBody] EmployerDto employerDto)
-        {
-            await _employerService.UpdateAsync(id, employerDto);
-
-
-            return Ok("Employer updated successfully.");
         }
 
 

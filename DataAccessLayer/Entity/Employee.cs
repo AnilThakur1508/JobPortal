@@ -1,5 +1,4 @@
-﻿using DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +10,10 @@ namespace DataAccessLayer.Entity
     {
         
         public DateOnly DOB { get; set; }
-        public string Resume { get; set; }
+        public Guid ResumeId { get; set; }
         public string Description { get; set; }
         public Guid UserId { get; set; }
-        public string ProfilePicture { get; set; }
+       
         
 
     }

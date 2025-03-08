@@ -9,7 +9,8 @@ namespace Service.Interface
 {
     public interface ICountryService
     {
+        Task<CountryDto> AddAsync(CountryDto countryDto);
         Task<IEnumerable<CountryDto>> GetAllAsync();
-        Task<CountryDto> AddAsync(CountryDto CountryDto);
     }
 }
+

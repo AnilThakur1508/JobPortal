@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Service.Interface
 {
-    internal interface IJobCategories
+    public interface IJobCategories
     {
     }
 }

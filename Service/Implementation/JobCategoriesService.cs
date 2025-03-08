@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Service.Implementation
 {
-    internal class JobCategoriesService
+    public class JobCategoriesService
     {
     }
 }

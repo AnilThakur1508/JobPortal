@@ -50,6 +50,8 @@ builder.Services.AddScoped<IAddressService, AddressService>();
 builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ISkillsService ,SkillService>();
+builder.Services.AddScoped<IJobApplicationService, JobApplicationService>();
+builder.Services.AddScoped<IResumeService, ResumeService>();
 
 
 // Add services to the container.

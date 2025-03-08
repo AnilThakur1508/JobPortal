@@ -13,10 +13,10 @@ namespace Service.Implementation
 {
     public class SkillService : ISkillsService
     {
-        private readonly IRepository<Skills> _SkillRepository;
+        private readonly IRepository<Skill> _SkillRepository;
         private readonly IMapper _mapper;
 
-        public SkillService(IRepository<Skills> repository, IMapper mapper)
+        public SkillService(IRepository<Skill> repository, IMapper mapper)
         {
             _SkillRepository = repository;
             _mapper = mapper;

@@ -18,8 +18,10 @@ namespace DataAccessLayer.Data
         public DbSet<State> States { get; set; }
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Skills> Skills { get; set; }
+        public DbSet<Skill> Skills { get; set; }
         public DbSet<JobCategories> JobCategories { get; set; }
+        public DbSet<JobApplication> JobApplications { get; set; }
+        public DbSet<Resume> Resumes { get; set; }
     }
 }
 

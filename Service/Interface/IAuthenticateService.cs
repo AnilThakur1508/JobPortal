@@ -16,6 +16,6 @@ namespace Service.Interface
         Task<string> LoginAsync(LoginDto loginDto);
   
         
-        Task<string> AddAsync(IFormFile file, string subFolder);
+        Task<string> AddAsync(IFormFile file);
     }
 }

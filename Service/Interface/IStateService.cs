@@ -11,8 +11,9 @@ namespace Service.Interface
 {
     public interface IStateService
     {
+
         Task<IEnumerable<StateDto>> GetAllAsync();
-        
+        Task<StateDto> GetByIdAsync(Guid Id);
     }
 }   
 

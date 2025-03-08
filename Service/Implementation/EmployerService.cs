@@ -46,7 +46,7 @@ namespace Service.Implementation
                 var employers = await _repository.GetAllAsync();
                 return _mapper.Map<IEnumerable<EmployerDto>>(employers);
             }
-             //GetById
+         //GetById
 
             public async Task<EmployerDto?> GetByIdAsync(Guid id)
             {
@@ -54,23 +54,44 @@ namespace Service.Implementation
     
                 return employer == null ? null : _mapper.Map<EmployerDto>(employer);
             }
-            //Add
-            public async Task<bool> AddAsync(EmployerDto employerDto)
-            {
-                var employer = _mapper.Map<Employer>(employerDto);
-            //var address = _mapper.Map<Address>(employeeDto.Address);
+        public async Task<bool> UpsertAsync(EmployerDto employerDto)
+        {
+            //var address = _mapper.Map<Address>(employerDto.Address);
             await _addressService.AddAsync(employerDto.Address);
-            employer.ProfilePicture = await UploadFileAsync(employerDto.ProfilePicture);
-              return await _repository.AddAsync(employer);
-            }
-            // Update
-            public async Task<bool> UpdateAsync(Guid id, EmployerDto employerDto)
+
+
+            // 🔹 Map DTO to Employee entity
+            var employer = _mapper.Map<Employer>(employerDto);
+
+            // 🔹 Handle logo upload
+            if (employerDto.Logo != null)
             {
-                var employer = _mapper.Map<Employer>(employerDto);
-                employer.Id = id;
+                employer.Logo = await UploadFileAsync(employerDto.Logo);
+            }
+
+            // 🔹 Check if employee already exists
+            var existingEmployer = await _repository.GetByIdAsync(employer.Id);
+
+            if (existingEmployer != null)
+            {
+                // 🔹 Update employee
                 return await _repository.UpdateAsync(employer);
             }
-          //Delete
+            else
+            {
+                // 🔹 Insert new employee
+                return await _repository.AddAsync(employer);
+            }
+        }
+
+        //// Update
+        //public async Task<bool> UpdateAsync(Guid id, EmployerDto employerDto)
+        //    {
+        //        var employer = _mapper.Map<Employer>(employerDto);
+        //        employer.Id = id;
+        //        return await _repository.UpdateAsync(employer);
+        //    }
+        //  //Delete
             public async Task<bool> DeleteAsync(Guid id)
             {
               return await _repository.DeleteAsync(id);
@@ -107,11 +128,11 @@ namespace Service.Implementation
                 throw new Exception("File upload failed.", ex);
             }
         }
-        public async Task<string> AddFileAsync(IFormFile file, string subFolder)
+        public async Task<string> AddFileAsync(IFormFile file, string subFolder = "uploads")
         {
             if (file == null) return null;
 
-            var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, subFolder);
+            var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "uploads", subFolder);
             if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
 
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
@@ -122,8 +143,9 @@ namespace Service.Implementation
                 await file.CopyToAsync(stream);
             }
 
-            return $"/{subFolder}/{fileName}";
+            return $"/uploads/{subFolder}/{fileName}";
         }
+
     }
 
 

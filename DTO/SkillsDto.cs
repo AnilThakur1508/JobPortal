@@ -9,5 +9,6 @@ namespace DTO
     public class SkillsDto
     {
         public string Name { get; set; }
+        public Guid CategoryId { get; set; }
     }
 }
