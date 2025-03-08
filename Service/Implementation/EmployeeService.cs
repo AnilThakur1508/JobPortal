@@ -47,32 +47,50 @@ namespace Service.Implementation
 
         }
         //GetById
-        public async Task<EmployeeDto> GetByIdAsync(Guid id)
+        public async Task<EmployeeDto?> GetByIdAsync(Guid id)
         {
             var employee = await _employeeRepository.GetByIdAsync(id);
 
             return employee == null ? null : _mapper.Map<EmployeeDto>(employee);
         }
         //Add
-        public async Task<bool> AddAsync(EmployeeDto employeeDto)
+        public async Task<bool> UpsertAsync(EmployeeDto employeeDto)
         {
-           
-            var employee = _mapper.Map<Employee>(employeeDto);
+
             //var address = _mapper.Map<Address>(employeeDto.Address);
-           await _addressService.AddAsync(employeeDto.Address);
-            employee.ProfilePicture=await UploadFileAsync(employeeDto.ProfilePicture);
-            return   await _employeeRepository.AddAsync(employee);
-           
+            await _addressService.AddAsync(employeeDto.Address);
+            // 🔹 Map DTO to Employee entity
+            var employee = _mapper.Map<Employee>(employeeDto);
+
             
            
+
+            // 🔹 Check if employee already exists
+            var existingEmployee = await _employeeRepository.GetByIdAsync(employee.Id);
+
+            if (existingEmployee != null)
+            {
+                // 🔹 Update employee
+                return await _employeeRepository.UpdateAsync(employee);
+            }
+            else
+            {
+                // 🔹 Insert new employee
+                return await _employeeRepository.AddAsync(employee);
+            }
         }
-        //Update
-        public async Task<bool> UpdateAsync(Guid id, EmployeeDto employeeDto)
-        {
-            var employee = _mapper.Map<Employee>(employeeDto);
-            employee.Id = id;
-            return await _employeeRepository.UpdateAsync(employee);
-        }
+
+
+
+
+
+        ////Update
+        //public async Task<bool> UpdateAsync(Guid id, EmployeeDto employeeDto)
+        //{
+        //    var employee = _mapper.Map<Employee>(employeeDto);
+        //    employee.Id = id;
+        //    return await _employeeRepository.UpdateAsync(employee);
+        //}
 
 
         //Delete
@@ -81,54 +99,24 @@ namespace Service.Implementation
             return await _employeeRepository.DeleteAsync(id);
 
         }
-        public async Task<string> UploadFileAsync(IFormFile file)
-        {
-            if (file == null || file.Length == 0)
-            {
-                throw new ArgumentException("No file uploaded.");
-            }
+       
+        //public async Task<string> AddFileAsync(IFormFile file, string subFolder = "uploads")
+        //{
+        //    if (file == null) return null;
 
-            try
-            {
-                string uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
-                Directory.CreateDirectory(uploadPath);
+        //    var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "uploads", subFolder);
+        //    if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
 
-                string uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
-                string filePath = Path.Combine(uploadPath, uniqueFileName);
+        //    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+        //    var filePath = Path.Combine(uploadPath, fileName);
 
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await file.CopyToAsync(stream);
-                }
+        //    using (var stream = new FileStream(filePath, FileMode.Create))
+        //    {
+        //        await file.CopyToAsync(stream);
+        //    }
 
-                string fileUrl = $"/uploads/{uniqueFileName}";
-                _logger.LogInformation($"File uploaded successfully: {fileUrl}");
-
-                return fileUrl;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"File upload failed: {ex.Message}");
-                throw new Exception("File upload failed.", ex);
-            }
-        }
-        public async Task<string> AddFileAsync(IFormFile file, string subFolder)
-        {
-            if (file == null) return null;
-
-            var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, subFolder);
-            if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
-
-            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
-            var filePath = Path.Combine(uploadPath, fileName);
-
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await file.CopyToAsync(stream);
-            }
-
-            return $"/{subFolder}/{fileName}";
-        }
+        //    return $"/uploads/{subFolder}/{fileName}";
+        //}
     }
 }
 

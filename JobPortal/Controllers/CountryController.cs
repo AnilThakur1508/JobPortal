@@ -9,29 +9,26 @@ namespace JobPortal.Controllers
     [ApiController]
     public class CountryController : ControllerBase
     {
-        
-        
-            private readonly ICountryService _countryService;
 
+            private readonly ICountryService _countryService;
             public CountryController(ICountryService countryService)
             {
                 _countryService = countryService;
+
             }
-            //GetAll
+            [HttpPost("Add")]
+            public async Task<ActionResult<CountryDto>> AddAsync(CountryDto countryDto)
+            {
+                await _countryService.AddAsync(countryDto);
+                return Ok(new { Message = "Country is  create", data = countryDto });
+            }
+
             [HttpGet("GetAll")]
             public async Task<ActionResult<IEnumerable<CountryDto>>> GetAllAsync()
             {
-                var country = await _countryService.GetAllAsync();
-                return Ok(new { Message = "List of the country", Data = country });
+                var countries = await _countryService.GetAllAsync();
+                return Ok(new { Message = "List of the Country ", Data = countries });
             }
 
-            //Add 
-            [HttpPost("Add")]
-            public async Task<IActionResult> AddAsync(CountryDto countryDto)
-            {
-                await _countryService.AddAsync(countryDto);
-                return Ok(new { Message = "Created a Country", data = countryDto });
-            }
-        
     }
 }

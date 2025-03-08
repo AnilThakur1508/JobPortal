@@ -1,12 +1,16 @@
 ﻿using AutoMapper;
+using DataAccessLayer.Data;
 using DataAccessLayer.Entity;
 using DataAccessLayer.PortalRepository;
 using DTO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Service.Implementation
@@ -16,18 +20,10 @@ namespace Service.Implementation
         private readonly IRepository<Country> _countryRepository;
         private readonly IMapper _mapper;
 
-        public CountryService(IRepository<Country> repository, IMapper mapper)
+        public CountryService(IRepository<Country> countryRepository, IMapper mapper)
         {
-            _countryRepository = repository;
+            _countryRepository = countryRepository;
             _mapper = mapper;
-
-        }
-        public async Task<IEnumerable<CountryDto>> GetAllAsync()
-        {
-
-            var country = await _countryRepository.GetAllAsync();
-             return _mapper.Map<IEnumerable<CountryDto>>(country);
-
         }
         public async Task<CountryDto> AddAsync(CountryDto countryDto)
         {
@@ -35,6 +31,15 @@ namespace Service.Implementation
             await _countryRepository.AddAsync(country);
             return countryDto;
         }
+
+        public async Task<IEnumerable<CountryDto>> GetAllAsync()
+        {
+
+            var countries = await _countryRepository.GetAllAsync();
+            return _mapper.Map<IEnumerable<CountryDto>>(countries);
+
+        }
+
     }
 }
 

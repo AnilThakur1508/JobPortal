@@ -29,8 +29,8 @@ namespace JobPortal.Controllers
         [HttpGet("GetById/{id}")]
         public async Task<ActionResult<EmployeeDto>> GetById(Guid id)
         {
-            var employee = await _employeeService.GetByIdAsync(id)
-;
+            var employee = await _employeeService.GetByIdAsync(id);
+
             if (employee == null)
                 return NotFound("Employee not found.");
 
@@ -38,36 +38,28 @@ namespace JobPortal.Controllers
         }
 
         //Add
-        [HttpPost("Add")]
-        public async Task<IActionResult> AddAsync(EmployeeDto employeeDto)
+        [HttpPost("AddOrUpdate")]
+        public async Task<IActionResult> AddOrUpdate(EmployeeDto employeeDto)
         {
-            await _employeeService.AddAsync(employeeDto);
+            await _employeeService.UpsertAsync(employeeDto);
             return Ok(new { Message = "Created a employee", data = employeeDto });
 
         }
-        //update
-        [HttpPut("Update/{id}")]
-        public async Task<IActionResult> UpdateEmployee(Guid id, [FromBody] EmployeeDto employeeDto)
-        {
-            await _employeeService.UpdateAsync(id, employeeDto);
-
-
-            return Ok("Employee updated successfully.");
-        }
+      
         //delete
 
         [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeleteEmployee(Guid id)
         {
-            var success = await _employeeService.DeleteAsync(id)
-;
+            var success = await _employeeService.DeleteAsync(id);
+
             if (!success)
                 return NotFound("Employee not found.");
 
             return Ok("Employe deleted successfully.");
         }
 
-        
+
         //public async Task<IActionResult> UploadFile(IFormFile file)
         //{
         //    if (file == null || file.Length == 0)
@@ -85,7 +77,7 @@ namespace JobPortal.Controllers
         //        return StatusCode(500, new { message = "File upload failed.", error = ex.Message });
         //    }
         //}
-        
+
 
 
 
@@ -98,14 +90,14 @@ namespace JobPortal.Controllers
         //        return BadRequest("Invalid employee profile data.");
         //    }
 
-        //    var result = await _employeeService.AddAsync(employee);
+        //    var result = await _employeeService.AddFileAsync(employee);
 
         //    if (result == null)
         //        return StatusCode(500, "Failed to upload employee profile.");
 
         //    return Ok(new { message = "employee profile uploaded successfully!", employer = result });
         //}
-        
+
 
     }
 

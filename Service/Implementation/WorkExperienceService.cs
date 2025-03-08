@@ -18,13 +18,13 @@ namespace Service.Implementation
     {
         private readonly IRepository<WorkExperience> _workExperienceRepository;
         private readonly IMapper _mapper;
-        private readonly IWebHostEnvironment _webHostEnvironment;
+        
 
-        public WorkExperienceService(IRepository<WorkExperience> workExperienceRepository, IMapper mapper,IWebHostEnvironment webHostEnvironment)
+        public WorkExperienceService(IRepository<WorkExperience> workExperienceRepository, IMapper mapper)
         {
             _workExperienceRepository = workExperienceRepository;
             _mapper = mapper;
-            _webHostEnvironment = webHostEnvironment;
+            
         }
         //GetAll
         public async Task<IEnumerable<WorkExperienceDto>> GetAllAsync()

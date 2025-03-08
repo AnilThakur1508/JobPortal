@@ -13,12 +13,13 @@ namespace Service.Interface
     {
         Task<IEnumerable<EmployeeDto>> GetAllAsync();
         Task<EmployeeDto> GetByIdAsync(Guid id);
-        Task<bool>AddAsync(EmployeeDto employerDto);
-        Task<bool> UpdateAsync(Guid id ,EmployeeDto employeeDto);
+        //Task<bool>AddAsync(EmployeeDto employerDto);
+        Task<bool> UpsertAsync(EmployeeDto employeeDto);
         Task<bool> DeleteAsync(Guid id);
 
+       
 
-        Task<string> UploadFileAsync(IFormFile file);
-        Task<string>AddFileAsync(IFormFile file, string subFolder);
+
+       // Task<string>AddFileAsync(IFormFile file, string subFolder);
     }
 }

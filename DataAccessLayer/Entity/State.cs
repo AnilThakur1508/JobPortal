@@ -9,8 +9,9 @@ namespace DataAccessLayer.Entity
     public class State :BaseEntity
     {
        
+        
+        public Guid CountryId { get; set; }
         public string Name { get; set; }
-        public string CountryName { get; set; }
         public virtual Country Country { get; set; }
 
     }

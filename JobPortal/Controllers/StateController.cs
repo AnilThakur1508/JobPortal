@@ -1,37 +1,39 @@
 ﻿using DTO;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service.Interface;
 
-namespace JobPortal.Controllers
+[Route("api/states")]
+[ApiController]
+public class StateController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class StateController : ControllerBase
-    {
-        
-        
-            private readonly IStateService _stateService;
+   
 
-            public StateController(IStateService stateService)
-            {
-                _stateService = stateService;
-            }
-            //GetAll
-            [HttpGet("GetAll")]
-            public async Task<ActionResult<IEnumerable<StateDto>>> GetAllAsync()
-            {
-                var state = await _stateService.GetAllAsync();
-                return Ok(new { Message = "List of the state", Data = state });
-            }
+    
+    
+        private readonly IStateService _service;
+        public StateController(IStateService service)
+        {
+            _service = service;
 
-            //Add 
-            [HttpPost("Add")]
-            public async Task<IActionResult> AddAsync(StateDto stateDto)
+        }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<StateDto>>> GetAllAsync()
+        {
+            var states = await _service.GetAllAsync();
+            return Ok(states);
+        }
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<StateDto>> GetStateById(Guid Id)
+        {
+        var state = await _service.GetByIdAsync(Id);
+
+            if (state == null)
             {
-                await _stateService.AddAsync(stateDto);
-                return Ok(new { Message = "Created a state", data = stateDto });
+                return NotFound(new { Message = "State not found" });
             }
-        
-    }
+            return Ok(state);
+        }
+    
 }
+  
+

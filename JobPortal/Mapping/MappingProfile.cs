@@ -17,8 +17,15 @@ namespace JobPortal.Mapping
             CreateMap<CountryDto, Country>().ReverseMap();
             CreateMap<StateDto, State>().ReverseMap();
             CreateMap<AddressDto, Address>().ReverseMap();
-            
-            
+            CreateMap<JobDto,Job>().ReverseMap();
+            CreateMap<CategoryDto, Category>().ReverseMap();
+            CreateMap<SkillsDto, Skill>().ReverseMap();
+            CreateMap<JobCategoriesDto, JobCategories>().ReverseMap();
+            CreateMap<JobApplicationDto, JobApplication>().ReverseMap();
+            CreateMap<ResumeDto, Resume>().ReverseMap();    
+
+           
+
         }
     }
 }

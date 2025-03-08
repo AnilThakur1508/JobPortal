@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DataAccessLayer.Data;
 using DataAccessLayer.Entity;
 using DataAccessLayer.PortalRepository;
+using DTO;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Repository
@@ -63,6 +64,10 @@ namespace DataAccessLayer.Repository
             throw new NotImplementedException();
 
         }
-        
+
+        public Task UpsertAsync(AddressDto address)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

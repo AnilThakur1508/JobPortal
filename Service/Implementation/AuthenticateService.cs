@@ -46,6 +46,8 @@ namespace Service.Implementation
         public async Task<string> RegisterAsync(RegisterDto model)
         {
             var user = _mapper.Map<AppUser>(model);
+            user.ProfilePicture =await AddAsync(model.ProfilePicture);
+
             var result = await _userManager.CreateAsync(user, model.Password);
             user = await _userManager.FindByEmailAsync(model.Email);
 
@@ -64,12 +66,12 @@ namespace Service.Implementation
 
             return GenerateJwtToken(user);
         }
-       
-        public async Task<string> AddAsync(IFormFile file, string subFolder)
+
+        public async Task<string> AddAsync(IFormFile file)
         {
             if (file == null) return null;
 
-            var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, subFolder);
+            var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
             if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
 
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
@@ -80,7 +82,7 @@ namespace Service.Implementation
                 await file.CopyToAsync(stream);
             }
 
-            return $"/{subFolder}/{fileName}";
+            return $"/uploads/{fileName}";
         }
 
         private string GenerateJwtToken(AppUser user)

@@ -47,3 +47,4 @@ coverage/
 
 # Ignore Windows system files
 Thumbs.db
+wwwroot/

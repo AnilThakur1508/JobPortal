@@ -24,9 +24,11 @@ namespace Service.Implementation
             private readonly UserManager<AppUser> _userManager;
             private readonly IWebHostEnvironment _webHostEnvironment;
             private readonly ILogger<EmployerService> _logger;
-        
+            private readonly IAddressService _addressService;
 
-        public EmployerService(UserManager<AppUser> userManager,IRepository<Employer> repository, IMapper mapper, IWebHostEnvironment webHostEnvironment, ILogger<EmployerService> logger )
+
+
+        public EmployerService(UserManager<AppUser> userManager,IRepository<Employer> repository, IMapper mapper, IWebHostEnvironment webHostEnvironment, ILogger<EmployerService> logger , IAddressService addressService)
           
             {
                 _repository = repository;
@@ -34,6 +36,7 @@ namespace Service.Implementation
                 _webHostEnvironment = webHostEnvironment;
                  _logger = logger;
                 _userManager = userManager;
+               _addressService = addressService;
 
 
         }
@@ -43,7 +46,7 @@ namespace Service.Implementation
                 var employers = await _repository.GetAllAsync();
                 return _mapper.Map<IEnumerable<EmployerDto>>(employers);
             }
-             //GetById
+         //GetById
 
             public async Task<EmployerDto?> GetByIdAsync(Guid id)
             {
@@ -51,21 +54,44 @@ namespace Service.Implementation
     
                 return employer == null ? null : _mapper.Map<EmployerDto>(employer);
             }
-            //Add
-            public async Task<bool> AddAsync(EmployerDto employerDto)
+        public async Task<bool> UpsertAsync(EmployerDto employerDto)
+        {
+            //var address = _mapper.Map<Address>(employerDto.Address);
+            await _addressService.AddAsync(employerDto.Address);
+
+
+            // 🔹 Map DTO to Employee entity
+            var employer = _mapper.Map<Employer>(employerDto);
+
+            // 🔹 Handle logo upload
+            if (employerDto.Logo != null)
             {
-                var employer = _mapper.Map<Employer>(employerDto);
-              employer.ProfilePicture = await UploadFileAsync(employerDto.ProfilePicture);
-              return await _repository.AddAsync(employer);
+                employer.Logo = await UploadFileAsync(employerDto.Logo);
             }
-            // Update
-            public async Task<bool> UpdateAsync(Guid id, EmployerDto employerDto)
+
+            // 🔹 Check if employee already exists
+            var existingEmployer = await _repository.GetByIdAsync(employer.Id);
+
+            if (existingEmployer != null)
             {
-                var employer = _mapper.Map<Employer>(employerDto);
-                employer.Id = id;
+                // 🔹 Update employee
                 return await _repository.UpdateAsync(employer);
             }
-          //Delete
+            else
+            {
+                // 🔹 Insert new employee
+                return await _repository.AddAsync(employer);
+            }
+        }
+
+        //// Update
+        //public async Task<bool> UpdateAsync(Guid id, EmployerDto employerDto)
+        //    {
+        //        var employer = _mapper.Map<Employer>(employerDto);
+        //        employer.Id = id;
+        //        return await _repository.UpdateAsync(employer);
+        //    }
+        //  //Delete
             public async Task<bool> DeleteAsync(Guid id)
             {
               return await _repository.DeleteAsync(id);
@@ -102,11 +128,11 @@ namespace Service.Implementation
                 throw new Exception("File upload failed.", ex);
             }
         }
-        public async Task<string> AddFileAsync(IFormFile file, string subFolder)
+        public async Task<string> AddFileAsync(IFormFile file, string subFolder = "uploads")
         {
             if (file == null) return null;
 
-            var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, subFolder);
+            var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "uploads", subFolder);
             if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
 
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
@@ -117,8 +143,9 @@ namespace Service.Implementation
                 await file.CopyToAsync(stream);
             }
 
-            return $"/{subFolder}/{fileName}";
+            return $"/uploads/{subFolder}/{fileName}";
         }
+
     }
 
 

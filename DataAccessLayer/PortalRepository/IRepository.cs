@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Entity;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,6 @@ namespace DataAccessLayer.PortalRepository
         Task<bool> AddAsync(T entity);
         Task<bool> UpdateAsync(T entity);
         Task<bool> DeleteAsync(Guid id);
-        
+        Task UpsertAsync(AddressDto address);
     }
 }
