@@ -15,9 +15,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class RegisterComponent {
   registerForm: FormGroup;
-roles: any[]=[{id:1,name:'Admin'},{id:2,name:'User'},
-  {id:3,name:'SuperAdmin'}
-];
+roles: any
+
+
   constructor(private fb: FormBuilder,private registerService:RegisterService) {
 
     this.registerForm= this.fb.group({
