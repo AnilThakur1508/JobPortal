@@ -29,8 +29,8 @@ namespace DTO
         public string PhoneNumber { get; set; }
         public IFormFile ProfilePicture { get; set; }
 
-        [Required(ErrorMessage ="Role is required")]
-        public string RoleName { get; set; } = string.Empty;
+       [Required(ErrorMessage ="Role is required")]
+        public string Role { get; set; } = string.Empty;
        
     }
 }
