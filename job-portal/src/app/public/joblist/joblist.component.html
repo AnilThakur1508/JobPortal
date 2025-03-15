@@ -1,0 +1,142 @@
+<div class="container mt-4">
+    <h2 class="text-center">{{ selectedJobId ? 'Update Job' : 'Job list' }}</h2>
+  
+    <!-- Job Form -->
+    <form [formGroup]="JobForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label>Job Title</label>
+          <input type="text" class="form-control" formControlName="jobTitle" placeholder="Enter Job Title" />
+          <small class="text-danger" *ngIf="JobForm.controls['jobTitle'].invalid && JobForm.controls['jobTitle'].touched">
+            Job title is required (min 3 chars).
+          </small>
+        </div>
+  
+        <div class="col-md-6 mb-3">
+          <label>Job Description</label>
+          <input type="text" class="form-control" formControlName="jobDescription" placeholder="Enter Job Description" />
+          <small class="text-danger" *ngIf="JobForm.controls['jobDescription'].invalid && JobForm.controls['jobDescription'].touched">
+            Job description is required (min 3 chars).
+          </small>
+        </div>
+        
+        <div class="col-md-6 mb-3">
+          <label>Job Type</label>
+          <select class="form-control" formControlName="jobType">
+            <option value="">Select Job Type</option>
+            <option value="Full-Time">Full-Time</option>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Remote">Remote</option>
+          </select>
+          <small class="text-danger" *ngIf="JobForm.controls['jobType'].invalid && JobForm.controls['jobType'].touched">
+            Job Type is required.
+          </small>
+        </div>
+  
+        
+  
+        <div class="col-md-6 mb-3">
+          <label>Salary</label>
+          <input type="text" class="form-control" formControlName="jobSalary" placeholder="Enter Salary" />
+          <small class="text-danger" *ngIf="JobForm.controls['jobSalary'].invalid && JobForm.controls['jobSalary'].touched">
+            Salary must be a number.
+          </small>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>Job Experience</label>
+          <select class="form-control" formControlName="jobExperience">
+            <option value="">Select Experience Years</option>
+            <option *ngFor="let exp of experienceOptions" [value]="exp">{{ exp }} {{ exp === 'Fresher' ? '' : 'Years' }}</option>
+          </select>
+          <small class="text-danger" *ngIf="JobForm.controls['jobExperience'].invalid && JobForm.controls['jobExperience'].touched">
+            Job Experience is required.
+          </small>
+        </div>
+           
+          <!-- <div class="col-md-6 mb-3">
+            <label>Job Qualification</label>
+            <select class="form-control" formControlName="jobQualification">
+              <option value="">Select Qualification</option>
+              <option *ngFor="let qual of qualificationOption" [value]="qual">{{ qual }}</option>
+            </select>
+            <small class="text-danger" *ngIf="JobForm.controls['jobQualification'].invalid && JobForm.controls['jobQualification'].touched">
+              Qualification is required.
+            </small>
+          </div> -->
+          
+  
+        <div class="col-md-6 mb-3">
+          <label>Posted Date</label>
+          <input type="date" class="form-control" formControlName="jobPostedDate" />
+          <small class="text-danger" *ngIf="JobForm.controls['jobPostedDate'].invalid && JobForm.controls['jobPostedDate'].touched">
+            Posted Date is required.
+          </small>
+        </div>
+  
+        <div class="col-md-6 mb-3">
+          <label>Expiry Date</label>
+          <input type="date" class="form-control" formControlName="jobExpiryDate" />
+          <small class="text-danger" *ngIf="JobForm.controls['jobExpiryDate'].invalid && JobForm.controls['jobExpiryDate'].touched">
+            Expiry Date is required.
+          </small>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="jobCategory">Job Category</label>
+        <select id="jobCategory" class="form-control" formControlName="jobCategory">
+          <option value="">Select Category</option>
+          <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+        </select>
+        <small class="text-danger" *ngIf="JobForm.get('jobCategory')?.invalid && JobForm.get('jobCategory')?.touched">
+          Job Category is required.
+        </small>
+      </div>
+      
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="JobForm.invalid">
+        {{ selectedJobId ? 'Update Job' : 'Create Job' }}
+      </button>
+      <button type="button" class="btn btn-secondary mt-3 ms-2" (click)="resetForm()">Reset</button>
+    </form>
+  
+    <!-- Job List -->
+    <h3 class="mt-5 text-center">Job Listings</h3>
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Experience</th>
+            <th>Qualification</th>
+            <th>Category</th>
+          
+          <th>Salary</th>
+          <th>Posted Date</th>
+          <th>Expiry Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of jobs; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ job.jobTitle }}</td>
+          <td>{{ job.jobDescription }}</td>
+          <td>{{ job.jobType }}</td>
+          <td>{{ job.jobExperience }}</td>
+            <td>{{ job.jobQualification }}</td>
+            <td>{{ job.jobCategory }}</td>
+
+          
+          <td>{{ job.jobSalary }}</td>
+          <td>{{ job.jobPostedDate | date }}</td>
+          <td>{{ job.jobExpiryDate | date }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm me-2" (click)="editJob(job)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteJob(job.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

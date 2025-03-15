@@ -22,6 +22,7 @@ namespace DataAccessLayer.Data
         public DbSet<JobCategories> JobCategories { get; set; }
         public DbSet<JobApplication> JobApplications { get; set; }
         public DbSet<Resume> Resumes { get; set; }
+        public DbSet<JobQualification> JobQualifications { get; set; }
     }
 }
 
