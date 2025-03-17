@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTO
+namespace Service.Interface
 {
-    public class CategoryDto
+    public interface IJobCategoriesService
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
     }
 }

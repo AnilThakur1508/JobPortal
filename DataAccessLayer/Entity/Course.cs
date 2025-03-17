@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTO
+namespace DataAccessLayer.Entity
 {
-    public class CategoryDto
+    public class Course :BaseEntity
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
+       
+
     }
 }

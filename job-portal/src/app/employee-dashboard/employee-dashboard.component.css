@@ -1,0 +1,62 @@
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: #198754; /* Green */
+    color: white;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h4 {
+    margin-bottom: 20px;
+}
+
+/* Nav Links */
+.nav-link {
+    color: #000000; /* Black */
+    padding: 10px;
+    display: block;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: #28a745; /* Light Green */
+    border-radius: 5px;
+    color: white;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Tables */
+.table-dark {
+    background-color: #8B4513; /* Brown */
+    color: white;
+}
+
+.badge {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

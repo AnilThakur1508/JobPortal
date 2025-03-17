@@ -1,0 +1,71 @@
+<div class="container">
+    <h2>Employee Profile</h2>
+    <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+     
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="date" class="form-control" formControlName="dob" required>
+      </div>
+      <div class="form-group">
+        <label>Resume ID</label>
+        <input type="text" class="form-control" formControlName="resumeId" required>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" formControlName="description" maxlength="500" required></textarea>
+      </div>
+      <fieldset formGroupName="address">
+        <legend>Address</legend>
+        <div class="form-group">
+          <label>Address Line 1</label>
+          <input type="text" class="form-control" formControlName="addressLine1" required>
+        </div>
+        <div class="form-group">
+          <label>Address Line 2</label>
+          <input type="text" class="form-control" formControlName="addressLine2">
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" class="form-control" formControlName="city" required>
+        </div>
+        <div class="form-group">
+          <label>State</label>
+          <input type="text" class="form-control" formControlName="state" required>
+        </div>
+        <div class="form-group">
+          <label>Zip Code</label>
+          <input type="text" class="form-control" formControlName="zipCode" required>
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" class="form-control" formControlName="country" required>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">{{ selectedProfileId ? 'Update' : 'Create' }} Profile</button>
+    </form>
+  
+    <h3>Employee Profiles</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          
+          <th>Date of Birth</th>
+          <th>Resume ID</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let profile of profiles">
+         
+          <td>{{ profile.dob }}</td>
+          <td>{{ profile.resumeId }}</td>
+          <td>{{ profile.description }}</td>
+          <td>
+            <button class="btn btn-warning" (click)="selectProfile(profile)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

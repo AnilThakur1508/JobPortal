@@ -22,7 +22,8 @@ namespace JobPortal.Mapping
             CreateMap<SkillsDto, Skill>().ReverseMap();
             CreateMap<JobCategoriesDto, JobCategories>().ReverseMap();
             CreateMap<JobApplicationDto, JobApplication>().ReverseMap();
-            CreateMap<ResumeDto, Resume>().ReverseMap();    
+            CreateMap<ResumeDto, Resume>().ReverseMap(); 
+            CreateMap<JobQualificationDto, JobQualification>().ReverseMap();
 
            
 

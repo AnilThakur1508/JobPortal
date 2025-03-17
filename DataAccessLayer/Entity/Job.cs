@@ -23,7 +23,8 @@ namespace DataAccessLayer.Entity
         public DateTime PostedDate { get; set; }
         public DateTime ExpiryDate { get; set; }
         public string JobType { get; set; }
-
+        public int Experience { get; set; }
+       
 
     }
 }

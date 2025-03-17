@@ -17,11 +17,15 @@ export class ApiServiceService {
   }
 
   // POST Request
-  post<T>(endpoint: string, data: any): Observable<T> {
-    return this.http.post<T>(`${this.apiURL}/${endpoint}`, data).pipe(
+  post<T>(endpoint: string, data: any, options?: { isFormData?: boolean }): Observable<T> {
+    const headers = options?.isFormData ? undefined : { 'Content-Type': 'application/json' };
+    return this.http.post<T>(`${this.apiURL}/${endpoint}`, data, { headers }).pipe(
       catchError(this.handleError)
     );
   }
+  
+  
+  
 
   // PUT Request
   put<T>(endpoint: string, data: any): Observable<T> {

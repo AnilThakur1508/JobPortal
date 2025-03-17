@@ -7,7 +7,7 @@ using Service.Interface;
 namespace JobPortal.Controllers
 {
     [ApiController]
-    [Route("api/Employe")]
+    [Route("api/Employee")]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;

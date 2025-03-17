@@ -11,7 +11,8 @@ namespace DTO
     {
         public string Title { get; set; }
         public string Description { get; set; }
-
+        public int Experience { get; set; }
+        public string Qualification { get; set; }
        
         public decimal Salary { get; set; }
 
