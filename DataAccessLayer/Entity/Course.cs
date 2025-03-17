@@ -8,7 +8,8 @@ namespace DataAccessLayer.Entity
 {
     public class Course :BaseEntity
     {
-        public
+        public string Name { get; set; }
+       
 
     }
 }

@@ -92,51 +92,48 @@
         </small>
       </div>
       
-      <button type="submit" class="btn btn-primary mt-3" [disabled]="JobForm.invalid">
-        {{ selectedJobId ? 'Update Job' : 'Create Job' }}
-      </button>
-      <button type="button" class="btn btn-secondary mt-3 ms-2" (click)="resetForm()">Reset</button>
+     <!-- Inside Form -->
+<button type="submit" class="btn btn-primary mt-3" (click)="onSubmit()">
+  {{ selectedJobId ? 'Update Job' : 'Create Job' }}
+</button>
+<button type="button" class="btn btn-secondary mt-3 ms-2" (click)="resetForm()">Reset</button>
+
+
+  
     </form>
   
     <!-- Job List -->
-    <h3 class="mt-5 text-center">Job Listings</h3>
-    <table class="table table-bordered mt-3">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Type</th>
-          <th>Experience</th>
-            <th>Qualification</th>
+    <div class="mt-4">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Job Title</th>
+            <th>Job Description</th>
+            <th>Job Type</th>
+            <th>Salary</th>
+            <th>Experience</th>
+            <th>Posted Date</th>
+            <th>Expiry Date</th>
             <th>Category</th>
-          
-          <th>Salary</th>
-          <th>Posted Date</th>
-          <th>Expiry Date</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let job of jobs; let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>{{ job.jobTitle }}</td>
-          <td>{{ job.jobDescription }}</td>
-          <td>{{ job.jobType }}</td>
-          <td>{{ job.jobExperience }}</td>
-            <td>{{ job.jobQualification }}</td>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let job of jobs">
+            <td>{{ job.jobTitle }}</td>
+            <td>{{ job.jobDescription }}</td>
+            <td>{{ job.jobType }}</td>
+            <td>{{ job.jobSalary }}</td>
+            <td>{{ job.jobExperience }}</td>
+            <td>{{ job.jobPostedDate }}</td>
+            <td>{{ job.jobExpiryDate }}</td>
             <td>{{ job.jobCategory }}</td>
-
-          
-          <td>{{ job.jobSalary }}</td>
-          <td>{{ job.jobPostedDate | date }}</td>
-          <td>{{ job.jobExpiryDate | date }}</td>
-          <td>
-            <button class="btn btn-warning btn-sm me-2" (click)="editJob(job)">Edit</button>
-            <button class="btn btn-danger btn-sm" (click)="deleteJob(job.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <td>
+              <button class="btn btn-sm btn-primary" (click)="editJob(job.id)">Edit</button>
+              <button class="btn btn-sm btn-danger ms-2" (click)="deleteJob(job.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  

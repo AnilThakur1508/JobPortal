@@ -11,7 +11,7 @@ import { RegisterService } from '../../service/register.service';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder,private registerService:RegisterService) {
+  constructor(private fb: FormBuilder,private registerService:RegisterService,) {
 
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]], // Email validation

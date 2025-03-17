@@ -58,17 +58,18 @@
         </div>
       </div>
 
-      <!-- Role -->
-      <div class="mb-3">
-        <label for="role" class="form-label">Role</label>
-        <select id="role" class="form-control" formControlName="role">
-          <option value="">Select Role</option>
-          <option *ngFor="let role of roles" [value]="role.name">{{ role.name }}</option>
-        </select>
-        <div *ngIf="registerForm.controls['role'].invalid && registerForm.controls['role'].touched" class="text-danger">
-          Role selection is required.
-        </div>
-      </div>
+     <!-- Role Selection -->
+<div class="mb-3">
+  <label for="role" class="form-label">Role</label>
+  <select id="role" class="form-control" formControlName="role">
+    <option value="">Select Role</option>
+    <option *ngFor="let role of roles" [value]="role.name">{{ role.name }}</option>
+  </select>
+  <div *ngIf="registerForm.controls['role'].invalid && registerForm.controls['role'].touched" class="text-danger">
+    Role selection is required.
+  </div>
+</div>
+
 
       <!-- Profile Picture -->
       <div class="mb-3">

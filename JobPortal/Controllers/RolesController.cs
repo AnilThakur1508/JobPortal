@@ -18,12 +18,15 @@ namespace JobPortal.Controllers
 
         // Get only "Employee" and "Employer" roles
         [HttpGet("all")]
-        public IActionResult GetRoles()
+        public async Task<IActionResult> GetRoles()
         {
             var roles = _roleManager.Roles
                 .Where(r => r.Name == "Employee" || r.Name == "Employer") // Filter roles
                 .Select(r => new { r.Id, r.Name })
                 .ToList();
+
+            if (roles.Count == 0)
+                return NotFound("No roles found.");
 
             return Ok(roles);
         }

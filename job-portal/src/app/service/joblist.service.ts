@@ -14,26 +14,26 @@ private apiURL = environment.baseUrl
 
   // Fetch all job listings
   getJobs(): Observable<any[]> {
-    return this.apiService.get(`Job/joblist`);
+    return this.apiService.get(`Job/GetAll`);
   }
 
   // Fetch job details by ID
   getJobById(id: string): Observable<any> {
-    return this.apiService.get(`Job/joblist/${id}`);
+    return this.apiService.get(`Job/GetById/{id}`);
   }
 
   // Create a new job
   createJob(jobData: any): Observable<any> {
-    return this.apiService.post(`Job/joblist`, jobData);
+    return this.apiService.post(`Job/Add`, jobData);
   }
-  // Update an existing job
   updateJob(id: string, jobData: any): Observable<any> {
-    return this.apiService.put(`Job/joblist/{id}`, jobData);
+    return this.apiService.put(`Job/Update/{id}`, jobData); 
   }
+  
 
   // Delete a job
   deleteJob(id: string): Observable<any> {
-    return this.apiService.delete(`Job/joblist/${id}`);
+    return this.apiService.delete(`Job/Delete/{id}`);
   }
   // Fetch all categories
 getCategories(): Observable<any> {

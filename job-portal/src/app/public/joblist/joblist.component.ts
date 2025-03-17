@@ -4,12 +4,12 @@ import { joblistService } from '../../service/joblist.service';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-joblist',
-  imports: [CommonModule,ReactiveFormsModule],
-
+  standalone: true, // Add this line
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './joblist.component.html',
   styleUrls: ['./joblist.component.css']
-  
 })
+
 export class JobListComponent implements OnInit {
   JobForm: FormGroup;
   jobs: any[] = []; // Store job list
@@ -24,7 +24,7 @@ export class JobListComponent implements OnInit {
       jobTitle: ['', [Validators.required, Validators.minLength(3)]],
       jobDescription: ['', [Validators.required, Validators.minLength(3)]],
       jobExperience: ['', [Validators.required, Validators.pattern('^[0-9]*$')]], // Experience in years
-      jobQualification: ['', [Validators.required]],
+      // jobQualification: ['', [Validators.required]],
       jobType: ['', [Validators.required]],
       jobCategory: ['', [Validators.required]], // Job Category
       
@@ -41,6 +41,7 @@ export class JobListComponent implements OnInit {
   ngOnInit(): void {
     this.getAllJobs();
     this.getCategories(); // Fetch categories on component load
+    
   }
   
 
@@ -58,7 +59,7 @@ export class JobListComponent implements OnInit {
   getCategories(): void {
     this.joblistService.getCategories().subscribe({
       next: (response) => {
-        this.categories = response;
+        this.categories = response.data;
         console.log('Categories loaded:', this.categories); // Debugging
       },
       error: (error) => console.error('Error fetching categories:', error)
@@ -67,6 +68,7 @@ export class JobListComponent implements OnInit {
   
   // Create a new job
   onSubmit(): void {
+    debugger;
     if (this.JobForm.valid) {
       if (this.selectedJobId) {
         // If updating an existing job
