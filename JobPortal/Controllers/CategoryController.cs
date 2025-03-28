@@ -20,7 +20,7 @@ namespace JobPortal.Controllers
         public async Task<ActionResult<IEnumerable<CategoryDto>>> GetAllAsync()
         {
             var categories = await _categoryService.GetAllAsync();
-            return Ok(new { Message = "List of the category", Data = categories });
+            return Ok(categories);
         }
     }
 }

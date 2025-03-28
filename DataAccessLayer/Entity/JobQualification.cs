@@ -8,14 +8,13 @@ namespace DataAccessLayer.Entity
 {
     public class JobQualification : BaseEntity
     {
+        
+        public Guid JobId {  get; set; }
+        public Guid CourseId { get; set; }
       
         
            
-            public string Name { get; set; }  // Qualification Name (e.g., "Bachelor’s Degree in Computer Science")
            
-            public string Level { get; set; }  // Example: "Diploma", "Bachelor's", "Master's", "PhD"
-            public string FieldOfStudy { get; set; }  // Example: "Computer Science", "Business Administration"
-            
 
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 namespace DTO
 {
     public class AddressDto
-    {
+    {   
+        
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public Guid? CountryId { get; set; }  // 🔹 Required for Country

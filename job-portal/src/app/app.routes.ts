@@ -1,28 +1,45 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from '../app/public/home/home.component';
+
+// Public Pages
+import { HomeComponent } from './public/home/home.component';
 import { AboutComponent } from './public/about/about.component';
 import { ContactComponent } from './public/contact/contact.component';
-import { JobListComponent } from './public/joblist/joblist.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { EmployerComponent } from './public/employer/employer.component';
-import { EmployeeComponent } from './employee-dashboard/employee-dashboard.component';
-import { ProfileComponent } from './profile/profile.component';
+
+// Employer Layout & Pages
+import { EmployerLayoutComponent } from './layouts/employer-layout/employer-layout.component';
+import { EmployerDashboardComponent } from './modules/dashboard/employer-dashboard/employer-dashboard.component';
+import { PostJobComponent } from './modules/jobs/post-job/post-job.component'; // ✅ Missing Import Fixed
+import { ManageJobsComponent } from './modules/jobs/manage-jobs/manage-jobs.component';
+import { ViewApplicationsComponent } from './modules/jobs/view-applications/view-applications.component';
+import { EmployerProfileComponent } from './modules/profile/employer-profile/employer-profile.component';
+
 
 export const routes: Routes = [
-{path:'',component:HomeComponent},  
-{path:'home',component:HomeComponent}, 
-{path:'about',component:AboutComponent},
-{path:'contact',component:ContactComponent},
-{path:'jobs',component:JobListComponent},
-{path:'login',component:LoginComponent},
-{path:'register',component:RegisterComponent},
-{path:'employer',component:EmployerComponent},
-{path:'employee-dashboard',component:EmployeeComponent},
-{path:'profile',component:ProfileComponent}
+  // Public Pages
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 
+  // Employer Layout with Child Routes
+  {
+    path: 'employer',
+    component: EmployerLayoutComponent, // This wraps all employer pages with a layout
+    children: [
+      { path: 'dashboard', component: EmployerDashboardComponent },
+      { path: 'post-job', component: PostJobComponent }, // ✅ Add Job
+      { path: 'post-job/:id', component: PostJobComponent }, // ✅ Edit Job
+      { path: 'manage-jobs', component: ManageJobsComponent },
+      { path: 'applications', component: ViewApplicationsComponent },
+      { path: 'profile', component: EmployerProfileComponent },
+    ],
+  },
+ 
 
-
-
-
+  // Redirect unknown routes
+  { path: '**', redirectTo: '/home' },
 ];

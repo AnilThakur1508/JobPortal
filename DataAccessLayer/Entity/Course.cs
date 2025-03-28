@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Entity
 {
-    public class Course :BaseEntity
+    public class Course : BaseEntity
     {
         public string Name { get; set; }
-       
-
     }
 }

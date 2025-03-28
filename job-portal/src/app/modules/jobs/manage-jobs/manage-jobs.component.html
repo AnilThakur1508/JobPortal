@@ -1,0 +1,44 @@
+<div class="container mt-4">
+  <h2 class="text-center">Manage Jobs</h2>
+
+  <!-- Add Job Button -->
+  <div class="text-end mb-3">
+      <button class="btn btn-success" (click)="addJob()">+ Add Job</button>
+  </div>
+
+  <!-- Job List Table -->
+  <table class="table table-bordered">
+      <thead class="table-dark">
+          <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Job Type</th>
+              <th>Salary</th>
+              <th>Experience</th>
+              <th>Publish Date</th>
+              <th>Expiry Date</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let job of jobs">
+              <td>{{job.id}}</td>
+              <td>{{ job.title }}</td>
+              <td>{{ job.description }}</td>
+              <td>{{ job.jobType }}</td>
+              <td>{{ job.salary }}</td>
+              <td>{{ job.experience }}</td>
+              <td>{{ job.publishDate | date: 'yyyy-MM-dd' }}</td>
+              <td>{{ job.expiryDate | date: 'yyyy-MM-dd' }}</td>
+              <td>
+                  <button class="btn btn-sm btn-primary" (click)="editJob(job)">Edit</button>
+                  <button class="btn btn-sm btn-danger ms-2" (click)="deleteJob(job.id)">Delete</button>
+              </td>
+          </tr>
+          <tr *ngIf="jobs.length === 0">
+              <td colspan="9" class="text-center">No jobs available</td>
+          </tr>
+      </tbody>
+  </table>
+</div>

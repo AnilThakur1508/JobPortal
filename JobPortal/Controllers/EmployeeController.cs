@@ -23,13 +23,23 @@ namespace JobPortal.Controllers
         public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetAllAsync()
         {
             var employee = await _employeeService.GetAllAsync();
-            return Ok(new {Message =  "List of the employe", Data = employee});
+            return Ok(new {Message =  "List of the employee", Data = employee});
         }
         //GetbyId
         [HttpGet("GetById/{id}")]
         public async Task<ActionResult<EmployeeDto>> GetById(Guid id)
         {
             var employee = await _employeeService.GetByIdAsync(id);
+
+            if (employee == null)
+                return NotFound("Employee not found.");
+
+            return Ok(employee);
+        }
+        [HttpGet("GetByUserId/{id}")]
+        public async Task<ActionResult<EmployeeDto>> GetByUserId(string id)
+        {
+            var employee = await _employeeService.GetByUserIdAsync(Guid.Parse(id));
 
             if (employee == null)
                 return NotFound("Employee not found.");
@@ -45,7 +55,7 @@ namespace JobPortal.Controllers
             return Ok(new { Message = "Created a employee", data = employeeDto });
 
         }
-      
+
         //delete
 
         [HttpDelete("Delete/{id}")]
@@ -81,22 +91,6 @@ namespace JobPortal.Controllers
 
 
 
-
-        //[HttpPost("update-employee")]
-        //public async Task<IActionResult> SaveEmployee([FromForm] EmployeeDto employee)
-        //{
-        //    if (employee == null)
-        //    {
-        //        return BadRequest("Invalid employee profile data.");
-        //    }
-
-        //    var result = await _employeeService.AddFileAsync(employee);
-
-        //    if (result == null)
-        //        return StatusCode(500, "Failed to upload employee profile.");
-
-        //    return Ok(new { message = "employee profile uploaded successfully!", employer = result });
-        //}
 
 
     }

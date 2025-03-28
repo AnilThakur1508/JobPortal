@@ -1,7 +1,11 @@
-﻿using DTO;
+﻿using DataAccessLayer.Entity;
+using DataAccessLayer.PortalRepository;
+using DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Service.Interface;
+using System.Security.Claims;
 
 namespace JobPortal.Controllers
 {
@@ -11,20 +15,23 @@ namespace JobPortal.Controllers
      
     {
         private readonly IJobService _jobService;
+        private readonly IRepository<Employer> _repository; 
 
-
-        public JobController(IJobService jobService)
+        public JobController(IJobService jobService, IRepository<Employer> repository)
         {
             _jobService = jobService;
-        } 
-        //GetAll
+            _repository = repository; 
+        }
+
+
         [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<JobDto>>> GetAllAsync()
         {
             var jobs = await _jobService.GetAllAsync();
             return Ok(new { Message = "List of the jobs", Data = jobs });
         }
-        //GetbyId
+        
+
         [HttpGet("GetById/{id}")]
         public async Task<ActionResult<JobDto>> GetById(Guid id)
         {
@@ -34,25 +41,56 @@ namespace JobPortal.Controllers
                 return NotFound("Job not found.");
 
             return Ok(job);
-        } //Add
+        }
+
         [HttpPost("Add")]
-        public async Task<IActionResult> AddAsync(JobDto jobDto)
+        public async Task<IActionResult> AddAsync([FromBody] JobDto jobDto)
         {
-            await _jobService.AddAsync(jobDto);
-            return Ok(new { Message = "Created a job", data = jobDto });
+            if (jobDto == null)
+            {
+                return BadRequest("Invalid job data.");
+            }
 
+            //// Get the User Id from JWT token claims
+            //string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            //if (string.IsNullOrEmpty(userId))
+            //{
+            //    return Unauthorized("User is not logged in.");
+            //}
+
+            //// Fetch the Employer using UserId
+            //var employer = await _repository.FirstOrDefaultAsync(e => e.UserId == Guid.Parse(userId));
+            //if (employer == null)
+            //{
+            //    return NotFound("Employer not found.");
+            //}
+
+            //// Assign Employer Id to Job
+            //jobDto.EmployerId = employer.Id;
+
+            // Save Job
+            var isAdded = await _jobService.AddAsync(jobDto);
+            if (isAdded)
+            {
+                return Ok(new { Message = "Job created successfully", data = jobDto });
+            }
+            return BadRequest("Failed to create job.");
         }
-        //update
-        [HttpPut("Update/{id}")]
-        public async Task<IActionResult> UpdateJob(Guid id, [FromBody] JobDto jobDto)
-        {
-            await _jobService.UpdateAsync(id, jobDto);
 
 
-            return Ok("Job updated successfully.");
+        
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Update(Guid id, [FromBody] JobDto jobDto)
+            {
+            var success = await _jobService.UpdateAsync(id, jobDto);
+            if (success)
+            {
+                return Ok(new { message = "Job updated successfully!" });
+            }
+            return BadRequest(new { error = "Failed to update job." });
         }
 
-        //delete
+
 
         [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeleteJob(Guid id)

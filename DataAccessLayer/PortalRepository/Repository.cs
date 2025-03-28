@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Data;
@@ -29,6 +30,7 @@ namespace DataAccessLayer.Repository
         {
             return await _dbSet.FindAsync(id);
         }
+
         public async Task<bool> AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
@@ -54,20 +56,14 @@ namespace DataAccessLayer.Repository
             return false;
         }
 
-        public Task<T> GetById(Guid id)
+        public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await _dbSet.FirstOrDefaultAsync(predicate);
+        }
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().AnyAsync(predicate);
         }
 
-        public Task<bool> Delete(Guid id)
-        {
-            throw new NotImplementedException();
-
-        }
-
-        public Task UpsertAsync(AddressDto address)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

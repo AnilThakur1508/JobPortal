@@ -16,7 +16,7 @@ public class StateController : ControllerBase
             _service = service;
 
         }
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<StateDto>>> GetAllAsync()
         {
             var states = await _service.GetAllAsync();

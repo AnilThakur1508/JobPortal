@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -95,15 +96,17 @@ namespace Service.Implementation
 
         private string GenerateJwtToken(AppUser user)
         {
-            var claims = new[]
-            {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-            new Claim(JwtRegisteredClaimNames.Email, user.Email),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        };
+            var claims = new List<Claim>
+    {
+        new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+        new Claim(JwtRegisteredClaimNames.Email, user.Email),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        new Claim("role", user.Role) // Using "role" instead of ClaimTypes.Role
+    };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
             var token = new JwtSecurityToken(
                 _configuration["JwtSettings:Issuer"],
                 _configuration["JwtSettings:Audience"],
@@ -113,5 +116,7 @@ namespace Service.Implementation
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+
     }
 }

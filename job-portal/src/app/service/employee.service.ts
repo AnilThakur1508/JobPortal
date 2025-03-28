@@ -9,10 +9,6 @@ import { environment } from '../../enviorment/enviornment';
 })
 export class EmployeeService {
   
-  
-  
- 
- 
   private endpoint = 'Employee'; // Backend API endpoint
   private apiURL = environment.baseUrl;
 
@@ -26,21 +22,25 @@ export class EmployeeService {
 
   // Get a single employee by ID
   getEmployeeById(employeeId: string): Observable<any> {
-    return this.apiService.get(`Employee/GetBy/{employeeId}`);
+    return this.apiService.get(`Employee/GetBy/${employeeId}`);
+  }
+  getEmployeeByUserId(Id: string): Observable<any> {
+    return this.apiService.get(`Employee/GetByUserId/${Id}`);
   }
 
   // Create a new employee
   createEmployee(employeeData: any): Observable<any> {
-    return this.apiService.post(`Employee/Add`,employeeData);
+    return this.apiService.post(`Employee/AddOrUpdate`,employeeData);
   }
 
   // Update an employee's details
-  updateEmployee(employeeId: string, updatedData: any): Observable<any> {
-    return this.apiService.put(`Employee/Update`, updatedData);
+  updateEmployee( updatedData: any): Observable<any> {
+    return this.apiService.post(`Employee/AddOrUpdate`, updatedData);
   }
 
   // Delete an employee
   deleteEmployee(employeeId: string): Observable<any> {
     return this.apiService.delete(`Employee/${employeeId}`);
   }
+  // GetAll 
 }

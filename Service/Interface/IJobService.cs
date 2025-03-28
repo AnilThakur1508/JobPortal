@@ -14,6 +14,7 @@ namespace Service.Interface
         Task<bool> AddAsync(JobDto jobDto);
         Task<bool> UpdateAsync(Guid id, JobDto jobDto);
         Task<bool> DeleteAsync(Guid id);
-
+        
+       // Task<bool> UpdateAsync(Guid? id, JobDto jobDto);
     }
 }

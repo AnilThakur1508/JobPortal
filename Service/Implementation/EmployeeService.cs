@@ -20,13 +20,14 @@ namespace Service.Implementation
     public class EmployeeService : IEmployeeService
     {
         private readonly IRepository<Employee> _employeeRepository;
+        private readonly IRepository<Address> _addressService;
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly UserManager<AppUser> _userManager;
         private readonly ILogger<EmployeeService> _logger;
-        private readonly IAddressService _addressService;
+        
 
-        public EmployeeService(IRepository<Employee> repository, UserManager<AppUser> userManager, IMapper mapper,IWebHostEnvironment webHostEnvironment, ILogger<EmployeeService> logger,IAddressService addressService)
+        public EmployeeService(IRepository<Employee> repository, IRepository<Address> addressService, UserManager<AppUser> userManager, IMapper mapper,IWebHostEnvironment webHostEnvironment, ILogger<EmployeeService> logger)
         {
             _employeeRepository = repository;
             _mapper = mapper;
@@ -53,44 +54,45 @@ namespace Service.Implementation
 
             return employee == null ? null : _mapper.Map<EmployeeDto>(employee);
         }
-        //Add
+
+       // Add
         public async Task<bool> UpsertAsync(EmployeeDto employeeDto)
         {
 
             //var address = _mapper.Map<Address>(employeeDto.Address);
-            await _addressService.AddAsync(employeeDto.Address);
             // 🔹 Map DTO to Employee entity
-            var employee = _mapper.Map<Employee>(employeeDto);
-
-            
-           
-
-            // 🔹 Check if employee already exists
-            var existingEmployee = await _employeeRepository.GetByIdAsync(employee.Id);
+            var existingEmployee = await _employeeRepository.FirstOrDefaultAsync(e => e.UserId == employeeDto.UserId);
 
             if (existingEmployee != null)
             {
-                // 🔹 Update employee
-                return await _employeeRepository.UpdateAsync(employee);
+                // 🔹 Update existing entity instead of creating a new instance
+                _mapper.Map(employeeDto, existingEmployee); // This updates existingEmployee in-place
+
+                return await _employeeRepository.UpdateAsync(existingEmployee);
+
             }
+
             else
             {
+                var employee = _mapper.Map<Employee>(employeeDto);
                 // 🔹 Insert new employee
-                return await _employeeRepository.AddAsync(employee);
+                if (await _employeeRepository.AddAsync(employee))
+                {
+                    if (employeeDto.Address != null)
+                    {
+                        employeeDto.Address.UserId = employee.UserId; // Ensure correct UserId is set
+                        await _addressService.AddAsync(_mapper.Map<Address>(employeeDto.Address));
+                    }
+                    return true;
+                }
+
+                return false;
             }
         }
 
 
 
 
-
-        ////Update
-        //public async Task<bool> UpdateAsync(Guid id, EmployeeDto employeeDto)
-        //{
-        //    var employee = _mapper.Map<Employee>(employeeDto);
-        //    employee.Id = id;
-        //    return await _employeeRepository.UpdateAsync(employee);
-        //}
 
 
         //Delete
@@ -99,24 +101,35 @@ namespace Service.Implementation
             return await _employeeRepository.DeleteAsync(id);
 
         }
+
+        public async Task<string> AddFileAsync(IFormFile file, string subFolder = "uploads")
+        {
+            if (file == null) return null;
+
+            var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "uploads", subFolder);
+            if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
+
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+            var filePath = Path.Combine(uploadPath, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            return $"/uploads/{subFolder}/{fileName}";
+        }
+
+        public async Task<EmployeeDto> GetByUserIdAsync(Guid id)
+        {
+            var employee = await _employeeRepository.FirstOrDefaultAsync(e => e.UserId == id);
+            if (employee == null)
+            {
+                throw new KeyNotFoundException("Employee not found.");
+            }
+            return _mapper.Map<EmployeeDto>(employee);
+        }
        
-        //public async Task<string> AddFileAsync(IFormFile file, string subFolder = "uploads")
-        //{
-        //    if (file == null) return null;
-
-        //    var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "uploads", subFolder);
-        //    if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
-
-        //    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
-        //    var filePath = Path.Combine(uploadPath, fileName);
-
-        //    using (var stream = new FileStream(filePath, FileMode.Create))
-        //    {
-        //        await file.CopyToAsync(stream);
-        //    }
-
-        //    return $"/uploads/{subFolder}/{fileName}";
-        //}
     }
 }
 

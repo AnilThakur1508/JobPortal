@@ -8,9 +8,8 @@ namespace DTO
 {
     public class JobQualificationDto
     {
-        public string Name { get; set; }  
-        public string Level { get; set; }  
-        public string FieldOfStudy { get; set; } 
+       public Guid JobId {  get; set; }
+       public Guid CourseId { get; set; }
 
     }
 }

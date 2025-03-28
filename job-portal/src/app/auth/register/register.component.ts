@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegisterService } from '../../service/register.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
@@ -33,8 +32,8 @@ export class RegisterComponent implements OnInit {
     this.getRoles();
   }
 
-  // Fetch roles from API
   getRoles(): void {
+    debugger;
     this.registerService.getRoles().subscribe({
       next: (response) => {
         console.log("Roles API Response:", response);
@@ -44,7 +43,6 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  // Handle file selection
   onFileChange(event: any): void {
     if (event.target.files.length > 0) {
       this.selectedFile = event.target.files[0];
@@ -52,9 +50,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  // Submit Form
   onSubmit(): void {
-    debugger;
     if (this.registerForm.valid && this.selectedFile) {
       const formData = new FormData();
       formData.append('firstName', this.registerForm.get('firstName')?.value);
@@ -70,8 +66,16 @@ export class RegisterComponent implements OnInit {
         next: (response) => {
           console.log('User registered successfully:', response);
           alert('Registration Successful!');
-          this.registerForm.reset();
-          this.router.navigate(['/login']);
+
+          // Pass email and password to the login page
+          const navigationExtras: NavigationExtras = {
+            state: {
+              email: this.registerForm.get('email')?.value,
+              password: this.registerForm.get('password')?.value
+            }
+          };
+
+          this.router.navigate(['/login'], navigationExtras);
         },
         error: (error) => {
           console.error('Error:', error);

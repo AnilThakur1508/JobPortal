@@ -1,0 +1,71 @@
+<div class="profile-container">
+  <h2>Employer Profile</h2>
+
+  <form [formGroup]="employerProfileForm" (ngSubmit)="saveProfile()">
+    <!-- Company Name -->
+    <label for="companyName">Company Name:</label>
+    <input id="companyName" type="text" formControlName="companyName" class="form-control" />
+
+    <!-- Description -->
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description" class="form-control"></textarea>
+
+    <!-- Website -->
+    <label for="website">Website:</label>
+    <input id="website" type="text" formControlName="website" class="form-control" />
+
+    <!-- Phone Number -->
+    <label for="phoneNumber">Phone Number:</label>
+    <input id="phoneNumber" type="text" formControlName="phoneNumber" class="form-control" />
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" class="form-control" />
+
+    <fieldset formGroupName="address">
+      <legend>Address</legend>
+      <div class="form-group">
+        <label>Address Line 1</label>
+        <input type="text" class="form-control" formControlName="addressLine1" required>
+      </div>
+      <div class="form-group">
+        <label>Address Line 2</label>
+        <input type="text" class="form-control" formControlName="addressLine2">
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <input type="text" class="form-control" formControlName="city" required>
+      </div>
+      <div class="form-group">
+        <label>StateId</label>
+        <input type="text" class="form-control" formControlName="stateId" required>
+      </div>
+      <div class="form-group">
+        <label>Zip Code</label>
+        <input type="text" class="form-control" formControlName="zipcode" required>
+      </div>
+      <div class="form-group">
+        <label>CountryId</label>
+        <input type="text" class="form-control" formControlName="countryId" required>
+      </div>
+    </fieldset>
+    
+    <!-- Action Buttons -->
+    <div class="d-flex gap-2 mt-3">
+      <!-- Show "Create Profile" button if creating a new profile -->
+      <button *ngIf="!selectedProfileId" type="submit" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Create Profile
+      </button>
+
+      <!-- Show "Update Profile" button if editing an existing profile -->
+      <button *ngIf="selectedProfileId" type="submit" class="btn btn-success">
+        <i class="fas fa-edit"></i> Update Profile
+      </button>
+
+      <!-- Cancel Button (Always Visible) -->
+      <button type="button" class="btn btn-danger" (click)="cancel()">
+        <i class="fas fa-times"></i> Cancel
+      </button>
+    </div>
+  </form>
+</div>

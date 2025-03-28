@@ -54,6 +54,7 @@ builder.Services.AddScoped<ISkillsService ,SkillService>();
 builder.Services.AddScoped<IJobApplicationService, JobApplicationService>();
 builder.Services.AddScoped<IResumeService, ResumeService>();
 builder.Services.AddScoped<IJobQualificationService, JobQualificationService>();
+builder.Services.AddScoped<ICourseService, CourseService>();
 
 
 // Add services to the container.
