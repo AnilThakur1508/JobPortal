@@ -37,16 +37,26 @@
         <input type="text" class="form-control" formControlName="city" required>
       </div>
       <div class="form-group">
-        <label>StateId</label>
-        <input type="text" class="form-control" formControlName="stateId" required>
+        <label for="state">State</label>
+        <select id="state" class="form-control" formControlName="stateId">
+          <option value="">-- Select State --</option>
+          <option *ngFor="let state of states" [value]="state.id">
+            {{ state.name }}
+          </option>
+        </select>
       </div>
       <div class="form-group">
         <label>Zip Code</label>
         <input type="text" class="form-control" formControlName="zipcode" required>
       </div>
       <div class="form-group">
-        <label>CountryId</label>
-        <input type="text" class="form-control" formControlName="countryId" required>
+        <label for="country">Country</label>
+        <select id="country" class="form-control" formControlName="countryId">
+          <option value="">-- Select Country --</option>
+          <option *ngFor="let country of countries" [value]="country.id">
+            {{ country.name }}
+          </option>
+        </select>
       </div>
     </fieldset>
     

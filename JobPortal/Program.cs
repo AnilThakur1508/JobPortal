@@ -51,9 +51,10 @@ builder.Services.AddScoped<IAddressService, AddressService>();
 builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ISkillsService ,SkillService>();
+builder.Services.AddScoped<IJobSkillSevice, JobSkillService>();
 builder.Services.AddScoped<IJobApplicationService, JobApplicationService>();
 builder.Services.AddScoped<IResumeService, ResumeService>();
-builder.Services.AddScoped<IJobQualificationService, JobQualificationService>();
+builder.Services.AddScoped<IJobCourseService, JobCourseService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 
 

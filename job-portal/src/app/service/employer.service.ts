@@ -43,7 +43,11 @@ export class EmployerService {
     return this.apiService.delete(`Employer/${employerId}`);
   }
   
-  
-  
+  getstates(): Observable<any[]> {
+    return this.apiService.get<any[]>(`states/GetAll`);
+  }
+  getcountries(): Observable<any[]>{
+   return this.apiService.get<any[]>(`Country/GetAll`);
+  }
  
 }

@@ -26,6 +26,18 @@ namespace DataAccessLayer.Repository
         {
             return await _dbSet.ToListAsync();
         }
+        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null)
+        {
+            IQueryable<T> query = _context.Set<T>(); // Get all records from the database
+
+            if (filter != null)
+            {
+                query = query.Where(filter); // Apply filtering condition
+            }
+
+            return await query.ToListAsync();
+        }
+
         public async Task<T> GetByIdAsync(Guid id)
         {
             return await _dbSet.FindAsync(id);
@@ -38,6 +50,15 @@ namespace DataAccessLayer.Repository
             return true;
 
         }
+        public async Task<bool> AddRangeAsync(IEnumerable<T> entities) // Implementation
+        {
+            await _dbSet.AddRangeAsync(entities);
+            return await _context.SaveChangesAsync() > 0;
+        }
+
+
+
+
         public async Task<bool> UpdateAsync(T entity)
         {
             _dbSet.Update(entity);
@@ -64,6 +85,20 @@ namespace DataAccessLayer.Repository
         {
             return await _context.Set<T>().AnyAsync(predicate);
         }
+        public async Task<bool> SaveChangesAsync() // ✅ Implement SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync() > 0;
+        }
+        public async Task<IEnumerable<T>> GetListAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().Where(predicate).ToListAsync();
+        }
+        public async Task<bool> RemoveRangeAsync(IEnumerable<T> entities)
+        {
+            _context.Set<T>().RemoveRange(entities);
+            return await SaveChangesAsync();
+        }
+
 
     }
 }

@@ -78,9 +78,9 @@ namespace JobPortal.Controllers
         }
 
 
-        
+
         [HttpPut("{id}")]
-        public async Task<ActionResult> Update(Guid id, [FromBody] JobDto jobDto)
+        public async Task<IActionResult> Update(Guid id, [FromBody] JobDto jobDto)
             {
             var success = await _jobService.UpdateAsync(id, jobDto);
             if (success)

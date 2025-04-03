@@ -22,13 +22,14 @@ namespace JobPortal.Mapping
             CreateMap<JobDto,Job>()
                 .ForMember(dest=>dest.EmployerId,opt=>opt.MapFrom(src=>src.EmployerId))
                  .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                   
                 .ReverseMap();
             CreateMap<CategoryDto, Category>().ReverseMap();
             CreateMap<SkillsDto, Skill>().ReverseMap();
             CreateMap<JobSkillDto, JobSkill>().ReverseMap();
             CreateMap<JobApplicationDto, JobApplication>().ReverseMap();
             CreateMap<ResumeDto, Resume>().ReverseMap(); 
-            CreateMap<JobQualificationDto, JobQualification>().ReverseMap();
+            CreateMap<JobCourseDto, JobCourse>().ReverseMap();
             CreateMap<CourseDto, Course>().ReverseMap();
 
            

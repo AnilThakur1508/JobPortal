@@ -49,7 +49,7 @@
         </div>
   
         <div class="col-md-6 mb-3">
-          <label>PublishDate</label>
+          <label>Publish Date</label>
           <input type="date" class="form-control" formControlName="PublishDate" />
         </div>
   
@@ -57,6 +57,28 @@
           <label>Expiry Date</label>
           <input type="date" class="form-control" formControlName="ExpiryDate" />
         </div>
+        <div class="col-md-6 mb-3">
+          <label>Category</label>
+          <select class="form-control" formControlName="CategoryId" (change)="onCategoryChange($event)">
+            <option value="">Select Category</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+          </select>
+        </div>
+        
+        <div class="col-md-6 mb-3">
+          <label>Skills</label>
+          <ng-multiselect-dropdown
+            [placeholder]="'Select Skills'"
+            [data]="skills"
+            [settings]="dropdownSettings"
+            formControlName="SkillIds"
+            (onSelect)="onSkillSelect($event)"
+            (onDeSelect)="onSkillDeselect($event)"
+            (onSelectAll)="onSelectAll($event)"
+            (onDeSelectAll)="onDeSelectAll()">
+          </ng-multiselect-dropdown>
+        </div>
+        
   
         <div class="col-md-6 mb-3">
           <label>Courses</label>

@@ -28,12 +28,12 @@ export class JobService {
 
   // Create a new job
   createJob(jobData: any): Observable<any> {
-    return this.apiService.post(`Job/Add`, jobData);
+    return this.apiService.post(`Job/Add`, jobData);  
   }
 
   // Update a job
   updateJob(id: string, jobData: any): Observable<any> {
-    return this.apiService.put(`Job/${id}`, jobData);
+    return this.apiService.put(`Job/${id}`, jobData);  
   }
 
   // Delete a job
@@ -44,4 +44,12 @@ export class JobService {
   getcourse(): Observable<any[]> {
     return this.apiService.get<any[]>(`Course/GetAll`);
   }
+  getCategories(): Observable<any[]> {
+    return this.apiService.get(`Category/GetAll`);
+  }
+  // ✅ Fetch skills based on a selected category ID
+  getSkillsByCategory(categoryId: string): Observable<any[]> {
+    return this.apiService.get(`Skills/GetByCategory/${categoryId}`);
+  }
+
 }

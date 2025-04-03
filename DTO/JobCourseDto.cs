@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class JobQualificationDto
+    public class JobCourseDto
     {
        public Guid JobId {  get; set; }
-       public Guid CourseId { get; set; }
+      
+        public Guid CourseId { get; set; }
 
     }
 }

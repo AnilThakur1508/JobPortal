@@ -14,6 +14,8 @@ import { RegisterService } from '../../../service/register.service';
 export class EmployerProfileComponent implements OnInit {
   employerProfileForm: FormGroup;
   selectedProfileId: string | null = null;
+  states: any[] = []; // Store fetched states
+  countries:any[] =[]; //store  fetched  countries
 
   constructor(
     private fb: FormBuilder,
@@ -42,6 +44,8 @@ export class EmployerProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEmployerByUserId();
+    this.loadStates(); 
+    this.loadCountries();
   }
 
   // Fetch employer profile by logged-in user ID
@@ -64,7 +68,22 @@ export class EmployerProfileComponent implements OnInit {
       }
     );
   }
-
+  loadStates() {
+    this.employerService.getstates().subscribe(data => {
+      this.states = data.map(states => ({
+        id: states.id,
+        name: states.name
+      }));
+    });
+  }
+  loadCountries() {
+    this.employerService.getcountries().subscribe(data => {
+      this.countries = data.map(countries => ({
+        id: countries.id,
+        name: countries.name
+      }));
+    });
+  }
   // Reset form and switch to Create mode
   cancel() {
     this.employerProfileForm.reset();

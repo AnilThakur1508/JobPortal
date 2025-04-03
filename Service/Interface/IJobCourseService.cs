@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Service.Interface
 {
-    public interface ICountryService
+    public  interface IJobCourseService
     {
-        Task<IEnumerable<CountryDto>> GetAllAsync();
-        Task<CountryDto> AddAsync(CountryDto countryDto);
+        Task<IEnumerable<JobCourseDto>> GetAllAsync();
+        Task<JobCourseDto> AddAsync(JobCourseDto jobcourseDto);
     }
 }
-

@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Service.Interface
 {
-    public  interface IJobQualificationService
+   public interface IJobSkillSevice
     {
-        Task<IEnumerable<JobQualificationDto>> GetAllAsync();
+        Task<IEnumerable<JobSkillDto>> GetAllAsync();
+        Task<JobSkillDto> AddAsync(JobSkillDto jobskillDto);
     }
 }

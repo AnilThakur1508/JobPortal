@@ -27,7 +27,7 @@ namespace JobPortal.Controllers
             public async Task<ActionResult<IEnumerable<CountryDto>>> GetAllAsync()
             {
                 var countries = await _countryService.GetAllAsync();
-                return Ok(new { Message = "List of the Country ", Data = countries });
+                return Ok(countries );
             }
 
     }

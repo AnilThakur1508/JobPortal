@@ -4,6 +4,7 @@ using DataAccessLayer.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250328115112_ AddCourseConcentrationToJob")]
+    partial class AddCourseConcentrationToJob
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -409,6 +412,10 @@ namespace DataAccessLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("CourseConcentration")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("CreatedBy")
                         .HasColumnType("uniqueidentifier");
 
@@ -534,6 +541,8 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("JobId");
 
                     b.ToTable("JobCourses");
                 });
@@ -897,6 +906,15 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("Employer");
                 });
 
+            modelBuilder.Entity("DataAccessLayer.Entity.JobCourse", b =>
+                {
+                    b.HasOne("DataAccessLayer.Entity.Job", null)
+                        .WithMany("JobCourses")
+                        .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("DataAccessLayer.Entity.Skill", b =>
                 {
                     b.HasOne("DataAccessLayer.Entity.Category", "Category")
@@ -973,6 +991,11 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("DataAccessLayer.Entity.Country", b =>
                 {
                     b.Navigation("States");
+                });
+
+            modelBuilder.Entity("DataAccessLayer.Entity.Job", b =>
+                {
+                    b.Navigation("JobCourses");
                 });
 #pragma warning restore 612, 618
         }
