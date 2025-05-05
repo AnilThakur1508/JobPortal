@@ -6,10 +6,6 @@ using Service.Interface;
 [ApiController]
 public class StateController : ControllerBase
 {
-   
-
-    
-    
         private readonly IStateService _service;
         public StateController(IStateService service)
         {

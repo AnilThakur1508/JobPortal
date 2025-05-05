@@ -16,14 +16,13 @@ namespace JobPortal.Controllers
         {
             _skillsService = skillsService;
         }
-        //GetAll
         [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<SkillsDto>>> GetAllAsync()
         {
             var skills = await _skillsService.GetAllAsync();
             return Ok(new { Message = "List of the skills", Data = skills });
         }
-        // ✅ Fetch skills by category ID
+        
         [HttpGet("GetByCategory/{categoryId}")]
         public async Task<ActionResult<IEnumerable<SkillsDto>>> GetByCategoryAsync(Guid categoryId)
         {

@@ -6,8 +6,8 @@ import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-sidebar',
-  standalone: true, // ✅ Since you're using standalone components
-  imports: [CommonModule, RouterModule, MatSidenavModule, MatListModule], // ✅ Import necessary modules
+  standalone: true,
+  imports: [CommonModule, RouterModule, MatSidenavModule, MatListModule], 
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })

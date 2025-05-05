@@ -11,7 +11,6 @@ namespace Service.Interface
         Task<IEnumerable<EmployerDto>> GetAllAsync();
         Task<EmployerDto> GetByIdAsync(Guid id);
         Task<EmployerDto> GetByUserIdAsync(Guid id);
-
         Task<bool> DeleteAsync(Guid id);
         Task<bool> UpsertAsync(EmployerDto employerDto);
        

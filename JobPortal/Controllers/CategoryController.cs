@@ -15,7 +15,7 @@ namespace JobPortal.Controllers
         {
             _categoryService = categoryService;
         }
-        //GetAll
+      
         [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<CategoryDto>>> GetAllAsync()
         {

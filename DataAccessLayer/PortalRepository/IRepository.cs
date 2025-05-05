@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Entity;
 using DTO;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,12 @@ namespace DataAccessLayer.PortalRepository
         Task<IEnumerable<T>> GetListAsync(Expression<Func<T, bool>> predicate); 
         Task<bool> RemoveRangeAsync(IEnumerable<T> entities); 
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
-        Task<bool> SaveChangesAsync(); 
+        Task<bool> SaveChangesAsync();
+        IQueryable<T> GetQueryable();
+        Task<int> CountAsync(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate);
+        
+
     }
 }
 

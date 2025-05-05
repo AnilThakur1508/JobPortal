@@ -13,10 +13,11 @@ namespace DTO
         {
             Address = new AddressDto();
         }
-       
+        public Guid? Id { get; set; }
         public Guid UserId { get; set; }
         public DateOnly DOB { get; set; } 
-        public Guid ResumeId { get; set; }
+        public string Gender { get; set; }
+        public int WorkExperience { get; set; }
         public string Description { get; set; }
         public AddressDto Address { get; set; }
         

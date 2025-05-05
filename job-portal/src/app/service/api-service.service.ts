@@ -9,14 +9,11 @@ import { catchError, Observable, throwError } from 'rxjs';
 export class ApiServiceService {
   private apiURL = environment.baseUrl
   constructor(private http: HttpClient) { }
-  // GET Request
   get<T>(endpoint: string): Observable<T> {
     return this.http.get<T>(`${this.apiURL}/${endpoint}`).pipe(
       catchError(this.handleError)
     );
   }
-
-  // POST Request
   post<T>(endpoint: string, data: any, options?: { isFormData?: boolean }): Observable<T> {
     const headers = options?.isFormData ? undefined : { 'Content-Type': 'application/json' };
     return this.http.post<T>(`${this.apiURL}/${endpoint}`, data, { headers }).pipe(

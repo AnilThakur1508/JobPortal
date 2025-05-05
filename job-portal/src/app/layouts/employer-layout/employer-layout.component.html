@@ -1,15 +1,9 @@
 <div class="employer-layout">
-  <!-- Sidebar (Left Menu) -->
-  <app-sidebar></app-sidebar>
-
-  <!-- Main Content Area -->
+ <app-sidebar style="margin-top: 64px;"></app-sidebar>
   <div class="content">
-      <!-- Navbar (Top Bar) -->
-      <app-navbar></app-navbar>
-
-      <!-- Dynamic Content (Handled by Router) -->
-      <div class="main-container">
-          <router-outlet></router-outlet>
+    <app-navbar></app-navbar>
+       <div class="main-container">
+          <router-outlet style="margin-bottom: 45px;"></router-outlet>
       </div>
   </div>
 

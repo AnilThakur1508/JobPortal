@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {  FormBuilder,  FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder,  FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgMultiSelectDropDownModule, IDropdownSettings } from 'ng-multiselect-dropdown';
 import { RegisterService } from '../../../service/register.service';
@@ -14,18 +14,20 @@ import { JobService } from '../../../service/job.service';
   styleUrls: ['./post-job.component.css']
 
 })
-export class PostJobComponent implements OnInit { // ✅ Class name fixed
+export class PostJobComponent implements OnInit { 
   jobForm: FormGroup;
-  selectedJobId: string | null = null;
-  experienceOptions: string[] = ['Fresher', '1', '2', '3', '4', '5+'];
-  courses: any[] = []; // List of courses
+  selectedJobId: string | null = null
+  courses: any[] = [];
   categories: any[] = [];
   selectedCategory: string = '';
+  jobTypes: any[] = []; 
+  selectedJobType: string = ''; 
+  experienceLevels: any[] = []; 
+  selectedExperienceLevel: string = ''; 
   skills: any[] = [];
-  
-  selectedCourses: any[] = []; // Stores selected courses
+  selectedCourses: any[] = []; 
   selectedSkills: any[] = [];
-  dropdownSettings: IDropdownSettings = {}; // Dropdown settings
+  dropdownSettings: IDropdownSettings = {}; 
 
   constructor(
     private fb: FormBuilder,
@@ -39,12 +41,12 @@ export class PostJobComponent implements OnInit { // ✅ Class name fixed
       Id: [''],
       Title: ['', [Validators.required, Validators.minLength(3)]],
       Description: ['', [Validators.required, Validators.minLength(3)]],
-      Experience: [''],
+      ExperienceLevelId: ['',Validators.required],
       EmployerId:[''],
-      CategoryId: ['', Validators.required], // ✅ Added CategoryId field
-      SkillIds: [[], Validators.required], // ✅ Added SkillIds field
+      CategoryId: ['', Validators.required], 
+      SkillIds: [[], Validators.required], 
       courseIds: [[], Validators.required], 
-      jobType: ['', [Validators.required]],
+      JobTypeId: ['', [Validators.required]],
       Salary: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       PublishDate: ['', [Validators.required]],
       ExpiryDate: ['', [Validators.required]],
@@ -54,16 +56,17 @@ export class PostJobComponent implements OnInit { // ✅ Class name fixed
   ngOnInit(): void {
     debugger;
     this.loadCourses();
-    this.loadCategories(); // ✅ Load categories first
-    // Configure Multi-Select Dropdown Settings
+    this.loadJobTypes(); 
+    this.loadExperienceLevels();
+    this.loadCategories(); 
     this.dropdownSettings = {
-      singleSelection: false, // ✅ Allow multiple selections
-      idField: 'id', // ✅ Unique ID of the course
-      textField: 'name', // ✅ Name of the course
+        singleSelection: false, 
+        idField: 'id', 
+        textField: 'name', 
         selectAllText: 'Select All',
         unSelectAllText: 'Unselect All',
-        itemsShowLimit: 3, // Show up to 3 selected courses
-      allowSearchFilter: true, // Enable search functionality
+        itemsShowLimit: 3, 
+      allowSearchFilter: true, 
     };
     this.dropdownSettings = {
       singleSelection: false,
@@ -74,27 +77,23 @@ export class PostJobComponent implements OnInit { // ✅ Class name fixed
       itemsShowLimit: 3,
       allowSearchFilter: true,
     }; 
-
-    
-
-
-
-    this.route.paramMap.subscribe((params) => {
+     this.route.paramMap.subscribe((params) => {
       this.selectedJobId = params.get('id');
        debugger;
       if (this.selectedJobId) {
-         // ✅ Update case - Fetch job details
+         
         this.jobService.getJobById(this.selectedJobId).subscribe({
           next: (job) => {
+            
+            debugger;
             this.jobForm.patchValue({
               Id: job.JobId,
               Title: job.title,
               Description: job.description,
-              jobType: job.jobType,
+              JobTypeId: job.jobTypeId,
               EmployerId:job.employerId,
               Salary: job.salary,
-              Experience: job.experience,
-              
+              ExperienceLevelId: job.experienceLevelId,
               PublishDate: job. publishDate? job.publishDate.split('T')[0] : '',
               ExpiryDate: job.expiryDate ? job.expiryDate.split('T')[0] : '',
               CategoryId: job.categoryId
@@ -102,18 +101,15 @@ export class PostJobComponent implements OnInit { // ✅ Class name fixed
             this.selectedCategory = job.categoryId;
             this.loadSkills(this.selectedCategory);
             this.jobForm.patchValue({ CategoryId: job.categoryId });
-            
-            this.selectedSkills = this.skills.filter(skill => job.skillIds?.includes(skill.id));
-            this.jobForm.patchValue({ SkillIds: this.selectedSkills.map(skill => skill.id) });
-            // ✅ Set selected courses correctly
-          this.selectedCourses = this.courses.filter(course => job.courseIds?.includes(course.id));
-          this.jobForm.patchValue({ courseIds: this.selectedCourses.map(course => course.id) }); 
-           
-           // ✅ Update the form field
+           this.selectedSkills = this.skills.filter(skill => job.skillIds?.includes(skill.id));
+           this.jobForm.patchValue({ SkillIds: this.selectedSkills.map(skill => skill.id) });
+           this.selectedCourses = this.courses.filter(course => job.courseIds?.includes(course.id));
+           this.jobForm.patchValue({ courseIds: this.selectedCourses.map(course => course.id) }); 
            this.jobForm.patchValue({ courseIds: this.selectedCourses.map(course => course.id) });
-           
+           this.jobForm.patchValue({ SkillIds: this.selectedSkills.map(skill => skill.id) });
+           this.jobForm.patchValue({ CategoryId: job.categoryId });
           
-    
+          
           },
 
           error: (error) => {
@@ -124,6 +120,23 @@ export class PostJobComponent implements OnInit { // ✅ Class name fixed
       }
     });
   }
+  loadJobTypes() {
+    this.jobService.getJobTypes().subscribe(data => {
+      this.jobTypes = data.map(JobType => ({
+        id: JobType.id,
+        name: JobType.name
+      }));
+    });
+  }
+
+  loadExperienceLevels() {
+    this.jobService.getExperienceLevels().subscribe(data => {
+      this.experienceLevels = data.map(experienceLevel => ({
+        id: experienceLevel.id,
+        name: experienceLevel.name
+      }));
+    });
+  }
   loadCourses() {
     this.jobService.getcourse().subscribe(data => {
       this.courses = data.map(course => ({
@@ -132,6 +145,7 @@ export class PostJobComponent implements OnInit { // ✅ Class name fixed
       }));
     });
   }
+  
   loadCategories() {
     this.jobService.getCategories().subscribe(data => {
       this.categories = data.map(category => ({
@@ -161,13 +175,13 @@ export class PostJobComponent implements OnInit { // ✅ Class name fixed
   onCourseSelect(item: any) {
     console.log('Selected Course:', item);
     this.selectedCourses.push(item);
-    this.jobForm.patchValue({ courseIds: this.selectedCourses.map(course => course.name) });
+    this.jobForm.patchValue({ courseIds: this.selectedCourses.map(course => course.id) });
   }
   
   onCourseDeselect(item: any) {
     console.log('Deselected Course:', item);
     this.selectedCourses = this.selectedCourses.filter(course => course.id !== item.id);
-    this.jobForm.patchValue({ courseIds: this.selectedCourses.map(course => course.name) });
+    this.jobForm.patchValue({ courseIds: this.selectedCourses.map(course => course.id) });
   }
   
   onSelectAll(items: any) {
@@ -184,12 +198,12 @@ export class PostJobComponent implements OnInit { // ✅ Class name fixed
    // Skill Selection
    onSkillSelect(item: any) {
     this.selectedSkills.push(item);
-    this.jobForm.patchValue({ SkillIds: this.selectedSkills.map(skill => skill.name) });
+    this.jobForm.patchValue({ SkillIds: this.selectedSkills.map(skill => skill.id) });
   }
 
   onSkillDeselect(item: any) {
     this.selectedSkills = this.selectedSkills.filter(skill => skill.id !== item.id);
-    this.jobForm.patchValue({ SkillIds: this.selectedSkills.map(skill => skill.name) });
+    this.jobForm.patchValue({ SkillIds: this.selectedSkills.map(skill => skill.id) });
   }
 
   onSelectAllSkills(items: any) {

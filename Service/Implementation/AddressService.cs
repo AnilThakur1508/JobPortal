@@ -15,7 +15,6 @@ namespace Service.Implementation
     {
         private readonly IRepository<Address> _addressRepository;
         private readonly IMapper _mapper;
-
         public AddressService(IRepository<Address> addressRepository, IMapper mapper)
         {
             _addressRepository = addressRepository;

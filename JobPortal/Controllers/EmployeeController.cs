@@ -1,41 +1,41 @@
-﻿using DataAccessLayer.Entity;
-using DTO;
-using Microsoft.AspNetCore.Hosting;
+﻿using DTO;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service.Interface;
+using System.Security.Claims;
 
 namespace JobPortal.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("api/Employee")]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
-        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly object _logger;
 
-        public EmployeeController(IEmployeeService employeeService, IWebHostEnvironment webHostEnvironment)
+        public EmployeeController(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
-            _webHostEnvironment = webHostEnvironment;
         }
-        //GetAll
+
         [HttpGet("GetAll")]
-        public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetAllAsync()
+        public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetAll()
         {
-            var employee = await _employeeService.GetAllAsync();
-            return Ok(new {Message =  "List of the employee", Data = employee});
+            var employees = await _employeeService.GetAllAsync();
+            return Ok(employees);
         }
-        //GetbyId
+
         [HttpGet("GetById/{id}")]
         public async Task<ActionResult<EmployeeDto>> GetById(Guid id)
         {
-            var employee = await _employeeService.GetByIdAsync(id);
-
+            var employee = await _employeeService.GetByIdAsync(id)
+;
             if (employee == null)
                 return NotFound("Employee not found.");
 
             return Ok(employee);
         }
+
         [HttpGet("GetByUserId/{id}")]
         public async Task<ActionResult<EmployeeDto>> GetByUserId(string id)
         {
@@ -46,8 +46,6 @@ namespace JobPortal.Controllers
 
             return Ok(employee);
         }
-
-        //Add
         [HttpPost("AddOrUpdate")]
         public async Task<IActionResult> AddOrUpdate(EmployeeDto employeeDto)
         {
@@ -55,60 +53,27 @@ namespace JobPortal.Controllers
             return Ok(new { Message = "Created a employee", data = employeeDto });
 
         }
-
-        //delete
-
         [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeleteEmployee(Guid id)
         {
-            var success = await _employeeService.DeleteAsync(id);
-
+            var success = await _employeeService.DeleteAsync(id)
+;
             if (!success)
                 return NotFound("Employee not found.");
 
-            return Ok("Employe deleted successfully.");
+            return Ok("Employee deleted successfully.");
         }
 
 
-        //public async Task<IActionResult> UploadFile(IFormFile file)
-        //{
-        //    if (file == null || file.Length == 0)
-        //    {
-        //        return BadRequest(new { message = "No file uploaded." });
-        //    }
 
-        //    try
-        //    {
-        //        string fileUrl = await _employeeService.UploadFileAsync(file);
-        //        return Ok(new { filePath = fileUrl });
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, new { message = "File upload failed.", error = ex.Message });
-        //    }
-        //}
-
-
-
-
+      
 
 
     }
-
 
 }
 
 
 
-
-       
-        
-       
-
-
-
-
-
-    
 
 

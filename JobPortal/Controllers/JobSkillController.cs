@@ -15,7 +15,7 @@ namespace JobPortal.Controllers
         {
             _jobSkillService = jobSkillService;
         }
-        //GetAll
+        
         [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<JobSkillDto>>> GetAllAsync()
         {

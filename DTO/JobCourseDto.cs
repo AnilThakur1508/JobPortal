@@ -9,8 +9,7 @@ namespace DTO
     public class JobCourseDto
     {
        public Guid JobId {  get; set; }
-      
-        public Guid CourseId { get; set; }
+       public Guid CourseId { get; set; }
 
     }
 }

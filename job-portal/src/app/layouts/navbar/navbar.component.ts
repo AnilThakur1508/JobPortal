@@ -6,8 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true, // ✅ Since you're using standalone components
-  imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule], // ✅ Import necessary modules
+  standalone: true, 
+  imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })

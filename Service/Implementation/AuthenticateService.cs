@@ -51,11 +51,9 @@ namespace Service.Implementation
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (!result.Succeeded)
-                return null; // Registration failed
+                return null; 
 
             user = await _userManager.FindByEmailAsync(model.Email);
-
-            // Ensure the role exists before adding the user
             var roleExists = await _roleManager.RoleExistsAsync(model.Role);
             if (!roleExists)
             {
@@ -64,6 +62,7 @@ namespace Service.Implementation
 
             await _userManager.AddToRoleAsync(user, model.Role);
 
+           
             return "User registered successfully!";
         }
 
@@ -71,7 +70,7 @@ namespace Service.Implementation
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null || !await _userManager.CheckPasswordAsync(user, model.Password))
-                return null; // Invalid credentials
+                return null; 
 
             return GenerateJwtToken(user);
         }
@@ -101,7 +100,7 @@ namespace Service.Implementation
         new Claim(JwtRegisteredClaimNames.Sub, user.Id),
         new Claim(JwtRegisteredClaimNames.Email, user.Email),
         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-        new Claim("role", user.Role) // Using "role" instead of ClaimTypes.Role
+        new Claim("role", user.Role) 
     };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:Key"]));

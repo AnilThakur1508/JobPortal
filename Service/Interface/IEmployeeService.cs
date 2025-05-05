@@ -14,14 +14,12 @@ namespace Service.Interface
         Task<IEnumerable<EmployeeDto>> GetAllAsync();
         Task<EmployeeDto> GetByIdAsync(Guid id);
         Task<EmployeeDto> GetByUserIdAsync(Guid id);
-
-        
         Task<bool> UpsertAsync(EmployeeDto employeeDto);
         Task<bool> DeleteAsync(Guid id);
-
-       
+    }
+}      
 
 
       
-    }
-}
+    
+

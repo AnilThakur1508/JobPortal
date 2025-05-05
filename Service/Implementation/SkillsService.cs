@@ -28,7 +28,7 @@ namespace Service.Implementation
             var skills = await _SkillRepository.GetAllAsync();
             return _mapper.Map<IEnumerable<SkillsDto>>(skills);
         }
-        // ✅ Fetch skills based on CategoryId
+        
         public async Task<IEnumerable<SkillsDto>> GetByCategoryAsync(Guid categoryId)
         {
             var skills = await _SkillRepository.GetAllAsync(s => s.CategoryId == categoryId);

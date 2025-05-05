@@ -10,8 +10,10 @@ namespace DataAccessLayer.Entity
     {
         
         public DateOnly DOB { get; set; }
-        public Guid ResumeId { get; set; }
+        public int WorkExperience { get; set; }
         public string Description { get; set; }
+        public string Gender { get; set; }
+        
         public Guid UserId { get; set; }
        
         

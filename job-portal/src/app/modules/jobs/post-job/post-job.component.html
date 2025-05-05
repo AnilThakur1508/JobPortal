@@ -18,20 +18,15 @@
             Job description is required (min 3 chars).
           </small>
         </div>
-  
         <div class="col-md-6 mb-3">
           <label>Job Type</label>
-          <select class="form-control" formControlName="jobType">
+          <select id="JobType" class="form-control" formControlName="JobTypeId">
             <option value="">Select Job Type</option>
-            <option value="Full-Time">Full-Time</option>
-            <option value="Part-Time">Part-Time</option>
-            <option value="Remote">Remote</option>
+            <option *ngFor="let jobType of jobTypes" [value]="jobType.id">
+              {{ jobType.name }}
+            </option>
           </select>
-          <small class="text-danger" *ngIf="jobForm.controls['jobType'].invalid && jobForm.controls['jobType'].touched">
-            Job Type is required.
-          </small>
         </div>
-  
         <div class="col-md-6 mb-3">
           <label>Salary</label>
           <input type="text" class="form-control" formControlName="Salary" placeholder="Enter Salary" />
@@ -39,21 +34,20 @@
             Salary must be a number.
           </small>
         </div>
-  
         <div class="col-md-6 mb-3">
-          <label>Experience</label>
-          <select class="form-control" formControlName="Experience">
-            <option value="">Select Experience Years</option>
-            <option *ngFor="let exp of experienceOptions" [value]="exp">{{ exp }} {{ exp === 'Fresher' ? '' : 'Years' }}</option>
+          <label>Experience Level</label>
+          <select id="ExperienceLevel" class="form-control" formControlName="ExperienceLevelId">
+            <option value="">Select Experience Level</option>
+            <option *ngFor="let experienceLevel of experienceLevels" [value]="experienceLevel.id">
+              {{ experienceLevel.name }}
+            </option>
           </select>
         </div>
-  
         <div class="col-md-6 mb-3">
           <label>Publish Date</label>
           <input type="date" class="form-control" formControlName="PublishDate" />
         </div>
-  
-        <div class="col-md-6 mb-3">
+       <div class="col-md-6 mb-3">
           <label>Expiry Date</label>
           <input type="date" class="form-control" formControlName="ExpiryDate" />
         </div>
@@ -64,8 +58,7 @@
             <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
           </select>
         </div>
-        
-        <div class="col-md-6 mb-3">
+       <div class="col-md-6 mb-3">
           <label>Skills</label>
           <ng-multiselect-dropdown
             [placeholder]="'Select Skills'"
@@ -78,26 +71,21 @@
             (onDeSelectAll)="onDeSelectAll()">
           </ng-multiselect-dropdown>
         </div>
-        
-  
         <div class="col-md-6 mb-3">
           <label>Courses</label>
           <ng-multiselect-dropdown
-  [placeholder]="'Select Courses'"
-  [data]="courses"
-  [settings]="dropdownSettings"
-  formControlName="courseIds"
-  (onSelect)="onCourseSelect($event)"
-  (onDeSelect)="onCourseDeselect($event)"
-  (onSelectAll)="onSelectAll($event)"
-  (onDeSelectAll)="onDeSelectAll()">
-</ng-multiselect-dropdown>
-        
+           [placeholder]="'Select Courses'"
+           [data]="courses"
+           [settings]="dropdownSettings"
+           formControlName="courseIds"
+           (onSelect)="onCourseSelect($event)"
+           (onDeSelect)="onCourseDeselect($event)"
+           (onSelectAll)="onSelectAll($event)"
+           (onDeSelectAll)="onDeSelectAll()">
+           </ng-multiselect-dropdown>
         </div>
-      </div>
-  
-
-      <div class="d-flex justify-content-center mt-3">
+        </div>
+       <div class="d-flex justify-content-center mt-3">
         <button type="submit" class="btn btn-primary">{{ selectedJobId ? 'Update Job' : 'Create Job' }}</button>
         <button type="button" class="btn btn-secondary ms-2" (click)="cancel()">Cancel</button>
       </div>

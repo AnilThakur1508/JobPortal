@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DataAccessLayer.Data;
 using DataAccessLayer.Entity;
 using DataAccessLayer.PortalRepository;
 using DataAccessLayer.Repository;
@@ -22,12 +23,12 @@ namespace Service.Implementation
         private readonly IRepository<JobSkill> _jobskillRepository;
         private readonly IRepository<Skill> _skillRepositry;
         private readonly IRepository<Category> _categoryRepository;
-
+        private readonly IRepository<Address> _addressRepository;
         private readonly IMapper _mapper;
-        
+        private readonly AppDbContext _context;
 
-        public JobService(IRepository<Job> jobRepository, IMapper mapper, IRepository<Employer> repository,IRepository<AppUser> userrepository,
-            IRepository<JobCourse> jobcourseRepository,IRepository<JobSkill> jobskillRepository, IRepository<Skill> skillRepositry, IRepository<Category> categoryRepository)
+        public JobService(IRepository<Job> jobRepository, IMapper mapper, IRepository<Employer> repository, IRepository<AppUser> userrepository,
+            IRepository<JobCourse> jobcourseRepository, IRepository<JobSkill> jobskillRepository, IRepository<Skill> skillRepositry, IRepository<Category> categoryRepository, IRepository<Address> addressRepository, AppDbContext context)
         {
             _jobRepository = jobRepository;
             _mapper = mapper;
@@ -37,101 +38,70 @@ namespace Service.Implementation
             _jobskillRepository = jobskillRepository;
             _skillRepositry = skillRepositry;
             _categoryRepository = categoryRepository;
-
-
+            _addressRepository = addressRepository;
+            _context = context;
         }
-        //GetAll
-        public async Task<IEnumerable<JobDto>> GetAllAsync()
+        public async Task<IEnumerable<JobResponseDto>> GetAllAsync()
         {
-            var job = await _jobRepository.GetAllAsync();
-            return _mapper.Map<IEnumerable<JobDto>>(job);
-        }
-        //GetById
+            var jobs = await _context.Jobs
+                .Include(j => j.ExperienceLevel)
+                .Include(j => j.JobType)
+                .ToListAsync();
 
+            return _mapper.Map<IEnumerable<JobResponseDto>>(jobs);
+        }
         public async Task<JobDto?> GetByIdAsync(Guid id)
         {
-            // Fetch job with the given ID
+           
             var job = await _jobRepository.GetByIdAsync(id);
             if (job == null)
-            {
                 return null;
-            }
 
-            // Fetch JobCourse entries for this job
+           
             var jobCourses = await _jobcourseRepository.GetListAsync(jc => jc.JobId == id);
-
-            // Fetch JobSkill entries for this job
             var jobSkills = await _jobskillRepository.GetListAsync(js => js.JobId == id);
 
-            // Extract Skill IDs
+            
             var skillIds = jobSkills.Select(js => js.SkillId).ToList();
 
-
-            // Fetch Skills based on SkillIds
+            
             var skills = await _skillRepositry.GetListAsync(s => skillIds.Contains(s.Id));
 
-            // Extract Unique CategoryIds from Skills
-            var categoryIds = skills.Select(s => s.CategoryId).Distinct().ToList();
 
-            // Convert List<Guid> to Comma-Separated String
+            var categoryId = skills.Select(s => s.CategoryId).FirstOrDefault();
+
+            
             var courseIdsString = string.Join(",", jobCourses.Select(jc => jc.CourseId));
-            var skillIdString = string.Join(",", skillIds);
-            var categoryIdsString = string.Join(",", categoryIds); // Convert CategoryIds to string
+            var skillIdsString = string.Join(",", skillIds);
 
-            // Map job to Dto
+            
             var jobDto = _mapper.Map<JobDto>(job);
-
-            // Assign the comma-separated string to Dto
             jobDto.CourseIds = courseIdsString;
-            jobDto.SkillIds = skillIdString;
-            jobDto.CategoryIds = categoryIdsString; // Add CategoryIds to DTO
+            jobDto.SkillIds = skillIdsString;
+            jobDto.CategoryId = categoryId; 
 
             return jobDto;
-        }
-
-
-
-
-
-
-        //public async Task<bool> AddAsync(JobDto jobDto)
-        //{
-        //    // First find the employer by user ID
-        //    var employer = await _repository.FirstOrDefaultAsync(e => e.UserId == jobDto.EmployerId);
-
-        //    if (employer == null)
-        //    {
-        //        throw new Exception("Employer record not found for this user.");
-        //    }
-
-        //    // Now use the employer's ID (not user ID) for the job
-        //    jobDto.EmployerId = employer.Id;
-        //    var job = _mapper.Map<Job>(jobDto);
-
-        //    return await _jobRepository.AddAsync(job);
-        //}
+        } 
         public async Task<bool> AddAsync(JobDto jobDto)
         {
-            // Find employer by UserId
             var employer = await _repository.FirstOrDefaultAsync(e => e.UserId == jobDto.EmployerId);
             if (employer == null)
             {
                 throw new Exception("Employer record not found for this user.");
             }
 
-            // Assign correct EmployerId
+            
             jobDto.EmployerId = employer.Id;
 
-            // Map DTO to Job entity
             var job = _mapper.Map<Job>(jobDto);
 
-            // Save Job in database
+           
             var jobAdded = await _jobRepository.AddAsync(job);
             if (!jobAdded) return false;
 
-            await _jobRepository.SaveChangesAsync(); // Ensure JobId is available
+            await _jobRepository.SaveChangesAsync(); 
 
-            // Add JobCourse entries (if courseIds exist)
+           
             if (!string.IsNullOrEmpty(jobDto.CourseIds))
             {
                 var jobCourses = jobDto.CourseIds.Split(',')
@@ -143,9 +113,9 @@ namespace Service.Implementation
                                     }).ToList();
 
                 await _jobcourseRepository.AddRangeAsync(jobCourses);
-                await _jobcourseRepository.SaveChangesAsync(); // Persist JobCourse entries
+                await _jobcourseRepository.SaveChangesAsync(); 
             }
-            // Add JobSkill entries (if SkillIds exist)
+            
             if (!string.IsNullOrEmpty(jobDto.SkillIds))
             {
                 var jobSkills = jobDto.SkillIds.Split(',')
@@ -157,38 +127,11 @@ namespace Service.Implementation
                                    }).ToList();
 
                 await _jobskillRepository.AddRangeAsync(jobSkills);
-                await _jobskillRepository.SaveChangesAsync(); // Persist JobSkill entries
+                await _jobskillRepository.SaveChangesAsync(); 
             }
 
             return true;
         }
-
-        //public async Task<bool> UpdateAsync(Guid id, JobDto jobDto)
-        //{
-        //    var existingJob = await _jobRepository.GetByIdAsync(id);
-        //    if (existingJob == null)
-        //    {
-        //        throw new KeyNotFoundException("Job not found.");
-        //    }
-
-        //    // Debugging log to check what EmployerId is being received
-        //    Console.WriteLine($"Received EmployerId: {jobDto.EmployerId}");
-
-        //    if (jobDto.EmployerId == Guid.Empty || jobDto.EmployerId == null)
-        //    {
-        //        throw new ArgumentException("Invalid Employer ID.");
-        //    }
-
-        //    var employerExists = await _repository.AnyAsync(e => e.Id == jobDto.EmployerId);
-        //    if (!employerExists)
-        //    {
-        //        throw new KeyNotFoundException($"Employer with ID {jobDto.EmployerId} does not exist.");
-        //    }
-
-        //    _mapper.Map(jobDto, existingJob);
-        //    return await _jobRepository.UpdateAsync(existingJob);
-        //}
-
         public async Task<bool> UpdateAsync(Guid id, JobDto jobDto)
         {
             var existingJob = await _jobRepository.GetByIdAsync(id);
@@ -208,12 +151,12 @@ namespace Service.Implementation
                 throw new KeyNotFoundException($"Employer with ID {jobDto.EmployerId} does not exist.");
             }
 
-            // 🔹 Map the updated job details
+           
             _mapper.Map(jobDto, existingJob);
             var isUpdated = await _jobRepository.UpdateAsync(existingJob);
-            await _jobRepository.SaveChangesAsync(); // Save job changes before updating JobCourses and JobSkills
+            await _jobRepository.SaveChangesAsync(); 
 
-            // 🔹 Update JobCourses table
+           
             var existingJobCourses = await _jobcourseRepository.GetListAsync(jc => jc.JobId == id);
             var existingCourseIds = existingJobCourses.Select(jc => jc.CourseId).ToList();
             var newCourseIds = jobDto.CourseIdList ?? new List<Guid>();
@@ -239,9 +182,9 @@ namespace Service.Implementation
                 await _jobcourseRepository.AddRangeAsync(jobCoursesToAdd);
             }
 
-            await _jobcourseRepository.SaveChangesAsync(); // Save JobCourse changes
+            await _jobcourseRepository.SaveChangesAsync(); 
 
-            // 🔹 Update JobSkills table 
+            
             var existingJobSkills = await _jobskillRepository.GetListAsync(js => js.JobId == id);
             var existingSkillIds = existingJobSkills.Select(js => js.SkillId).ToList();
             var newSkillIds = jobDto.SkillIdList ?? new List<Guid>();
@@ -267,18 +210,13 @@ namespace Service.Implementation
                 await _jobskillRepository.AddRangeAsync(jobSkillsToAdd);
             }
 
-            await _jobskillRepository.SaveChangesAsync(); // Save JobSkill changes
+            await _jobskillRepository.SaveChangesAsync(); 
 
             return isUpdated;
         }
 
 
-        ////Delete
-        //public async Task<bool> DeleteAsync(Guid id)
-        //{
-        //    return await _jobRepository.DeleteAsync(id);
-
-        //}
+       
 
         public async Task<bool> DeleteAsync(Guid id)
         {
@@ -287,32 +225,168 @@ namespace Service.Implementation
             {
                 throw new KeyNotFoundException("Job not found.");
             }
-
-            // 🔹 Step 1: Fetch and delete related JobCourse records
             var jobCourses = await _jobcourseRepository.GetListAsync(jc => jc.JobId == id);
             if (jobCourses.Any())
             {
                 await _jobcourseRepository.RemoveRangeAsync(jobCourses);
             }
-
-            // 🔹 Step 2: Fetch and delete related JobSkill records
             var jobSkills = await _jobskillRepository.GetListAsync(js => js.JobId == id);
             if (jobSkills.Any())
             {
                 await _jobskillRepository.RemoveRangeAsync(jobSkills);
             }
-
-            // 🔹 Step 3: Delete the job itself
             var isDeleted = await _jobRepository.DeleteAsync(id);
-
-            // 🔹 Step 4: Save changes to database
             await _jobcourseRepository.SaveChangesAsync();
             await _jobskillRepository.SaveChangesAsync();
             await _jobRepository.SaveChangesAsync();
-
             return isDeleted;
         }
+        public async Task<List<CategoryCountDto>> GetJobCountsByCategoryAsync()
+        {
+             var jobs = await _jobRepository.GetAllAsync();
+            var jobDto = _mapper.Map<List<JobDto>>(jobs);
+            var categories = await _categoryRepository.GetAllAsync();
+            var categoryDict = categories.ToDictionary(c => c.Id, c => new { c.Name, c.Icon });
+            var categoryCounts = jobDto
+                .GroupBy(j => j.CategoryId)
+                .Select(g => new CategoryCountDto
+                {
+                    CategoryId = g.Key,
+                    CategoryName = categoryDict.ContainsKey(g.Key) ? categoryDict[g.Key].Name : "Unknown",
+                    CategoryIcon = categoryDict.ContainsKey(g.Key) ? categoryDict[g.Key].Icon : string.Empty,
+                    CategoryCount = g.Count()
+                })
+                .ToList();
+             return categoryCounts;
+        }
+        public async Task<IEnumerable<JobDto>> GetFeaturedJobsAsync()
+        {
+            var featuredJobs = await _jobRepository.GetQueryable()
+                .Include(x => x.Employer)
+                
+                .ToListAsync();
+
+            var employerUserIds = featuredJobs
+                .Select(j => j.Employer.UserId)
+                .Distinct()
+                .ToList();
+
+           
+            var addresses = await _addressRepository.GetQueryable()
+
+                .Where(a => employerUserIds.Contains(a.UserId))
+                .ToListAsync();
+
+            var addressDict = addresses.ToDictionary(a => a.UserId, a => a);
+
+            var jobDtos = _mapper.Map<List<JobDto>>(featuredJobs);
+
+            foreach (var jobDto in jobDtos)
+            {
+                var job = featuredJobs.FirstOrDefault(j => j.Id == jobDto.Id);
+                if (job != null && addressDict.TryGetValue(job.Employer.UserId, out var address))
+                {
+                    jobDto.Address = _mapper.Map<AddressDto>(address);
+                }
+            }
+
+            return jobDtos;
+        }
+        public async Task<(List<JobDto> Jobs, int TotalCount)> GetJobsAsync(JobFilterDto filters, int pageNumber, int pageSize)
+        {
+            var baseQuery = _jobRepository.GetQueryable();
+
+            if (filters != null)
+            {
+                if (filters.CategoryId.HasValue)
+                    baseQuery = baseQuery.Where(j => j.CategoryId == filters.CategoryId.Value);
+
+                if (filters.JobTypeId.HasValue)
+                    baseQuery = baseQuery.Where(j => j.JobTypeId == filters.JobTypeId.Value);
+
+                if (filters.ExperienceLevelId.HasValue)
+                    baseQuery = baseQuery.Where(j => j.ExperienceLevelId == filters.ExperienceLevelId.Value);
+
+            }
+           var query = baseQuery.Include(j => j.Employer);
+           var totalCount = await query.CountAsync();
+           var pagedJobs = await query
+                .OrderByDescending(j => j.PublishDate)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+          var employerUserIds = pagedJobs
+                .Select(j => j.Employer.UserId)
+                .Distinct()
+                .ToList();
+          var addresses = await _addressRepository.GetQueryable()
+                .Where(a => employerUserIds.Contains(a.UserId))
+                .ToListAsync();
+         var addressDict = addresses.ToDictionary(a => a.UserId, a => a);
+         var jobDtos = _mapper.Map<List<JobDto>>(pagedJobs);
+
+            foreach (var jobDto in jobDtos)
+            {
+                var job = pagedJobs.FirstOrDefault(j => j.Id == jobDto.Id);
+                if (job != null && addressDict.TryGetValue(job.Employer.UserId, out var address))
+                {
+                    jobDto.Address = _mapper.Map<AddressDto>(address);
+                }
+            }
+
+            return (jobDtos, totalCount);
+        }
+        public async Task<JobDetailDto> GetJobDetailByIdAsync(Guid id)
+        {
+            var job = await _jobRepository.GetQueryable()
+                .Include(j => j.Employer)
+                .Include(j => j.JobType)
+                .FirstOrDefaultAsync(j => j.Id == id);
+               if (job == null)
+                return null;
+            var jobDetailDto = new JobDetailDto
+            {
+                Id = job.Id,
+                Title = job.Title,
+                Description = job.Description,
+                Salary = job.Salary,
+                JobTypeName = job.JobType?.Name,
+                CompanyName = job.Employer?.CompanyName,
+                PublishDate = job.PublishDate,
+                ExpiryDate = job.ExpiryDate,
+                
+            };
+            var address = await _addressRepository.FirstOrDefaultAsync(a => a.UserId == job.Employer.UserId);
+            if (address != null)
+            {
+                jobDetailDto.Address = _mapper.Map<AddressDto>(address);
+            }
+            return jobDetailDto;
+        }
+        public async Task<List<Job>> SearchJobsAsync(string keyword)
+        {
+                 return await _context.Jobs
+                .Where(j => j.Title.Contains(keyword))
+                .ToListAsync();
+        }
+
+
+
+
+
+
+
+
+
 
 
     }
 }
+
+
+
+
+
+
+
+

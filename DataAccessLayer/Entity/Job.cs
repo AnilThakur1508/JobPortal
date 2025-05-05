@@ -23,8 +23,14 @@ namespace DataAccessLayer.Entity
 
         public DateTime PublishDate { get; set; }
         public DateTime ExpiryDate { get; set; }
-        public string JobType { get; set; }
-        public int Experience { get; set; }
-        
+        public Guid JobTypeId { get; set; }
+        public JobType JobType { get; set; }
+        public Guid ExperienceLevelId { get; set; }
+        public ExperienceLevel ExperienceLevel { get; set; }
+        public Guid CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
+       
+
     }
 }

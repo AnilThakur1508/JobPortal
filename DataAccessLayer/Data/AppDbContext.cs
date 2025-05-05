@@ -24,6 +24,8 @@ namespace DataAccessLayer.Data
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<JobCourse> JobCourses { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<JobType> JobTypes { get; set; }
+        public DbSet<ExperienceLevel> ExperienceLevels { get; set; }
     }
 }
 

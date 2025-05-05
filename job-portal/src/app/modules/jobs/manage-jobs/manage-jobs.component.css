@@ -1,0 +1,10 @@
+.table.scrollable{
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.scrollable-container {
+    max-height: 600px; /* or any desired height */
+    overflow-y: auto;
+  }
+  

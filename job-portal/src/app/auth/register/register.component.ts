@@ -66,12 +66,11 @@ export class RegisterComponent implements OnInit {
         next: (response) => {
           console.log('User registered successfully:', response);
           alert('Registration Successful!');
-
-          // Pass email and password to the login page
-          const navigationExtras: NavigationExtras = {
+            const navigationExtras: NavigationExtras = {
             state: {
               email: this.registerForm.get('email')?.value,
               password: this.registerForm.get('password')?.value
+              
             }
           };
 

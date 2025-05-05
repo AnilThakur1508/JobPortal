@@ -14,18 +14,17 @@ namespace DTO
         {
             Address = new AddressDto();
         }
-        public Guid? Id { get ; set ; }  // ✅ Map Id to EmployerId
+        public Guid? Id { get ; set ; }  
         public string CompanyName { get; set; }
         public string Description { get; set; }
-       // public IFormFile Logo { get; set; }
+        
         public string Website { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-       
         public Guid UserId { get; set; }
         public AddressDto Address { get; set; }
 
-
+        
 
 
     }

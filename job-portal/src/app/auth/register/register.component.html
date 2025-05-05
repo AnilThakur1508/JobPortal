@@ -4,7 +4,7 @@
 
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       
-      <!-- First Name -->
+      
       <div class="mb-3">
         <label for="firstName" class="form-label">First Name</label>
         <input type="text" id="firstName" class="form-control" formControlName="firstName" placeholder="Enter your first name" />
@@ -13,7 +13,6 @@
         </div>
       </div>
 
-      <!-- Last Name -->
       <div class="mb-3">
         <label for="lastName" class="form-label">Last Name</label>
         <input type="text" id="lastName" class="form-control" formControlName="lastName" placeholder="Enter your last name" />
@@ -22,7 +21,7 @@
         </div>
       </div>
 
-      <!-- Email -->
+      
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" id="email" class="form-control" formControlName="email" placeholder="Enter your email" />
@@ -31,7 +30,7 @@
         </div>
       </div>
 
-      <!-- Phone Number -->
+      
       <div class="mb-3">
         <label for="phoneNumber" class="form-label">Phone Number</label>
         <input type="text" id="phoneNumber" class="form-control" formControlName="phoneNumber" placeholder="Enter your phone number" />
@@ -40,7 +39,7 @@
         </div>
       </div>
 
-      <!-- Password -->
+     
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <input type="password" id="password" class="form-control" formControlName="password" placeholder="Enter your password" />
@@ -49,7 +48,7 @@
         </div>
       </div>
 
-      <!-- Confirm Password -->
+      
       <div class="mb-3">
         <label for="confirmPassword" class="form-label">Confirm Password</label>
         <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword" placeholder="Confirm your password" />
@@ -58,34 +57,30 @@
         </div>
       </div>
 
-     <!-- Role Selection -->
-<div class="mb-3">
-  <label for="role" class="form-label">Role</label>
-  <select id="role" class="form-control" formControlName="role">
-    <option value="">Select Role</option>
-    <option *ngFor="let role of roles" [value]="role.name">{{ role.name }}</option>
-  </select>
-  <div *ngIf="registerForm.controls['role'].invalid && registerForm.controls['role'].touched" class="text-danger">
-    Role selection is required.
-  </div>
-</div>
-
-
-      <!-- Profile Picture -->
-      <div class="mb-3">
+    
+         <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+              <select id="role" class="form-control" formControlName="role">
+            <option value="">Select Role</option>
+            <option *ngFor="let role of roles" [value]="role.name">{{ role.name }}</option>
+           </select>
+         <div *ngIf="registerForm.controls['role'].invalid && registerForm.controls['role'].touched" class="text-danger">
+           Role selection is required.
+          </div>
+       </div>
+       <div class="mb-3">
         <label for="profilePicture" class="form-label">Profile Picture</label>
         <input type="file" id="profilePicture" class="form-control" (change)="onFileChange($event)" />
         <div *ngIf="registerForm.controls['profilePicture'].invalid && registerForm.controls['profilePicture'].touched" class="text-danger">
           Profile picture is required.
         </div>
       </div>
-
-      <!-- Submit Button -->
       <button type="submit" class="btn btn-primary w-100">Register</button>
-
-      <!-- Login Redirect -->
-      <p class="text-center mt-3">Already have an account? <a routerLink="/login">Login</a></p>
-
+      <div class="d-flex justify-content-center align-items-center mt-3">
+      <p class="text-center mt-3">Already have an account?</p>
+      <a class="logintext ml-2 fw-bold text-dark" [href]="['/login']">Login</a>
+      </div>
+       
     </form>
   </div>
 </div>

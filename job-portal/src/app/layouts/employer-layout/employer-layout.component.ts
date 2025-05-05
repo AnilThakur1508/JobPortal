@@ -8,8 +8,8 @@ import { FooterComponent } from "../../shared/footer/footer.component";
 
 @Component({
   selector: 'app-employer-layout',
-  standalone: true, // ✅ Since you're using standalone components
-  imports: [CommonModule, RouterModule, SidebarComponent, NavbarComponent], // ✅ Import Sidebar & Navbar
+  standalone: true, 
+  imports: [CommonModule, RouterModule, SidebarComponent, NavbarComponent], 
   templateUrl: './employer-layout.component.html',
   styleUrls: ['./employer-layout.component.css']
 })

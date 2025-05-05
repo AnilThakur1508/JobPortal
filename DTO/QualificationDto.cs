@@ -16,7 +16,6 @@ namespace DTO
         public DateOnly EndDate { get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
-
         public decimal Score { get; set; }
     }
 }

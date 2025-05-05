@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using DataAccessLayer.Enum;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace Service.Interface
 {
-    public interface IJobApplicationService
+   public interface IJobApplicationService
     {
-        Task<IEnumerable<JobApplicationDto>> GetAllAsync();
-        Task<JobApplicationDto> GetByIdAsync(Guid id);
-        Task<bool> AddAsync(JobApplicationDto jobapplicationDto);
-        Task<bool> UpdateAsync(Guid id, JobApplicationDto jobapplicationDto);
-        Task<bool> DeleteAsync(Guid id);
+        Task<IEnumerable<JobApplicationResponseDto>> GetAllAsync();
+        Task ApplyForJobAsync(JobApplicationDto applicationDto);
+
+        Task<bool> UpdateStatusAsync(Guid Id, AppStatus appStatus);
+        Task<JobApplicationResponseDto> GetByIdAsync(Guid Id);
+        Task<bool> UpdateAsync(Guid Id, JobApplicationDto jobapplicationDto);
     }
+
 }

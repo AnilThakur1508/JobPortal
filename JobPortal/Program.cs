@@ -6,6 +6,7 @@ using JobPortal.Mapping;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Service.Implementation;
@@ -56,19 +57,16 @@ builder.Services.AddScoped<IJobApplicationService, JobApplicationService>();
 builder.Services.AddScoped<IResumeService, ResumeService>();
 builder.Services.AddScoped<IJobCourseService, JobCourseService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
-
-
-// Add services to the container.
-
+builder.Services.AddScoped<IJobTypeService, JobTypeService>();
+builder.Services.AddScoped<IExperienceLevelService, ExperienceLevelService>();
 builder.Services.AddControllers();
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", builder =>
     {
-        builder.AllowAnyOrigin() // Angular app URL
+        builder.AllowAnyOrigin() 
             .AllowAnyMethod()
             .AllowAnyHeader();
     });
@@ -76,7 +74,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -84,6 +82,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "resumes")),
+    RequestPath = "/resumes"
+});
 
 app.UseCors(x => x
             .AllowAnyOrigin()

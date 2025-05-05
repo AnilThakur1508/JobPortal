@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-
   ngOnInit(): void {
     const navigation = this.router.getCurrentNavigation();
     const state = navigation?.extras.state as { email: string, password: string };
@@ -31,7 +30,6 @@ export class LoginComponent implements OnInit {
       });
     }
   }
-
   onSubmit(): void {
     if (this.loginForm.valid) {
       this.registerService.login(this.loginForm.value).subscribe({
@@ -40,16 +38,28 @@ export class LoginComponent implements OnInit {
           alert('Login Successful!');
           const token = response.token;
           localStorage.setItem('authToken', token);
+          this.registerService.setLoginStatus(); 
           this.registerService.getUserId();
-          // Navigate to the desired page after successful login
-          this.router.navigate(['/employee']);
-           this.router.navigate(['/employer']);
+          const role = this.registerService.getrolesInfo(); 
+          console.log('Role:??????????', role);
+          debugger;
+          if (role === "Employee") {
+            this.router.navigate(['/employee/profile']);
+          } else if (role === 'Employer') {
+            this.router.navigate(['/employer']);
+          } else {
+            this.router.navigate(['/']); 
+          }
+          
         },
         error: (error) => {
           console.error('Error:', error);
           alert('Login Failed!');
         }
+        
       });
+      
     }
   }
+  
 }

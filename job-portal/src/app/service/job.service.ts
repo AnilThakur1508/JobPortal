@@ -7,36 +7,31 @@ import { environment } from '../../enviorment/enviornment';
   providedIn: 'root'
 })
 export class JobService {
-  
-  
-  private endpoint = 'Job';
+ private endpoint = 'Job';
   private apiURL = environment.baseUrl;
-
   constructor(private apiService: ApiServiceService) {}
-
-  // Fetch all job listings
   getJobs(): Observable<any[]> {
     return this.apiService.get(`Job/GetAll`).pipe(
-      map((response: any) => response.data || response) // Extract 'data' if exists
+      map((response: any) => response.data || response) 
     );
   }
    
-  // Fetch job details by ID
+  
   getJobById(id: string): Observable<any> {
     return this.apiService.get(`Job/GetById/${id}`);
   }
 
-  // Create a new job
+ 
   createJob(jobData: any): Observable<any> {
     return this.apiService.post(`Job/Add`, jobData);  
   }
 
-  // Update a job
+  
   updateJob(id: string, jobData: any): Observable<any> {
     return this.apiService.put(`Job/${id}`, jobData);  
   }
 
-  // Delete a job
+  
   deleteJob(id: string): Observable<any> {
     return this.apiService.delete(`Job/Delete/${id}`);
   }
@@ -47,9 +42,30 @@ export class JobService {
   getCategories(): Observable<any[]> {
     return this.apiService.get(`Category/GetAll`);
   }
-  // ✅ Fetch skills based on a selected category ID
+  
   getSkillsByCategory(categoryId: string): Observable<any[]> {
     return this.apiService.get(`Skills/GetByCategory/${categoryId}`);
   }
-
+  getJobCountsByCategory(): Observable<any[]> {
+    return this.apiService.get(`Job/job-counts-by-category`);
+  }
+  getJobFeatured(): Observable<any[]> {
+    return this.apiService.get(`Job/Featured`);
+  }
+  getJobsfeatured(filters: any = {}, pageNumber: number = 1, pageSize: number = 5): Observable<any> {
+    const url = `Job/JobFeaturedFilter?pageNumber=${pageNumber}&pageSize=${pageSize}`;
+    return this.apiService.post(url, filters);  
+  }
+  getJobTypes(): Observable<any[]> {
+    return this.apiService.get(`JobType/GetAll`);
+  }
+  getExperienceLevels(): Observable<any[]> {
+    return this.apiService.get(`ExperienceLevel/GetAll`);
+  }
+  getJobDetail(id: string): Observable<any> {
+    return this.apiService.get(`Job/details/${id}`);
+  }
+  searchJobsByTitle(keyword: string): Observable<any[]> {
+    return this.apiService.get<[]>(`Job/search?keyword=${encodeURIComponent(keyword)}`);
+  }
 }

@@ -26,12 +26,12 @@ namespace Service.Implementation
         private readonly IRepository<Address> _addressService;
 
 
-
         public EmployerService(
             UserManager<AppUser> userManager,
             IRepository<Employer> repository,
             IRepository<Address> addressService,
-            IMapper mapper)
+
+             IMapper mapper)
 
 
         {
@@ -59,21 +59,26 @@ namespace Service.Implementation
         }
         public async Task<bool> UpsertAsync(EmployerDto employerDto)
         {
-            // 🔹 Fetch employer based on UserId
+
             var existingEmployer = await _repository.FirstOrDefaultAsync(e => e.UserId == employerDto.UserId);
             var existingAddress = await _addressService.FirstOrDefaultAsync(e => e.UserId == employerDto.UserId);
 
+
+
+
             if (existingEmployer != null)
             {
-                // ✅ Ensure we don't modify the primary key
-                employerDto.Id = existingEmployer.Id; // Retain original Id
 
-                // 🔹 Update existing entity
+                employerDto.Id = existingEmployer.Id;
+
+
                 _mapper.Map(employerDto, existingEmployer);
-                 await _repository.UpdateAsync(existingEmployer);
+
+
+                await _repository.UpdateAsync(existingEmployer);
                 if (employerDto.Address != null && existingAddress != null)
                 {
-                    employerDto.Address.UserId = existingEmployer.UserId; // Ensure correct UserId is set
+                    employerDto.Address.UserId = existingEmployer.UserId;
                     _mapper.Map(employerDto.Address, existingAddress);
                     await _addressService.UpdateAsync(existingAddress);
                     return true;
@@ -84,12 +89,14 @@ namespace Service.Implementation
             {
                 var employer = _mapper.Map<Employer>(employerDto);
 
-                // 🔹 Insert new employer
+
+
+
                 if (await _repository.AddAsync(employer))
                 {
                     if (employerDto.Address != null)
                     {
-                        employerDto.Address.UserId = employer.UserId; // Ensure correct UserId is set
+                        employerDto.Address.UserId = employer.UserId;
                         await _addressService.AddAsync(_mapper.Map<Address>(employerDto.Address));
                     }
                     return true;
@@ -102,20 +109,22 @@ namespace Service.Implementation
         {
             var employer = await _repository.FirstOrDefaultAsync(e => e.UserId == id);
             var address = await _addressService.FirstOrDefaultAsync(x => x.UserId == id);
-            
+
             if (employer == null)
             {
                 throw new KeyNotFoundException("Employer not found.");
             }
-            var employeeDto =  _mapper.Map<EmployerDto>(employer);
-            employeeDto.Address = _mapper.Map<AddressDto>(address);
-            return employeeDto;
+            var employerDto = _mapper.Map<EmployerDto>(employer);
+            employerDto.Address = _mapper.Map<AddressDto>(address);
+            return employerDto;
         }
 
-        
+
         public async Task<bool> DeleteAsync(Guid id)
         {
             return await _repository.DeleteAsync(id);
         }
 
-}   }   
+    }
+}
+

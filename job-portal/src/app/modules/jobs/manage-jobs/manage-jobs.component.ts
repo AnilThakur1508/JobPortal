@@ -13,13 +13,11 @@ import { JobService } from '../../../service/job.service';
 })
 export class ManageJobsComponent implements OnInit {
   jobs: any[] = [];
-
-  constructor(private jobService: JobService, private router: Router) {} // ✅ Use JobService
-
+ constructor(private jobService: JobService, private router: Router) {} 
   ngOnInit(): void {
     this.getAllJobs();
+    
   }
-
   getAllJobs(): void {
     this.jobService.getJobs().subscribe({
       next: (response) => {
@@ -28,21 +26,18 @@ export class ManageJobsComponent implements OnInit {
       error: (error) => console.error('Error fetching jobs:', error)
     });
   }
-
   addJob(): void {
-    this.router.navigate(['/employer/post-job']); // ✅ Fix for adding job
+    this.router.navigate(['/employer/post-job']); 
   }
-  
   editJob(jobId: string): void {
     this.router.navigate(['/employer/post-job', jobId]); 
   }
-  
-
   deleteJob(id: string): void {
     debugger;
     if (confirm('Are you sure you want to delete this job?')) {
       this.jobService.deleteJob(id).subscribe({
         next: () => {
+          alert('Job deleted successfully.');
           this.getAllJobs();
         },
         error: (error) => {
@@ -52,4 +47,5 @@ export class ManageJobsComponent implements OnInit {
       });
     } 
   }
+ 
 }

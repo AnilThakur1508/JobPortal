@@ -1,47 +1,43 @@
 <div class="container mt-4">
-  <h2 class="text-center">Manage Jobs</h2>
-
-  <!-- Add Job Button -->
-  <div class="text-end mb-3">
-      <button class="btn btn-success" (click)="addJob()">+ Add Job</button>
-  </div>
-
-  <!-- Job List Table -->
-  <table class="table table-bordered">
-      <thead class="table-dark">
+    <div class="text-end mb-3">
+      <button class="btn btn-primary" (click)="addJob()">Add Job</button>
+    </div>
+  <div [ngClass]="{'scrollable-container': jobs.length > 7}">
+      <table class="table">
+        <thead>
           <tr>
-              <th>#</th> <!-- Index Column -->
-              <th>Title</th>
-              <th>Description</th>
-              <th>Job Type</th>
-              <th>Salary</th>
-              <th>Experience</th>
-              <th>Publish Date</th>
-              <th>Expiry Date</th>
-              <th>Actions</th>
+            <th>#</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Salary</th>
+            <th>Experience</th>
+            <th>Published</th>
+            <th>Expiry</th>
+            <th>Actions</th>
           </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let job of jobs; let i = index">
-            <td>{{ i + 1 }}</td> <!-- Display Index Instead of Job ID -->
+        </thead>
+        <tbody>
+          <tr *ngFor="let job of jobs; let i = index">
+            <td>{{ i + 1 }}</td>
             <td>{{ job.title }}</td>
-            <td>{{ job.description }}</td>
-            <td>{{ job.jobType }}</td>
+            <td>{{ job.jobTypeName }}</td>
             <td>{{ job.salary }}</td>
-            <td>{{ job.experience }}</td>
-            
-              
-              <td>{{ job.publishDate | date: 'yyyy-MM-dd' }}</td>
-              <td>{{ job.expiryDate | date: 'yyyy-MM-dd' }}</td>
-              
-              <td>
-                  <button class="btn btn-sm btn-primary" (click)="editJob(job.id)">Edit</button>
-                  <button class="btn btn-sm btn-danger ms-2" (click)="deleteJob(job.id)">Delete</button>
-              </td>
+            <td>{{ job.experienceLevelName }}</td>
+            <td>{{ job.publishDate | date: 'yyyy-MM-dd' }}</td>
+            <td>{{ job.expiryDate | date: 'yyyy-MM-dd' }}</td>
+            <td>
+              <button class="btn btn-sm btn-primary mr-1" (click)="editJob(job.id)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-sm btn-danger" (click)="deleteJob(job.id)">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
           </tr>
-          <tr *ngIf="jobs.length === 0">
-              <td colspan="9" class="text-center">No jobs available</td>
-          </tr>
-      </tbody>
-  </table>
-</div>
+        </tbody>
+      </table>
+    </div>
+    
+  
+    
+  
