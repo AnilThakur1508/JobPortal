@@ -28,23 +28,22 @@
               <a
                 *ngIf="app.resume"
                 [href]="app.resume.startsWith('/resumes') ? imageBaseUrl + app.resume : app.resume"
-                class="btn btn-sm btn-outline-primary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View Resume
+              <i class="fas fa-eye" title="View Document" style="color: #000000;"></i>
+
               </a>
               <span *ngIf="!app.resume" class="text-muted">N/A</span>
             </td>
             <td>{{ app.status}}</td>
-           <td> <button 
+           <td class="d-flex"><div> <button 
             id="acceptButton"
             *ngIf="app.status === 'Pending' || app.status === 'Declined'"
             (click)="UpdateStatus(app, 'Accepted')" 
             style="
             background-color: #068f06;
             color: white;
-            padding: 10px 20px;
             border: none;
            border-radius: 8px;
            font-size: 16px;
@@ -54,25 +53,25 @@
            onmouseover="this.style.backgroundColor='#168c16'"
             onmouseout="this.style.backgroundColor='#1c9b1c'">
             Accept
-         </button>
+         </button> </div>     
+         <div><button 
+          id="declineButton"
+          *ngIf="app.status === 'Pending' || app.status === 'Accepted'"
+          (click)="UpdateStatus(app, 'Declined')" 
+         style="
+        background-color: #ea3838;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;"
+       onmouseover="this.style.backgroundColor='#d92020'"
+       onmouseout="this.style.backgroundColor='#fa2323'">
+        Decline
+    </button></div>
    
-           <button 
-               id="declineButton"
-               *ngIf="app.status === 'Pending' || app.status === 'Accepted'"
-               (click)="UpdateStatus(app, 'Declined')" 
-              style="
-             background-color: #ea3838;
-             color: white;
-             padding: 10px 20px;
-             border: none;
-             border-radius: 8px;
-             font-size: 16px;
-             cursor: pointer;
-             transition: background-color 0.3s ease;"
-            onmouseover="this.style.backgroundColor='#d92020'"
-            onmouseout="this.style.backgroundColor='#fa2323'">
-             Decline
-         </button></td>
+  </td>
           </tr>
         </tbody>
       </table>

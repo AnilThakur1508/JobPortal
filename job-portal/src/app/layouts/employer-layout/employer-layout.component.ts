@@ -9,7 +9,7 @@ import { FooterComponent } from "../../shared/footer/footer.component";
 @Component({
   selector: 'app-employer-layout',
   standalone: true, 
-  imports: [CommonModule, RouterModule, SidebarComponent, NavbarComponent], 
+  imports: [CommonModule, RouterModule, SidebarComponent], 
   templateUrl: './employer-layout.component.html',
   styleUrls: ['./employer-layout.component.css']
 })
