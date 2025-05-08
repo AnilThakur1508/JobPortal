@@ -23,7 +23,9 @@
                                         <li *ngIf="userRole === 'Employer'">
                                             <a [routerLink]="['/employer']">Employer Dashboard</a>
                                           </li>
-                                          
+                                          <li *ngIf="userRole === 'Employee'">
+                                            <a [routerLink]="['/employee/profile']">Employee Profile</a>
+                                          </li>
 
                                     </ul>
                                 </nav>
