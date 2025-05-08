@@ -7,4 +7,24 @@
     max-height: 600px; /* or any desired height */
     overflow-y: auto;
   }
-  
+  .icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 4px 0 0;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  .icon-button.edit {
+    color: #007bff; /* Bootstrap primary color */
+  }
+
+  .icon-button.delete {
+    color: #dc3545; /* Bootstrap danger color */
+  }
+
+  .icon-button:focus {
+    outline: none;
+  }

@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
           this.registerService.getUserId();
           const role = this.registerService.getrolesInfo(); 
           console.log('Role:??????????', role);
-          debugger;
           if (role === "Employee") {
             this.router.navigate(['/employee/profile']);
           } else if (role === 'Employer') {

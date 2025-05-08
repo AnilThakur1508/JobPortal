@@ -1,6 +1,6 @@
 <div class="container mt-4">
     <div class="text-end mb-3">
-      <button class="btn btn-primary" (click)="addJob()">Add Job</button>
+      <button class="btn btn-success py-3 px-3 rounded" (click)="addJob()">Add Job</button>
     </div>
   <div [ngClass]="{'scrollable-container': jobs.length > 7}">
       <table class="table">
@@ -26,10 +26,10 @@
             <td>{{ job.publishDate | date: 'yyyy-MM-dd' }}</td>
             <td>{{ job.expiryDate | date: 'yyyy-MM-dd' }}</td>
             <td>
-              <button class="btn btn-sm btn-primary mr-1" (click)="editJob(job.id)">
+              <button class="icon-button edit mr-2" (click)="editJob(job.id)">
                 <i class="fas fa-edit"></i>
               </button>
-              <button class="btn btn-sm btn-danger" (click)="deleteJob(job.id)">
+              <button class="icon-button delete" (click)="deleteJob(job.id)">
                 <i class="fas fa-trash-alt"></i>
               </button>
             </td>
