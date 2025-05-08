@@ -1,6 +1,7 @@
 <div class="container mt-4">
     <div class="text-end mb-3">
-      <button class="btn btn-success py-3 px-3 rounded" (click)="addJob()">Add Job</button>
+      <button style="background-color: #068f06;" class="btn btn-sm py-3 px-3 rounded "   (mouseover)="null" 
+      (click)="addJob()">Add Job</button>
     </div>
   <div [ngClass]="{'scrollable-container': jobs.length > 7}">
       <table class="table">

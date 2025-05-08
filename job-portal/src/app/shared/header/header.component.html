@@ -30,11 +30,11 @@
                             </div>          
                               <div class="header-btn d-none f-right d-lg-block">
                                  <ng-container *ngIf="!isLoggedIn">
-                                  <a [routerLink]="['/register']" class="btn head-btn1">Register</a>
-                                  <a  class="btn head-btn2" (click)="login()">Login</a>
+                                  <a [routerLink]="['/register']" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-3 rounded mr-3">Register</a>
+                                  <a  class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-3 rounded" (click)="login()">Login</a>
                                 </ng-container>
-                                <ng-container *ngIf="isLoggedIn">
-                                  <button class="btn head-btn2" (click)="logout()">Logout</button>
+                                <ng-container class="ml-20" *ngIf="isLoggedIn">
+                                    <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-3 rounded" (click)="logout()">Logout</button>
                                 </ng-container>
                               </div>
                         </div>

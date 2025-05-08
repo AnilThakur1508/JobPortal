@@ -62,9 +62,18 @@
       <div class="col-md-6 mb-3">
         <label>Skills</label>
         <ng-multiselect-dropdown [placeholder]="'Select Skills'" [data]="skills" [settings]="dropdownSettings"
-          formControlName="SkillIds" (onSelect)="onSkillSelect($event)" (onDeSelect)="onSkillDeselect($event)"
+          formControlName="SkillIds" idField="id" textField="name" (onSelect)="onSkillSelect($event)" (onDeSelect)="onSkillDeselect($event)"
           (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll()">
         </ng-multiselect-dropdown>
+        <!-- <mat-form-field class="full-width">
+          <mat-label>Select Users</mat-label>
+          <mat-select formControlName="SkillIds">
+            <mat-option *ngFor="let user of skills" [value]="user.id">
+             <mat-checkbox [checked]="" idField="id" textField="name" (onSelect)="onSkillSelect($event)" (onDeSelect)="onSkillDeselect($event)"
+             (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll()">{{ user.name}}</mat-checkbox>
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
       </div>
       <div class="col-md-6 mb-3">
         <label>Courses</label>
@@ -77,12 +86,12 @@
     </div>
     <div class="d-flex mt-3">
       <div class="mr-3">
-        <button type="submit" class="btn btn-primary w-100" style="min-width: 120px;">
+        <button type="submit" class="btn btn-primary w-100" style="min-width: 120px; min-height: 30px;">
           {{ selectedJobId ? 'Update Job' : 'Create Job' }}
         </button>
       </div>
       <div>
-        <button type="button" class="btn w-100" style="background-color: black; color: white; min-width: 120px;"
+        <button type="button" class="btn w-100" style="background-color: black; color: white; min-width: 120px; min-height: 30px;"
           (click)="cancel()">
           Cancel
         </button>

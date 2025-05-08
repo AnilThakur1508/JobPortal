@@ -5,11 +5,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgMultiSelectDropDownModule, IDropdownSettings } from 'ng-multiselect-dropdown';
 import { RegisterService } from '../../../service/register.service';
 import { JobService } from '../../../service/job.service';
+import { MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-post-job',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgMultiSelectDropDownModule],
+  imports: [CommonModule, ReactiveFormsModule, NgMultiSelectDropDownModule, MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatCheckboxModule],
   templateUrl: './post-job.component.html',
   styleUrls: ['./post-job.component.css']
 
@@ -99,10 +106,12 @@ export class PostJobComponent implements OnInit {
               CategoryId: job.categoryId
             });
             this.selectedCategory = job.categoryId;
-            this.loadSkills(this.selectedCategory);
-            this.jobForm.patchValue({ CategoryId: job.categoryId });
-            this.selectedSkills = this.skills.filter(skill => job.skillIds?.includes(skill.id));
-            this.jobForm.patchValue({ SkillIds: this.selectedSkills.map(skill => skill.id) });
+            this.loadSkills(job.categoryId); // call it and modify the method
+
+          
+            
+            // Modify loadSkills to accept selected skillIds and handle patching after data loads
+       
             this.selectedCourses = this.courses.filter(course => job.courseIds?.includes(course.id));
             this.jobForm.patchValue({ courseIds: this.selectedCourses });
             this.selectedSkills = this.skills.filter(skill => job.skillIds?.includes(skill.id));
@@ -156,14 +165,14 @@ export class PostJobComponent implements OnInit {
     });
   }
 
-  loadSkills(categoryId: string) {
-    this.jobService.getSkillsByCategory(categoryId).subscribe(data => {
-      this.skills = data.map(skill => ({
-        id: skill.id,
-        name: skill.name
-      }));
-    });
-  }
+  // loadSkills(categoryId: string) {
+  //   this.jobService.getSkillsByCategory(categoryId).subscribe(data => {
+  //     this.skills = data.map(skill => ({
+  //       id: skill.id,
+  //       name: skill.name
+  //     }));
+  //   });
+  // }
 
   onCategoryChange(event: any) {
     this.selectedCategory = event.target.value;
@@ -197,7 +206,7 @@ export class PostJobComponent implements OnInit {
     this.jobForm.patchValue({ courseIds: [] });
   }
   // Skill Selection
-  onSkillSelect(item: any) {
+  onSkillSelect(item: any) {  
     this.selectedSkills.push(item);
     this.jobForm.patchValue({ SkillIds: this.selectedSkills.map(skill => skill.id) });
   }
@@ -265,6 +274,20 @@ export class PostJobComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate(['/employer/manage-jobs']); // ✅ Fixed Path
+  }
+  loadSkills(categoryId: string, selectedSkillIds?: number[]){
+    this.jobService.getSkillsByCategory(categoryId).subscribe(data => {
+      this.skills = data.map(skill => ({
+        id: skill.id,
+        name: skill.name
+      }));
+  
+      // ✅ Only patch if editing and skills are loaded
+      if (selectedSkillIds) {
+        this.selectedSkills = this.skills.filter(skill => selectedSkillIds.includes(skill.id));
+        this.jobForm.patchValue({ SkillIds: this.selectedSkills });
+      }
+    });
   }
 }
 

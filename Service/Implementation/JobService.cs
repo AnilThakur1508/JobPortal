@@ -78,7 +78,6 @@ namespace Service.Implementation
             var jobDto = _mapper.Map<JobDto>(job);
             jobDto.CourseIds = courseIdsString;
             jobDto.SkillIds = skillIdsString;
-            jobDto.CategoryId = categoryId; 
 
             return jobDto;
         } 
