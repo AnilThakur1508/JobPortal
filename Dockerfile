@@ -15,7 +15,7 @@ RUN dotnet restore
 RUN dotnet publish -c Release -o /app/publish
 
 # === Runtime image ===
-FROM mcr.microsoft.com/dotnet/aspnet:7.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app/publish .
 
