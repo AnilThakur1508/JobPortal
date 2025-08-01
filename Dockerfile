@@ -7,7 +7,7 @@ RUN npm install
 RUN npm run build
 
 # === Build .NET Core backend ===
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
 WORKDIR /src/JobPortal
