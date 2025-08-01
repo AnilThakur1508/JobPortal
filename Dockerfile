@@ -2,12 +2,14 @@
 FROM node:18 AS client-build
 WORKDIR /app
 COPY job-portal/ ./job-portal/
-RUN cd job-portal && npm install && npm run build
+WORKDIR /app/job-portal
+RUN npm install
+RUN npm run build
 
 # === Build .NET Core backend ===
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY . .  # 👈 Copies the entire solution including DTO, DAL, etc.
+COPY . .
 WORKDIR /src/JobPortal
 RUN dotnet restore
 RUN dotnet publish -c Release -o /app/publish
@@ -17,10 +19,10 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# ✅ Fix Angular output path
-COPY --from=client-build /app/job-portal/dist/ ./wwwroot/
+# ✅ Angular output is typically at: /app/job-portal/dist/{project-name}
+# Adjust this path if needed
+COPY --from=client-build /app/job-portal/dist/ /app/wwwroot/
 
 ENV ASPNETCORE_URLS=http://+:80
 EXPOSE 80
 ENTRYPOINT ["dotnet", "JobPortal.dll"]
-
