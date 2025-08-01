@@ -1,133 +1,130 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using DataAccessLayer.Entity;
 using DataAccessLayer.PortalRepository;
-using DataAccessLayer.Repository;
 using DTO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Service.Interface;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Service.Implementation
 {
     public class EmployeeService : IEmployeeService
     {
-        private readonly IRepository<Employee> _employeeRepository;
+        private readonly IRepository<Employee> _repository;
+
         private readonly IMapper _mapper;
-        private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly UserManager<AppUser> _userManager;
-        private readonly ILogger<EmployeeService> _logger;
-        private readonly IAddressService _addressService;
+        private readonly IRepository<Address> _addressService;
 
-        public EmployeeService(IRepository<Employee> repository, UserManager<AppUser> userManager, IMapper mapper,IWebHostEnvironment webHostEnvironment, ILogger<EmployeeService> logger,IAddressService addressService)
+
+        public EmployeeService(
+            UserManager<AppUser> userManager,
+            IRepository<Employee> repository,
+            IRepository<Address> addressService,
+
+             IMapper mapper)
+
+
         {
-            _employeeRepository = repository;
+            _repository = repository;
             _mapper = mapper;
-            _webHostEnvironment = webHostEnvironment;
-            _userManager = userManager;
-            _logger = logger;
             _addressService = addressService;
-
+            _userManager = userManager;
 
         }
-        //GetAll
+
         public async Task<IEnumerable<EmployeeDto>> GetAllAsync()
         {
-
-            var employees = await _employeeRepository.GetAllAsync();
-           var employeesDto = _mapper.Map<IEnumerable<EmployeeDto>>(employees);
-            return employeesDto;
-
+            var employees = await _repository.GetAllAsync();
+            return _mapper.Map<IEnumerable<EmployeeDto>>(employees);
         }
-        //GetById
-        public async Task<EmployeeDto?> GetByIdAsync(Guid id)
+
+        public async Task<EmployeeDto> GetByIdAsync(Guid id)
         {
-            var employee = await _employeeRepository.GetByIdAsync(id);
-
-            return employee == null ? null : _mapper.Map<EmployeeDto>(employee);
+            var employee = await _repository.GetByIdAsync(id);
+            if (employee == null)
+            {
+                throw new KeyNotFoundException($"Employee with ID {id} not found");
+            }
+            return _mapper.Map<EmployeeDto>(employee);
         }
-        //Add
         public async Task<bool> UpsertAsync(EmployeeDto employeeDto)
         {
 
-            //var address = _mapper.Map<Address>(employeeDto.Address);
-            await _addressService.AddAsync(employeeDto.Address);
-            // 🔹 Map DTO to Employee entity
-            var employee = _mapper.Map<Employee>(employeeDto);
-
-            
+            var existingEmployee = await _repository.FirstOrDefaultAsync(e => e.UserId == employeeDto.UserId);
+            var existingAddress = await _addressService.FirstOrDefaultAsync(e => e.UserId == employeeDto.UserId);
            
 
-            // 🔹 Check if employee already exists
-            var existingEmployee = await _employeeRepository.GetByIdAsync(employee.Id);
+
 
             if (existingEmployee != null)
             {
-                // 🔹 Update employee
-                return await _employeeRepository.UpdateAsync(employee);
+
+                employeeDto.Id = existingEmployee.Id;
+
+
+                _mapper.Map(employeeDto, existingEmployee);
+
+
+                await _repository.UpdateAsync(existingEmployee);
+                if (employeeDto.Address != null && existingAddress != null)
+                {
+                    employeeDto.Address.UserId = existingEmployee.UserId;
+                    _mapper.Map(employeeDto.Address, existingAddress);
+                    await _addressService.UpdateAsync(existingAddress);
+                    return true;
+                }
+                return false;
             }
             else
             {
-                // 🔹 Insert new employee
-                return await _employeeRepository.AddAsync(employee);
+                var employee = _mapper.Map<Employee>(employeeDto);
+
+
+
+
+                if (await _repository.AddAsync(employee))
+                {
+                    if (employeeDto.Address != null)
+                    {
+                        employeeDto.Address.UserId = employee.UserId;
+                        await _addressService.AddAsync(_mapper.Map<Address>(employeeDto.Address));
+                    }
+                    return true;
+                }
+                return false;
             }
         }
 
+        public async Task<EmployeeDto> GetByUserIdAsync(Guid id)
+        {
+            var employee = await _repository.FirstOrDefaultAsync(e => e.UserId == id);
+            var address = await _addressService.FirstOrDefaultAsync(x => x.UserId == id);
+
+            if (employee == null)
+            {
+                throw new KeyNotFoundException("Employee not found.");
+            }
+            var employeeDto = _mapper.Map<EmployeeDto>(employee);
+            employeeDto.Address = _mapper.Map<AddressDto>(address);
+            return employeeDto;
+        }
 
 
-
-
-        ////Update
-        //public async Task<bool> UpdateAsync(Guid id, EmployeeDto employeeDto)
-        //{
-        //    var employee = _mapper.Map<Employee>(employeeDto);
-        //    employee.Id = id;
-        //    return await _employeeRepository.UpdateAsync(employee);
-        //}
-
-
-        //Delete
         public async Task<bool> DeleteAsync(Guid id)
         {
-            return await _employeeRepository.DeleteAsync(id);
-
+            return await _repository.DeleteAsync(id);
         }
-       
-        //public async Task<string> AddFileAsync(IFormFile file, string subFolder = "uploads")
-        //{
-        //    if (file == null) return null;
 
-        //    var uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "uploads", subFolder);
-        //    if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
-
-        //    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
-        //    var filePath = Path.Combine(uploadPath, fileName);
-
-        //    using (var stream = new FileStream(filePath, FileMode.Create))
-        //    {
-        //        await file.CopyToAsync(stream);
-        //    }
-
-        //    return $"/uploads/{subFolder}/{fileName}";
-        //}
     }
 }
-
-
-
-       
-
-       
-        
-
-    
-
-    
 

@@ -1,46 +1,88 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterService } from '../../service/register.service';
 import { CommonModule } from '@angular/common';
+import { RegisterService } from '../../service/register.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-
-
-
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
-
   selector: 'app-register',
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],  
+  styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
-roles: any
+  roles: any[] = [];
+  selectedFile: File | null = null;
 
-
-  constructor(private fb: FormBuilder,private registerService:RegisterService) {
-
-    this.registerForm= this.fb.group({
-     
-      firstName: ['', [Validators.required, Validators.minLength(3)]], // First Name validation
-      lastName: ['', [Validators.required, Validators.minLength(3)]], // Last Name validation
-      role: ['', [Validators.required]], 
-      phoneNumber: ['', [Validators.required,Validators.pattern('^[0-9]{10}$')]], // Phone Number validation  
-      email: ['', [Validators.required, Validators.email]], // Email validation
-      password: ['', [Validators.required, Validators.minLength(6)]] , // Password validation
-      confirmPassword: ['', [Validators.required, Validators.minLength(6)]] , // Confirm Password validation
-     profilePicture: ['', [Validators.required]] // Profile Picture validation
+  constructor(private fb: FormBuilder, private registerService: RegisterService, private router: Router) {
+    this.registerForm = this.fb.group({
+      firstName: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ['', [Validators.required, Validators.minLength(3)]],
+      role: ['', Validators.required],
+      phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
+      profilePicture: [null, Validators.required]
     });
-     
   }
-   onSubmit(): void {
+
+  ngOnInit(): void {
+    this.getRoles();
+  }
+
+  getRoles(): void {
     debugger;
-alert('Form Submitted');
-        if (this.registerForm.valid) {
-          console.log(this.registerForm.value);
+    this.registerService.getRoles().subscribe({
+      next: (response) => {
+        console.log("Roles API Response:", response);
+        this.roles = response;
+      },
+      error: (error) => console.error('Error fetching roles:', error)
+    });
+  }
+
+  onFileChange(event: any): void {
+    if (event.target.files.length > 0) {
+      this.selectedFile = event.target.files[0];
+      this.registerForm.patchValue({ profilePicture: this.selectedFile });
+    }
+  }
+
+  onSubmit(): void {
+    if (this.registerForm.valid && this.selectedFile) {
+      const formData = new FormData();
+      formData.append('firstName', this.registerForm.get('firstName')?.value);
+      formData.append('lastName', this.registerForm.get('lastName')?.value);
+      formData.append('role', this.registerForm.get('role')?.value);
+      formData.append('phoneNumber', this.registerForm.get('phoneNumber')?.value);
+      formData.append('email', this.registerForm.get('email')?.value);
+      formData.append('password', this.registerForm.get('password')?.value);
+      formData.append('confirmPassword', this.registerForm.get('confirmPassword')?.value);
+      formData.append('profilePicture', this.selectedFile);
+
+      this.registerService.addItem(formData).subscribe({
+        next: (response) => {
+          console.log('User registered successfully:', response);
+          alert('Registration Successful!');
+            const navigationExtras: NavigationExtras = {
+            state: {
+              email: this.registerForm.get('email')?.value,
+              password: this.registerForm.get('password')?.value
+              
+            }
+          };
+
+          this.router.navigate(['/login'], navigationExtras);
+        },
+        error: (error) => {
+          console.error('Error:', error);
+          alert('Registration Failed!');
         }
-        this.registerService.addItem(this.registerForm.value).subscribe({
-          next: (response) => { console.log('user added:', response); } ,
-          error: (error) => console.error("Error", error) });
-  }   
+      });
+    } else {
+      alert('Please fill all fields correctly');
+    }
+  }
 }

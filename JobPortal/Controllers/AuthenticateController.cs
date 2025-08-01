@@ -12,7 +12,7 @@ using System.Text;
 namespace JobPortal.Controllers
 {
 
-    [Route("Api/Authenticate")]
+    [Route("api/Authenticate")]
     [ApiController]
     public class AuthenticateController : ControllerBase
     {
@@ -22,7 +22,7 @@ namespace JobPortal.Controllers
             _authenticateService = authenticateService;
         }
 
-        //Register
+        
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto model)
         {
@@ -33,19 +33,15 @@ namespace JobPortal.Controllers
             return Ok(new { message = result });
         }
 
-        //Login
+        
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginDto model)
         {
             var token = await _authenticateService.LoginAsync(model);
             if (token == null)
                 return Unauthorized("Invalid email or password.");
-
             return Ok(new { token });
-        }
-
-       
-        
+        } 
         [HttpPost("upload-register")]
         public async Task<IActionResult> UploadRegister([FromForm] RegisterDto model)
         {
@@ -53,15 +49,10 @@ namespace JobPortal.Controllers
             {
                 return BadRequest("Invalid registration  data.");
             }
-
             var result =await _authenticateService.RegisterAsync(model);
-
             if (result == null)
                 return StatusCode(500, "Failed to upload reg.");
-
             return Ok(new { message = "Registraion  uploaded successfully!", model = result });
         }
-
-
     }
 }

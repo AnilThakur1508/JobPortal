@@ -28,7 +28,8 @@ namespace Service.Implementation
         {
             var states = await _repository.GetAllAsync();
             return states.Select(s => new StateDto
-            {
+            {  
+                Id = s.Id,
                 CountryId = s.CountryId,
                 Name = s.Name,
 
@@ -43,7 +44,8 @@ namespace Service.Implementation
                 return null;
 
             return new StateDto
-            {
+            {  
+                Id = state.Id,
                 CountryId = state.CountryId,
                 Name = state.Name,
             };

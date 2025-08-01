@@ -12,12 +12,9 @@
           placeholder="Enter your email"
         />
         <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="text-danger">
-          <!-- <small *ngIf="loginForm.controls['email'].errors?.required">Email is required.</small>
-          <small *ngIf="loginForm.controls['email'].errors?.email">Please enter a valid email.</small> -->
-          Email is required.
+         Email is required.
         </div>
       </div>
-
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <input
@@ -28,19 +25,19 @@
           placeholder="Enter your password"
         />
         <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="text-danger">
-          <!-- <small *ngIf="loginForm.password.errors?.required">Password is required.</small> -->
-          <!-- <small *ngIf="loginForm.password.errors?.minlength">Password must be at least 6 characters long.</small> -->
-           Password is required.
+        Password is required.
         </div>
       </div>
-
       <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">
         Login
       </button>
-
-      <p class="text-center mt-3">
-        Don't have an account? <a routerLink="/register">Register</a>
-      </p>
+     
+      <div class="d-flex justify-content-center align-items-center mt-3">
+        <p class="text-center mt-3">Don't have an account?</p>
+        <a class="registertext ml-2 fw-bold text-dark" [href]="['/register']">Register</a>
+      </div>
     </form>
+    
   </div>
 </div>
+

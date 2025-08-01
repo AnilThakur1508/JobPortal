@@ -15,13 +15,12 @@ namespace Service.Interface
         Task<QualificationDto> GetByIdAsync(Guid id);
         Task<bool> AddAsync(QualificationDto QualificationDto);
         Task<bool> UpdateAsync(Guid id, QualificationDto qualificationDto);
-
         Task<bool> DeleteAsync(Guid id);
-
-        
-
-
-
-
     }
-}
+}       
+
+
+
+
+    
+

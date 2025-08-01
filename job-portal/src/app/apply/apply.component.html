@@ -1,0 +1,78 @@
+<div class="container mt-5">
+  <h2>Apply for Job</h2>
+  <form [formGroup]="applyForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data" novalidate>
+    
+    
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input id="firstName" type="text" class="form-control" formControlName="firstName" />
+      <div *ngIf="applyForm.get('firstName')?.invalid && applyForm.get('firstName')?.touched" class="text-danger">
+        First name is required (min 3 characters).
+      </div>
+    </div>
+
+
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input id="lastName" type="text" class="form-control" formControlName="lastName" />
+      <div *ngIf="applyForm.get('lastName')?.invalid && applyForm.get('lastName')?.touched" class="text-danger">
+        Last name is required (min 3 characters).
+      </div>
+    </div>
+
+    
+    <div class="mb-3">
+      <label for="experience" class="form-label">Experience (years)</label>
+      <input id="experience" type="number" class="form-control" formControlName="experience" />
+      <div *ngIf="applyForm.get('experience')?.invalid && applyForm.get('experience')?.touched" class="text-danger">
+        Please enter a valid experience.
+      </div>
+    </div>
+
+    
+    <div class="mb-3">
+      <label for="qualification" class="form-label">Qualification</label>
+      <input id="qualification" type="text" class="form-control" formControlName="qualification" />
+      <div *ngIf="applyForm.get('qualification')?.invalid && applyForm.get('qualification')?.touched" class="text-danger">
+        Qualification is required.
+      </div>
+    </div>
+       <div class="mb-3">
+         <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input id="phoneNumber" type="text" class="form-control" formControlName="phoneNumber" />
+        <div *ngIf="applyForm.get('phoneNumber')?.invalid && applyForm.get('phoneNumber')?.touched" class="text-danger">
+         Enter a valid 10-digit phone number.
+  </div>
+ </div>
+       <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="email" class="form-control" formControlName="email" />
+        <div *ngIf="applyForm.get('email')?.invalid && applyForm.get('email')?.touched" class="text-danger">
+       Enter a valid email address.
+       </div>
+    </div>
+   
+    <div class="mb-3">
+      <label for="appliedOn" class="form-label">Applied On</label>
+      <input id="appliedOn" type="date" class="form-control" formControlName="appliedOn" />
+      <div *ngIf="applyForm.get('appliedOn')?.invalid && applyForm.get('appliedOn')?.touched" class="text-danger">
+        Please select the applied date.
+      </div>
+    </div>
+
+    
+    <div class="mb-3">
+      <label for="resume" class="form-label">Upload Resume (PDF/DOC)</label>
+      <input id="resume" type="file" class="form-control" (change)="onFileChange($event)" />
+      <div *ngIf="!selectedFile && applyForm.get('resume')?.touched" class="text-danger">
+        Resume is required.
+      </div>
+    </div>
+
+   
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-primary" [disabled]="applyForm.invalid">Submit</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>

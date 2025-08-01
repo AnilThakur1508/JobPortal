@@ -1,0 +1,80 @@
+<h3 class="mb-3">Employer Profile</h3>
+<div class="profile-container">
+
+  <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+    <div class="row">
+     <div class="col-md-6 mb-3">
+        <label for="companyName">Company Name:</label>
+        <input id="companyName" type="text" formControlName="companyName" class="form-control" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description" class="form-control"></textarea>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="website">Website:</label>
+        <input id="website" type="text" formControlName="website" class="form-control" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="phoneNumber">Phone Number:</label>
+        <input id="phoneNumber" type="text" formControlName="phoneNumber" class="form-control" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="email">Email:</label>
+        <input id="email" type="email" formControlName="email" class="form-control" />
+      </div>
+    </div>
+    <fieldset formGroupName="address">
+      <legend>Address</legend>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label>Address Line 1</label>
+          <input type="text" class="form-control" formControlName="addressLine1" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>Address Line 2</label>
+          <input type="text" class="form-control" formControlName="addressLine2">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>City</label>
+          <input type="text" class="form-control" formControlName="city" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="country">Country</label>
+          <select id="country" class="form-control" formControlName="countryId">
+            <option value="">-- Select Country --</option>
+            <option *ngFor="let country of countries" [value]="country.id">
+              {{ country.name }}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="state">State</label>
+          <select id="state" class="form-control" formControlName="stateId">
+            <option value="">-- Select State --</option>
+            <option *ngFor="let state of states" [value]="state.id">
+              {{ state.name }}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>Zip Code</label>
+          <input type="text" class="form-control" formControlName="zipcode" required>
+        </div>
+       </div>
+    </fieldset>
+    <div class="d-flex gap-2 mt-3">
+      <button *ngIf="!selectedProfileId" type="submit" style="background-color: green; color: white; min-width: 120px; min-height: 10px;" class="btn btn-sm py-3 px-3 rounded mr-3">
+        <i class="fas fa-plus"></i> Create Profile
+      </button>
+
+      <button *ngIf="selectedProfileId" type="submit" class="btn btn-sm py-3 px-3 rounded mr-3" style="background-color: green; color: white; min-width: 120px; min-height: 30px;">
+        <i class="fas fa-edit"></i> Update Profile
+      </button>
+
+      <button type="button" class="btn btn-sm py-3 px-3 rounded " style="background-color: black; color: white; min-width: 120px; min-height: 30px;" (click)="cancel()">
+        <i class="fas fa-times"></i> Cancel
+      </button>
+    </div>
+  </form>
+</div>

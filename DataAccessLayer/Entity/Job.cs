@@ -17,13 +17,20 @@ namespace DataAccessLayer.Entity
         [Column(TypeName = "decimal(18,2)")]
         public decimal Salary { get; set; }
 
-        public Guid EmployeeId { get; set; }
-        public virtual Employee Employee { get; set; }
+        public Guid EmployerId { get; set; }
+        [ForeignKey("EmployerId")]
+        public  Employer Employer { get; set; }
 
-        public DateTime PostedDate { get; set; }
+        public DateTime PublishDate { get; set; }
         public DateTime ExpiryDate { get; set; }
-        public string JobType { get; set; }
-
+        public Guid JobTypeId { get; set; }
+        public JobType JobType { get; set; }
+        public Guid ExperienceLevelId { get; set; }
+        public ExperienceLevel ExperienceLevel { get; set; }
+        public Guid CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
+       
 
     }
 }

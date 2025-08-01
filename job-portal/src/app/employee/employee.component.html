@@ -1,0 +1,101 @@
+<div class="container">
+  <h2>Employee Profile</h2>
+  <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label>Date of Birth</label>
+        <input type="date" class="form-control" formControlName="dob" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="gender">Gender</label>
+        <select id="gender" class="form-control" formControlName="gender" required>
+          <option value="">-- Select Gender --</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="workExperience">Work Experience (in years)</label>
+        <select id="workExperience" class="form-control" formControlName="workExperience" required>
+          <option value="">-- Select Experience --</option>
+          <option [value]="0">Fresher</option>
+          <option [value]="1">1 Year</option>
+          <option [value]="2">2 Years</option>
+          <option [value]="3">3 Years</option>
+          <option [value]="4">4 Years</option>
+          <option [value]="5">5 Years</option>
+          <option [value]="6">6 Years</option>
+          <option [value]="7">7 Years</option>
+          <option [value]="8">8 Years</option>
+          <option [value]="9">9 Years</option>
+          <option [value]="10">10 Years</option>
+          <option [value]="11">11+ Years</option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Description</label>
+        <textarea class="form-control" formControlName="description" maxlength="500" required></textarea>
+      </div>
+    </div>
+    <fieldset formGroupName="address">
+      <legend>Address</legend>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label>Address Line 1</label>
+          <input type="text" class="form-control" formControlName="addressLine1" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>Address Line 2</label>
+          <input type="text" class="form-control" formControlName="addressLine2">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>City</label>
+          <input type="text" class="form-control" formControlName="city" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="country">Country</label>
+          <select id="country" class="form-control" formControlName="countryId">
+            <option value="">-- Select Country --</option>
+            <option *ngFor="let country of countries" [value]="country.id">
+              {{ country.name }}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="state">State</label>
+          <select id="state" class="form-control" formControlName="stateId">
+            <option value="">-- Select State --</option>
+            <option *ngFor="let state of states" [value]="state.id">
+              {{ state.name }}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>Zip Code</label>
+          <input type="text" class="form-control" formControlName="zipcode" required>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+  <div class="d-flex gap-2 mt-3">
+    <button *ngIf="!selectedProfileId" type="submit"
+      class="btn rounded d-flex align-items-center justify-content-center"
+      style="background-color: green; color: white; width: 150px; height: 42px; font-size: 14px;">
+      <i class="fas fa-plus me-2"></i> Create Profile
+    </button>
+
+    <button *ngIf="selectedProfileId" type="submit" class="btn rounded d-flex align-items-center justify-content-center"
+      style="background-color: green; color: white; width: 150px; height: 42px; font-size: 14px;">
+      <i class="fas fa-edit me-2"></i> Update Profile
+    </button>
+
+    <button type="button" class="btn rounded d-flex align-items-center justify-content-center ml-3"
+      style="background-color: black; color: white; width: 150px; height: 42px; font-size: 14px;" (click)="cancel()">
+      <i class="fas fa-times me-2"></i> Cancel
+    </button>
+  </div>
+
+</div>

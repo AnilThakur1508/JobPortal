@@ -1,7 +1,9 @@
 <div class="container d-flex justify-content-center align-items-center vh-100">
   <div class="card p-4 shadow-lg" style="width: 400px;">
     <h3 class="text-center mb-3">Register</h3>
+
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      
       
       <div class="mb-3">
         <label for="firstName" class="form-label">First Name</label>
@@ -10,7 +12,7 @@
           First Name is required (Min 3 characters).
         </div>
       </div>
-      
+
       <div class="mb-3">
         <label for="lastName" class="form-label">Last Name</label>
         <input type="text" id="lastName" class="form-control" formControlName="lastName" placeholder="Enter your last name" />
@@ -18,6 +20,7 @@
           Last Name is required (Min 3 characters).
         </div>
       </div>
+
       
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
@@ -26,6 +29,7 @@
           Valid Email is required.
         </div>
       </div>
+
       
       <div class="mb-3">
         <label for="phoneNumber" class="form-label">Phone Number</label>
@@ -34,7 +38,8 @@
           Enter a valid 10-digit phone number.
         </div>
       </div>
-      
+
+     
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <input type="password" id="password" class="form-control" formControlName="password" placeholder="Enter your password" />
@@ -42,6 +47,7 @@
           Password must be at least 6 characters long.
         </div>
       </div>
+
       
       <div class="mb-3">
         <label for="confirmPassword" class="form-label">Confirm Password</label>
@@ -50,27 +56,31 @@
           Password confirmation is required.
         </div>
       </div>
-      
-      <div class="mb-3">
-        <label for="role" class="form-label">Role</label>
-        <select id="role" class="form-control" formControlName="role">
-          <option value="">Select Role</option>
-          <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
-        </select>
-        <div *ngIf="registerForm.controls['role'].invalid && registerForm.controls['role'].touched" class="text-danger">
+
+    
+         <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+              <select id="role" class="form-control" formControlName="role">
+            <option value="">Select Role</option>
+            <option *ngFor="let role of roles" [value]="role.name">{{ role.name }}</option>
+           </select>
+         <div *ngIf="registerForm.controls['role'].invalid && registerForm.controls['role'].touched" class="text-danger">
+           Role selection is required.
+          </div>
+       </div>
+       <div class="mb-3">
+        <label for="profilePicture" class="form-label">Profile Picture</label>
+        <input type="file" id="profilePicture" class="form-control" (change)="onFileChange($event)" />
+        <div *ngIf="registerForm.controls['profilePicture'].invalid && registerForm.controls['profilePicture'].touched" class="text-danger">
+          Profile picture is required.
         </div>
       </div>
-      
-      
-      
-      <div class="mb-3">
-        <label for="profilePicture" class="form-label">Profile Picture</label>
-        <input type="file" id="profilePicture" class="form-control" formControlName="profilePicture" />
-      </div>
-      
       <button type="submit" class="btn btn-primary w-100">Register</button>
-      
-      <p class="text-center mt-3">Already have an account? <a routerLink="/login">Login</a></p>
+      <div class="d-flex justify-content-center align-items-center mt-3">
+      <p class="text-center mt-3">Already have an account?</p>
+      <a class="logintext ml-2 fw-bold text-dark" [href]="['/login']">Login</a>
+      </div>
+       
     </form>
   </div>
 </div>

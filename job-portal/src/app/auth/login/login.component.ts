@@ -1,31 +1,64 @@
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RegisterService } from '../../service/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder,private registerService:RegisterService) {
 
+  constructor(private fb: FormBuilder, private registerService: RegisterService, private router: Router) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]], // Email validation
-      password: ['', [Validators.required, Validators.minLength(6)]]  // Password validation
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
-     
+  }
+  ngOnInit(): void {
+    const navigation = this.router.getCurrentNavigation();
+    const state = navigation?.extras.state as { email: string, password: string };
+
+    if (state) {
+      this.loginForm.patchValue({
+        email: state.email,
+        password: state.password
+      });
+    }
   }
   onSubmit(): void {
-alert('Form Submitted');
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
+      this.registerService.login(this.loginForm.value).subscribe({
+        next: (response) => {
+          console.log('User logged in successfully:', response);
+          alert('Login Successful!');
+          const token = response.token;
+          localStorage.setItem('authToken', token);
+          this.registerService.setLoginStatus(); 
+          this.registerService.getUserId();
+          const role = this.registerService.getrolesInfo(); 
+          console.log('Role:??????????', role);
+          if (role === "Employee") {
+            this.router.navigate(['/home']);
+          } else if (role === 'Employer') {
+            this.router.navigate(['/employer']);
+          } else {
+            this.router.navigate(['/']); 
+          }
+          
+        },
+        error: (error) => {
+          console.error('Error:', error);
+          alert('Login Failed!');
+        }
+        
+      });
+      
     }
-    this.registerService.login(this.loginForm.value).subscribe({
-      next: (response) => { console.log('user added:', response); } ,
-      error: (error) => console.error("Error", error) });
   }
+  
 }

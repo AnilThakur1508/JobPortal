@@ -6,17 +6,13 @@ using Service.Interface;
 [ApiController]
 public class StateController : ControllerBase
 {
-   
-
-    
-    
         private readonly IStateService _service;
         public StateController(IStateService service)
         {
             _service = service;
 
         }
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<StateDto>>> GetAllAsync()
         {
             var states = await _service.GetAllAsync();

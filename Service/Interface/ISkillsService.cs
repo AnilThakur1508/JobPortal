@@ -10,5 +10,8 @@ namespace Service.Interface
     public interface ISkillsService
     {
         Task<IEnumerable<SkillsDto>> GetAllAsync();
+        Task<IEnumerable<SkillsDto>> GetByCategoryAsync(Guid categoryId);
+
+
     }
 }

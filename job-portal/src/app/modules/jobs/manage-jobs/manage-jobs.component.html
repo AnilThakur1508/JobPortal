@@ -1,0 +1,44 @@
+<div class="container mt-4">
+    <div class="text-end mb-3">
+      <button style="background-color: #068f06;" class="btn btn-sm py-3 px-3 rounded "   (mouseover)="null" 
+      (click)="addJob()">Add Job</button>
+    </div>
+  <div [ngClass]="{'scrollable-container': jobs.length > 7}">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Salary</th>
+            <th>Experience</th>
+            <th>Published</th>
+            <th>Expiry</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let job of jobs; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ job.title }}</td>
+            <td>{{ job.jobTypeName }}</td>
+            <td>{{ job.salary }}</td>
+            <td>{{ job.experienceLevelName }}</td>
+            <td>{{ job.publishDate | date: 'yyyy-MM-dd' }}</td>
+            <td>{{ job.expiryDate | date: 'yyyy-MM-dd' }}</td>
+            <td>
+              <button class="icon-button edit mr-2" (click)="editJob(job.id)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="icon-button delete" (click)="deleteJob(job.id)">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  
+    
+  

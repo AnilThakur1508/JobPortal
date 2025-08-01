@@ -1,0 +1,102 @@
+<div class="container mt-4">
+  <h2 class="text-start mb-3">{{ selectedJobId ? 'Update Job' : 'Create Job' }}</h2>
+
+  <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label>Title</label>
+        <input type="text" class="form-control" formControlName="Title" placeholder="Enter Job Title" />
+        <small class="text-danger" *ngIf="jobForm.controls['Title'].invalid && jobForm.controls['Title'].touched">
+          Job title is required (min 3 chars).
+        </small>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label>Description</label>
+        <input type="text" class="form-control" formControlName="Description" placeholder="Enter Job Description" />
+        <small class="text-danger"
+          *ngIf="jobForm.controls['Description'].invalid && jobForm.controls['Description'].touched">
+          Job description is required (min 3 chars).
+        </small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Job Type</label>
+        <select id="JobType" class="form-control" formControlName="JobTypeId">
+          <option value="">Select Job Type</option>
+          <option *ngFor="let jobType of jobTypes" [value]="jobType.id">
+            {{ jobType.name }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Salary</label>
+        <input type="text" class="form-control" formControlName="Salary" placeholder="Enter Salary" />
+        <small class="text-danger" *ngIf="jobForm.controls['Salary'].invalid && jobForm.controls['Salary'].touched">
+          Salary must be a number.
+        </small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Experience Level</label>
+        <select id="ExperienceLevel" class="form-control" formControlName="ExperienceLevelId">
+          <option value="">Select Experience Level</option>
+          <option *ngFor="let experienceLevel of experienceLevels" [value]="experienceLevel.id">
+            {{ experienceLevel.name }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Publish Date</label>
+        <input type="date" class="form-control" formControlName="PublishDate" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Expiry Date</label>
+        <input type="date" class="form-control" formControlName="ExpiryDate" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Category</label>
+        <select class="form-control" formControlName="CategoryId" (change)="onCategoryChange($event)">
+          <option value="">Select Category</option>
+          <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Skills</label>
+        <ng-multiselect-dropdown [placeholder]="'Select Skills'" [data]="skills" [settings]="dropdownSettings"
+          formControlName="SkillIds" idField="id" textField="name" (onSelect)="onSkillSelect($event)" (onDeSelect)="onSkillDeselect($event)"
+          (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll()">
+        </ng-multiselect-dropdown>
+        <!-- <mat-form-field class="full-width">
+          <mat-label>Select Users</mat-label>
+          <mat-select formControlName="SkillIds">
+            <mat-option *ngFor="let user of skills" [value]="user.id">
+             <mat-checkbox [checked]="" idField="id" textField="name" (onSelect)="onSkillSelect($event)" (onDeSelect)="onSkillDeselect($event)"
+             (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll()">{{ user.name}}</mat-checkbox>
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Courses</label>
+        <ng-multiselect-dropdown idField="id" textField="name" [placeholder]="'Select Courses'" [data]="courses"
+          [settings]="dropdownSettings" formControlName="courseIds" (onSelect)="onCourseSelect($event)"
+          (onDeSelect)="onCourseDeselect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll()">
+        </ng-multiselect-dropdown>
+
+      </div>
+    </div>
+    <div class="d-flex mt-3">
+      <div class="mr-3">
+        <button type="submit" class="btn btn-primary w-100" style="min-width: 120px; min-height: 30px;">
+          {{ selectedJobId ? 'Update Job' : 'Create Job' }}
+        </button>
+      </div>
+      <div>
+        <button type="button" class="btn w-100" style="background-color: black; color: white; min-width: 120px; min-height: 30px;"
+          (click)="cancel()">
+          Cancel
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>

@@ -1,71 +1,74 @@
-﻿using DTO;
+﻿using DataAccessLayer.Entity;
+using DataAccessLayer.Enum;
+using DTO;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Service.Implementation;
 using Service.Interface;
 
 namespace JobPortal.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class JobApplicationController : ControllerBase
     {
-        
-        private readonly IJobApplicationService _jobapplicationService;
+        private readonly IJobApplicationService _jobApplicationService;
 
-
-        public JobApplicationController(IJobApplicationService jobapplicationService)
+        public JobApplicationController(IJobApplicationService jobApplicationService)
         {
-            _jobapplicationService = jobapplicationService;
+            _jobApplicationService = jobApplicationService;
         }
-        //GetAll
-        [HttpGet("GetAll")]
-        public async Task<ActionResult<IEnumerable<JobApplicationDto>>> GetAllAsync()
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAll()
         {
-            var jobapplications = await _jobapplicationService.GetAllAsync();
-            return Ok(new { Message = "List of the jobapplications", Data = jobapplications });
+            var applications = await _jobApplicationService.GetAllAsync();
+            return Ok(applications);
         }
-        //GetbyId
-        [HttpGet("GetById/{id}")]
-        public async Task<ActionResult<JobApplicationDto>> GetById(Guid id)
+        [HttpPost("apply")]
+        public async Task<IActionResult> ApplyForJob([FromForm] JobApplicationDto dto)
         {
-            var jobapplication = await _jobapplicationService.GetByIdAsync(id);
+            try
+            {
+                await _jobApplicationService.ApplyForJobAsync(dto);
+                return Ok(new { message = "Application submitted successfully." });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPut("{Id}/Status")]
+        public async Task<ActionResult<bool>> UpdateStatusAsync(Guid Id,[FromBody] AppStatus appStatus)
+        {
+            var success = await _jobApplicationService.UpdateStatusAsync(Id, appStatus);
+            if (!success) 
 
-            if (jobapplication == null)
+                return NotFound();
+
+            return NoContent();
+        }
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<JobApplicationResponseDto>> GetByIdAsync(Guid Id)
+        {
+            var application = await _jobApplicationService.GetByIdAsync(Id);
+            if (application == null)
                 return NotFound("JobApplication not found.");
 
-            return Ok(jobapplication);
-        } //Add
-        [HttpPost("Add")]
-        public async Task<IActionResult> AddAsync(JobApplicationDto jobapplicationDto)
-        {
-            await _jobapplicationService.AddAsync(jobapplicationDto);
-            return Ok(new { Message = "Created a jobapplication", data = jobapplicationDto });
-
+            return Ok(application);
         }
-        //update
-        [HttpPut("Update/{id}")]
-        public async Task<IActionResult> UpdateJobApplication(Guid id, [FromBody] JobApplicationDto jobapplicationDto)
+        [HttpPut("{Id}")]
+        public async Task<IActionResult> Update(Guid Id, [FromBody] JobApplicationDto dto)
         {
-            await _jobapplicationService.UpdateAsync(id, jobapplicationDto);
-
-
-            return Ok("JobApplication updated successfully.");
+            var result = await _jobApplicationService.UpdateAsync(Id, dto);
+            if (result)
+            {
+                return Ok(new { message = "Job updated successfully!" });
+            }
+            return BadRequest(new { error = "Failed to update jobapplication." });
         }
-
-        //delete
-
-        [HttpDelete("Delete/{id}")]
-        public async Task<IActionResult> DeleteJobApplication(Guid id)
-        {
-            var success = await _jobapplicationService.DeleteAsync(id);
-
-            if (!success)
-                return NotFound("JobApplication not found.");
-
-            return Ok("JobApplication deleted successfully.");
-        }
-
 
     }
+
 }
 

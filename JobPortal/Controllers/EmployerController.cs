@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service.Interface;
+using System.Security.Claims;
 
 namespace JobPortal.Controllers
 {
@@ -10,6 +11,7 @@ namespace JobPortal.Controllers
     public class EmployerController : ControllerBase
     {
         private readonly IEmployerService _employerService;
+        private readonly object _logger;
 
         public EmployerController(IEmployerService employerService)
         {
@@ -34,7 +36,16 @@ namespace JobPortal.Controllers
             return Ok(employer);
         }
 
-        //Add
+        [HttpGet("GetByUserId/{id}")]
+        public async Task<ActionResult<EmployerDto>> GetByUserId(string id)
+        {
+            var employer = await _employerService.GetByUserIdAsync(Guid.Parse(id));
+
+            if (employer == null)
+                return NotFound("Employer not found.");
+
+            return Ok(employer);
+        }
         [HttpPost("AddOrUpdate")]
         public async Task<IActionResult> AddOrUpdate(EmployerDto employerDto)
         {
@@ -42,8 +53,6 @@ namespace JobPortal.Controllers
             return Ok(new { Message = "Created a employer", data = employerDto });
 
         }
-
-
         [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeleteEmployer(Guid id)
         {
@@ -56,28 +65,8 @@ namespace JobPortal.Controllers
         }
 
 
-        
-        //public async Task<IActionResult> UploadEmployerAsync([FromForm] EmployerDto employer)
-        //{
-        //    if (employer == null)
-        //    {
-        //        return BadRequest("Invalid employer  data.");
-        //    }
 
-        //    var result = await _employerService.AddAsync(employer);
 
-        //    if (result == null)
-        //        return StatusCode(500, "Failed to upload employer.");
-
-        //    return Ok(new { message = "Employer  uploaded successfully!", employer = result });
-        //}
-        //[HttpPost("upload")]
-        //public async Task<IActionResult> UploadFile([FromForm] IFormFile file)
-        //{
-        //    var filePath = await _employerService.AddAsync(file, "uploads");
-        //    if (filePath == null) return BadRequest("File upload failed.");
-        //    return Ok(new { filePath });
-        //}
 
 
     }

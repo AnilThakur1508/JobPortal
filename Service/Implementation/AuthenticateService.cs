@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -28,10 +29,10 @@ namespace Service.Implementation
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ILogger<AuthenticateService> _logger;
-        
-        
 
-        public AuthenticateService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration, IMapper mapper,IWebHostEnvironment webHostEnvironment,ILogger<AuthenticateService> logger)
+        private readonly RoleManager<IdentityRole> _roleManager;
+
+        public AuthenticateService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration, IMapper mapper,IWebHostEnvironment webHostEnvironment,ILogger<AuthenticateService> logger, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -39,30 +40,37 @@ namespace Service.Implementation
             _mapper = mapper;
             _webHostEnvironment = webHostEnvironment;
             _logger = logger;
+            _roleManager = roleManager;
 
-
-            
         }
         public async Task<string> RegisterAsync(RegisterDto model)
         {
             var user = _mapper.Map<AppUser>(model);
-            user.ProfilePicture =await AddAsync(model.ProfilePicture);
+            user.ProfilePicture = await AddAsync(model.ProfilePicture);
 
             var result = await _userManager.CreateAsync(user, model.Password);
-            user = await _userManager.FindByEmailAsync(model.Email);
-
 
             if (!result.Succeeded)
-                return null; // Registration failed
+                return null; 
+
+            user = await _userManager.FindByEmailAsync(model.Email);
+            var roleExists = await _roleManager.RoleExistsAsync(model.Role);
+            if (!roleExists)
+            {
+                await _roleManager.CreateAsync(new IdentityRole(model.Role));
+            }
+
             await _userManager.AddToRoleAsync(user, model.Role);
 
+           
             return "User registered successfully!";
         }
+
         public async Task<string> LoginAsync(LoginDto model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null || !await _userManager.CheckPasswordAsync(user, model.Password))
-                return null; // Invalid credentials
+                return null; 
 
             return GenerateJwtToken(user);
         }
@@ -87,15 +95,17 @@ namespace Service.Implementation
 
         private string GenerateJwtToken(AppUser user)
         {
-            var claims = new[]
-            {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-            new Claim(JwtRegisteredClaimNames.Email, user.Email),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        };
+            var claims = new List<Claim>
+    {
+        new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+        new Claim(JwtRegisteredClaimNames.Email, user.Email),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        new Claim("role", user.Role) 
+    };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
             var token = new JwtSecurityToken(
                 _configuration["JwtSettings:Issuer"],
                 _configuration["JwtSettings:Audience"],
@@ -105,5 +115,7 @@ namespace Service.Implementation
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+
     }
 }
