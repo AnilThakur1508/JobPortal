@@ -19,10 +19,8 @@ namespace JobPortal.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetRoles()
         {
-            var roles = _roleManager.Roles
-                .Where(r => r.Name == "Employee" || r.Name == "Employer") 
-                .Select(r => new { r.Id, r.Name })
-                .ToList();
+            var roles = _roleManager.Roles .ToList();
+
 
             if (roles.Count == 0)
                 return NotFound("No roles found.");

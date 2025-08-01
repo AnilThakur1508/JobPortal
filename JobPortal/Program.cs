@@ -64,7 +64,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigin", builder =>
+    options.AddPolicy("AllowAll", builder =>
     {
         builder.AllowAnyOrigin() 
             .AllowAnyMethod()
@@ -97,5 +97,5 @@ app.UseCors(x => x
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseCors("AllowAll");
 app.Run();
